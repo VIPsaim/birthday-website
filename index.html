@@ -155,17 +155,76 @@ transform:scale(1.05);
 
 <div class="hero">
 
-<div class="card">
+    <div class="card">
 
-<h1>🎂 Happy Birthday Eeshal ❤️</h1>
+        <h1>🎂 Happy Birthday Eeshal ❤️</h1>
 
-<p id="typing"></p>
+        <p id="typing"></p>
 
-<button onclick="alert('Welcome to your birthday surprise! ❤️')">
-Enter Surprise
-</button>
+        <!-- Countdown -->
+        <h2 id="countdownTitle">
+            ⏳ Birthday Countdown
+        </h2>
 
-</div>
+        <div class="countdown">
+
+            <div>
+                <span id="days">00</span>
+                <small>Days</small>
+            </div>
+
+            <div>
+                <span id="hours">00</span>
+                <small>Hours</small>
+            </div>
+
+            <div>
+                <span id="minutes">00</span>
+                <small>Minutes</small>
+            </div>
+
+            <div>
+                <span id="seconds">00</span>
+                <small>Seconds</small>
+            </div>
+
+        </div>
+
+        <!-- Cake -->
+        <div class="cake">
+
+            <div class="candle">
+                <div class="flame">🔥</div>
+            </div>
+
+            <div class="candle">
+                <div class="flame">🔥</div>
+            </div>
+
+            <div class="candle">
+                <div class="flame">🔥</div>
+            </div>
+
+            🎂
+        </div>
+
+        <button id="blowButton" onclick="blowCandles()">
+            🕯️ Blow Candles
+        </button>
+
+        <p id="birthdayMessage">
+            💖 Make a wish, Eeshal! 💖
+        </p>
+
+        <button id="musicButton" onclick="playMusic()">
+            🎵 Play Birthday Music
+        </button>
+
+        <button onclick="alert('Welcome to your birthday surprise! ❤️')">
+            🎁 Enter Surprise
+        </button>
+
+    </div>
 
 </div>
 
