@@ -249,6 +249,269 @@ document.body.appendChild(s);
 
 }
 
+
+/* =========================
+   PART 2 — BIRTHDAY SYSTEM
+   ========================= */
+
+/*
+   CHANGE THIS DATE TO EESHAL'S
+   ACTUAL BIRTHDAY.
+
+   Example:
+   August 15, 2026
+*/
+const birthdayDate = new Date("2026-08-15T00:00:00");
+
+
+/* =========================
+   COUNTDOWN
+   ========================= */
+
+function updateCountdown(){
+
+    const now = new Date();
+    const difference = birthdayDate - now;
+
+    if(difference <= 0){
+
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
+
+        document.getElementById("countdownTitle").textContent =
+            "🎉 HAPPY BIRTHDAY EESHAL! 🎉";
+
+        return;
+    }
+
+    const days = Math.floor(
+        difference / (1000 * 60 * 60 * 24)
+    );
+
+    const hours = Math.floor(
+        (difference / (1000 * 60 * 60)) % 24
+    );
+
+    const minutes = Math.floor(
+        (difference / (1000 * 60)) % 60
+    );
+
+    const seconds = Math.floor(
+        (difference / 1000) % 60
+    );
+
+    document.getElementById("days").textContent =
+        String(days).padStart(2,"0");
+
+    document.getElementById("hours").textContent =
+        String(hours).padStart(2,"0");
+
+    document.getElementById("minutes").textContent =
+        String(minutes).padStart(2,"0");
+
+    document.getElementById("seconds").textContent =
+        String(seconds).padStart(2,"0");
+}
+
+setInterval(updateCountdown,1000);
+updateCountdown();
+
+
+/* =========================
+   BLOW CANDLES
+   ========================= */
+
+let candlesBlown = false;
+
+function blowCandles(){
+
+    if(candlesBlown) return;
+
+    candlesBlown = true;
+
+    document.querySelectorAll(".flame").forEach(
+        flame => flame.classList.add("off")
+    );
+
+    document.getElementById("blowButton").textContent =
+        "✨ Candles Blown Out!";
+
+    document.getElementById("birthdayMessage")
+        .classList.add("show");
+
+    createConfetti();
+
+    launchFireworks();
+
+    playBirthdaySong();
+}
+
+
+/* =========================
+   CONFETTI
+   ========================= */
+
+function createConfetti(){
+
+    for(let i=0;i<100;i++){
+
+        const piece = document.createElement("div");
+
+        piece.className="confetti";
+
+        piece.style.left =
+            Math.random()*100+"vw";
+
+        piece.style.background =
+            [
+                "#ff4081",
+                "#ffca28",
+                "#ab47bc",
+                "#42a5f5",
+                "#66bb6a",
+                "#ff7043"
+            ][Math.floor(Math.random()*6)];
+
+        piece.style.animationDuration =
+            (2+Math.random()*3)+"s";
+
+        piece.style.transform =
+            `rotate(${Math.random()*360}deg)`;
+
+        document.body.appendChild(piece);
+
+        setTimeout(()=>{
+            piece.remove();
+        },5000);
+    }
+}
+
+
+/* =========================
+   FIREWORKS
+   ========================= */
+
+function launchFireworks(){
+
+    for(let i=0;i<15;i++){
+
+        setTimeout(()=>{
+
+            const firework =
+                document.createElement("div");
+
+            firework.className="firework";
+
+            firework.style.left =
+                (15+Math.random()*70)+"vw";
+
+            firework.style.top =
+                (15+Math.random()*55)+"vh";
+
+            document.body.appendChild(firework);
+
+            setTimeout(()=>{
+                firework.remove();
+            },1100);
+
+        },i*150);
+    }
+}
+
+
+/* =========================
+   BIRTHDAY MUSIC
+   =========================
+
+   This uses the browser's own
+   audio system, so no MP3 is
+   required.
+*/
+
+let audioContext = null;
+
+function playBirthdaySong(){
+
+    if(audioContext){
+        audioContext.close();
+    }
+
+    audioContext =
+        new (window.AudioContext ||
+        window.webkitAudioContext)();
+
+    const notes = [
+        261.63,
+        261.63,
+        293.66,
+        261.63,
+        349.23,
+        329.63,
+
+        261.63,
+        261.63,
+        293.66,
+        261.63,
+        392.00,
+        349.23
+    ];
+
+    let time =
+        audioContext.currentTime;
+
+    notes.forEach((frequency,index)=>{
+
+        const oscillator =
+            audioContext.createOscillator();
+
+        const gain =
+            audioContext.createGain();
+
+        oscillator.type="sine";
+
+        oscillator.frequency.value =
+            frequency;
+
+        gain.gain.setValueAtTime(
+            0.001,
+            time
+        );
+
+        gain.gain.exponentialRampToValueAtTime(
+            0.18,
+            time+0.03
+        );
+
+        gain.gain.exponentialRampToValueAtTime(
+            0.001,
+            time+0.45
+        );
+
+        oscillator.connect(gain);
+        gain.connect(audioContext.destination);
+
+        oscillator.start(time);
+        oscillator.stop(time+0.5);
+
+        time += 0.5;
+    });
+}
+
+
+/* =========================
+   MUSIC BUTTON
+   ========================= */
+
+function playMusic(){
+
+    playBirthdaySong();
+
+    document.getElementById("musicButton")
+        .textContent="🎵 Birthday Music Playing!";
+}
+
 </script>
 
 </body>
