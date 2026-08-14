@@ -2,602 +2,751 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#180d25">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#100718">
 <meta name="description" content="A special birthday surprise for Eeshal Ibrahim">
-<title>🎂 A Birthday Surprise for Eeshal</title>
+<title>🔐 A Secret Birthday Surprise</title>
 
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  min-height: 100vh;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Arial,
-    sans-serif;
-  color: #fff;
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;
+  overflow-x:hidden;
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  color:#fff;
   background:
-    radial-gradient(circle at 15% 15%, rgba(255, 88, 166, .22), transparent 28%),
-    radial-gradient(circle at 85% 20%, rgba(135, 92, 255, .25), transparent 30%),
-    radial-gradient(circle at 50% 90%, rgba(255, 170, 210, .14), transparent 35%),
-    linear-gradient(135deg, #100817, #24112f 45%, #160b21);
-  overflow-x: hidden;
+    radial-gradient(circle at 15% 15%,rgba(255,78,170,.20),transparent 30%),
+    radial-gradient(circle at 85% 20%,rgba(112,80,255,.22),transparent 30%),
+    radial-gradient(circle at 50% 100%,rgba(255,170,220,.12),transparent 35%),
+    linear-gradient(135deg,#0c0612,#1d0d29 50%,#0b0611);
+}
+button{font:inherit}
+.hidden{display:none!important}
+
+/* ---------- BACKGROUND ---------- */
+
+#background{
+  position:fixed;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  z-index:0;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(circle, rgba(255,255,255,.8) 1px, transparent 1.5px);
-  background-size: 75px 75px;
-  opacity: .22;
-  animation: stars 18s linear infinite;
-  z-index: 0;
+.star{
+  position:absolute;
+  width:2px;
+  height:2px;
+  background:#fff;
+  border-radius:50%;
+  opacity:.7;
+  animation:twinkle 3s ease-in-out infinite;
 }
 
-@keyframes stars {
-  from { transform: translateY(0); }
-  to { transform: translateY(75px); }
+@keyframes twinkle{
+  0%,100%{opacity:.2;transform:scale(.7)}
+  50%{opacity:1;transform:scale(1.5)}
 }
 
-.hidden {
-  display: none !important;
+.shooting-star{
+  position:absolute;
+  width:100px;
+  height:2px;
+  background:linear-gradient(90deg,transparent,#fff);
+  transform:rotate(-35deg);
+  animation:shoot 2s linear forwards;
 }
 
-/* ---------------- LOCK SCREEN ---------------- */
-
-#lockScreen {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 25px 16px;
-  position: relative;
-  z-index: 2;
+@keyframes shoot{
+  from{transform:translate(0,0) rotate(-35deg);opacity:0}
+  15%{opacity:1}
+  to{transform:translate(-300px,220px) rotate(-35deg);opacity:0}
 }
 
-.lock-card {
-  width: min(700px, 100%);
-  padding: 35px 22px;
-  text-align: center;
-  border: 1px solid rgba(255,255,255,.15);
-  border-radius: 30px;
-  background: rgba(255,255,255,.08);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  box-shadow:
-    0 25px 80px rgba(0,0,0,.4),
-    inset 0 1px rgba(255,255,255,.12);
+.bg-heart{
+  position:absolute;
+  bottom:-40px;
+  font-size:20px;
+  opacity:.25;
+  animation:heartFloat linear forwards;
 }
 
-.lock-icon {
-  font-size: 72px;
-  animation: lockFloat 2.5s ease-in-out infinite;
-  margin-bottom: 12px;
+@keyframes heartFloat{
+  to{transform:translateY(-115vh) translateX(var(--drift)) rotate(25deg);opacity:0}
 }
 
-@keyframes lockFloat {
-  0%,100% { transform: translateY(0) rotate(-3deg); }
-  50% { transform: translateY(-12px) rotate(3deg); }
+/* ---------- LOCK SCREEN ---------- */
+
+#lockScreen{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:22px 14px;
+  position:relative;
+  z-index:5;
 }
 
-.small-label {
-  display: inline-block;
-  padding: 8px 14px;
-  border-radius: 999px;
-  font-size: 13px;
-  background: rgba(255, 90, 175, .16);
-  border: 1px solid rgba(255, 130, 200, .25);
-  margin-bottom: 16px;
+.lock-card{
+  width:min(720px,100%);
+  text-align:center;
+  padding:34px 20px;
+  border-radius:32px;
+  background:rgba(255,255,255,.075);
+  border:1px solid rgba(255,255,255,.15);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  box-shadow:0 30px 90px rgba(0,0,0,.45),inset 0 1px rgba(255,255,255,.12);
 }
 
-.lock-card h1 {
-  font-size: clamp(30px, 8vw, 52px);
-  line-height: 1.05;
-  margin-bottom: 14px;
-  background: linear-gradient(90deg, #fff, #ffb7df, #c9b8ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.lock{
+  width:90px;
+  height:90px;
+  margin:0 auto 15px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:48px;
+  background:rgba(255,255,255,.08);
+  box-shadow:0 0 45px rgba(255,95,190,.2);
+  animation:lockPulse 2s ease-in-out infinite;
 }
 
-.lock-card p {
-  color: #eadbea;
-  font-size: 16px;
-  line-height: 1.7;
-  margin: 0 auto 22px;
-  max-width: 560px;
+@keyframes lockPulse{
+  0%,100%{transform:scale(1);box-shadow:0 0 25px rgba(255,95,190,.15)}
+  50%{transform:scale(1.08);box-shadow:0 0 55px rgba(255,95,190,.35)}
 }
 
-.waiting {
-  margin-top: 20px;
-  color: #ffd5eb;
-  font-size: 14px;
+.badge{
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:999px;
+  background:rgba(255,91,178,.12);
+  border:1px solid rgba(255,150,210,.2);
+  color:#ffd7ea;
+  font-size:12px;
+  margin-bottom:14px;
 }
 
-.countdown {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-  max-width: 560px;
-  margin: 25px auto 10px;
+.lock-card h1{
+  font-size:clamp(32px,8vw,58px);
+  line-height:1.05;
+  margin-bottom:14px;
+  background:linear-gradient(90deg,#fff,#ffc0e3,#cbbcff);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
 }
 
-.time-box {
-  padding: 15px 7px;
-  border-radius: 17px;
-  background: rgba(0,0,0,.18);
-  border: 1px solid rgba(255,255,255,.1);
+.lock-card p{
+  color:#e8d9e8;
+  line-height:1.75;
+  max-width:600px;
+  margin:0 auto;
 }
 
-.time-box strong {
-  display: block;
-  font-size: clamp(24px, 7vw, 40px);
-  color: #ffd2e8;
+.countdown{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+  max-width:590px;
+  margin:25px auto 15px;
 }
 
-.time-box span {
-  display: block;
-  margin-top: 4px;
-  font-size: 9px;
-  letter-spacing: 1px;
-  color: #cdbbd2;
-  text-transform: uppercase;
+.time{
+  padding:15px 5px;
+  border-radius:18px;
+  background:rgba(0,0,0,.18);
+  border:1px solid rgba(255,255,255,.1);
 }
 
-.lock-note {
-  margin-top: 22px;
-  font-size: 12px !important;
-  opacity: .7;
+.time strong{
+  display:block;
+  font-size:clamp(25px,7vw,42px);
+  color:#ffd3e8;
 }
 
-/* ---------------- MAIN WEBSITE ---------------- */
-
-#birthdaySite {
-  position: relative;
-  z-index: 2;
-  width: min(900px, 100%);
-  margin: auto;
-  padding: 25px 14px 60px;
+.time span{
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:#bda9c1;
 }
 
-.hero,
-.card {
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.14);
-  border-radius: 26px;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow:
-    0 18px 60px rgba(0,0,0,.3),
-    inset 0 1px rgba(255,255,255,.08);
+.waiting{
+  margin-top:18px;
+  color:#ffd2e7!important;
+  font-size:14px;
 }
 
-.hero {
-  text-align: center;
-  padding: 30px 18px 25px;
+.lock-note{
+  margin-top:18px!important;
+  font-size:12px!important;
+  opacity:.65;
 }
 
-.badge {
-  display: inline-block;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: rgba(255, 76, 171, .15);
-  border: 1px solid rgba(255, 143, 205, .2);
-  font-size: 12px;
-  margin-bottom: 12px;
+/* ---------- MAIN ---------- */
+
+#birthdaySite{
+  position:relative;
+  z-index:3;
+  width:min(930px,100%);
+  margin:auto;
+  padding:22px 14px 60px;
 }
 
-.hero h1 {
-  font-size: clamp(34px, 9vw, 58px);
-  line-height: 1.05;
-  margin-bottom: 12px;
-  background: linear-gradient(90deg, #fff, #ffc0e3, #cabaff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.hero,.card{
+  border-radius:27px;
+  background:rgba(255,255,255,.075);
+  border:1px solid rgba(255,255,255,.14);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  box-shadow:0 20px 65px rgba(0,0,0,.32),inset 0 1px rgba(255,255,255,.08);
 }
 
-.hero p {
-  color: #eadfeb;
-  line-height: 1.7;
-  font-size: 16px;
+.hero{
+  text-align:center;
+  padding:32px 18px 26px;
 }
 
-.buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 9px;
-  margin-top: 22px;
+.hero h1{
+  font-size:clamp(38px,10vw,68px);
+  line-height:1;
+  margin:10px 0 14px;
+  background:linear-gradient(90deg,#fff,#ffc0e3,#cbbcff);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
 }
 
-button {
-  border: none;
-  color: white;
-  cursor: pointer;
-  padding: 12px 17px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 700;
-  background: linear-gradient(135deg, #ff4fac, #8d5cff);
-  box-shadow: 0 8px 25px rgba(255, 71, 170, .2);
-  transition: transform .2s ease, box-shadow .2s ease;
+.hero p{
+  max-width:680px;
+  margin:auto;
+  color:#eaddeb;
+  line-height:1.8;
 }
 
-button:hover {
-  transform: translateY(-2px);
+.section-title{
+  text-align:center;
+  font-size:clamp(23px,6vw,34px);
+  color:#ffd6e9;
+  margin-bottom:17px;
 }
 
-button:active {
-  transform: scale(.96);
+.card{
+  margin-top:18px;
+  padding:25px 18px;
 }
 
-button.secondary {
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.12);
+.message{
+  text-align:center;
+  color:#eee0ed;
+  line-height:1.9;
+  font-size:15px;
 }
 
-.card {
-  margin-top: 18px;
-  padding: 24px 18px;
+.buttons,.share-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:9px;
+  margin-top:22px;
 }
 
-.section-title {
-  text-align: center;
-  color: #ffd5e9;
-  font-size: clamp(22px, 6vw, 31px);
-  margin-bottom: 17px;
+button{
+  border:0;
+  border-radius:999px;
+  padding:12px 17px;
+  color:#fff;
+  font-weight:700;
+  font-size:13px;
+  cursor:pointer;
+  background:linear-gradient(135deg,#ff4faa,#875cff);
+  box-shadow:0 9px 27px rgba(255,79,170,.2);
+  transition:.2s;
 }
 
-.message {
-  color: #f0e4ef;
-  text-align: center;
-  line-height: 1.9;
-  font-size: 15px;
+button:hover{transform:translateY(-2px)}
+button:active{transform:scale(.96)}
+button.secondary{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
 }
 
-/* ---------------- CAKE ---------------- */
+/* ---------- REVEAL ---------- */
 
-.cake-area {
-  text-align: center;
-  margin-top: 22px;
+#revealOverlay{
+  position:fixed;
+  inset:0;
+  z-index:10000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:#09040d;
+  transition:opacity 1.4s ease;
 }
 
-.cake {
-  position: relative;
-  width: 145px;
-  height: 115px;
-  margin: 30px auto 15px;
+.reveal-content{
+  padding:20px;
 }
 
-.cake-bottom {
-  position: absolute;
-  left: 8px;
-  bottom: 0;
-  width: 129px;
-  height: 65px;
-  border-radius: 12px 12px 20px 20px;
-  background: linear-gradient(#ffb5cf, #d9578e);
-  box-shadow: inset 0 -12px rgba(110, 25, 70, .12);
+.reveal-lock{
+  font-size:75px;
+  animation:unlock 1.3s ease forwards;
 }
 
-.cake-top {
-  position: absolute;
-  left: 8px;
-  top: 35px;
-  width: 129px;
-  height: 25px;
-  border-radius: 50%;
-  background: #fff1fa;
+@keyframes unlock{
+  0%{transform:scale(1) rotate(0)}
+  50%{transform:scale(1.25) rotate(-8deg)}
+  100%{transform:scale(0) rotate(20deg);opacity:0}
 }
 
-.candle {
-  position: absolute;
-  width: 9px;
-  height: 34px;
-  top: 5px;
-  background: repeating-linear-gradient(
-    135deg,
-    #fff,
-    #fff 5px,
-    #ff70ae 5px,
-    #ff70ae 9px
-  );
-  border-radius: 5px;
+.reveal-text{
+  font-size:clamp(30px,8vw,62px);
+  font-weight:800;
+  background:linear-gradient(90deg,#fff,#ffacd8,#bdb0ff);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  opacity:0;
+  animation:revealText 1.4s 1s forwards;
 }
 
-.candle:nth-child(1) { left: 28px; }
-.candle:nth-child(2) { left: 49px; }
-.candle:nth-child(3) { left: 70px; }
-.candle:nth-child(4) { left: 91px; }
-.candle:nth-child(5) { left: 112px; }
-
-.flame {
-  position: absolute;
-  top: -14px;
-  left: 1px;
-  width: 8px;
-  height: 13px;
-  border-radius: 50% 50% 50% 50%;
-  background: #ffd35c;
-  box-shadow: 0 0 15px #ff9d28;
-  animation: flame 0.7s ease-in-out infinite alternate;
+@keyframes revealText{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
 }
 
-@keyframes flame {
-  from { transform: scale(.8) rotate(-3deg); }
-  to { transform: scale(1.15) rotate(3deg); }
+/* ---------- CAKE ---------- */
+
+.cake-area{text-align:center;margin-top:25px}
+
+.cake{
+  position:relative;
+  width:160px;
+  height:130px;
+  margin:30px auto 10px;
 }
 
-.blown .flame {
-  display: none;
+.cake-base{
+  position:absolute;
+  bottom:0;
+  left:5px;
+  width:150px;
+  height:70px;
+  border-radius:12px 12px 20px 20px;
+  background:linear-gradient(#ffb5d3,#d85791);
+  box-shadow:inset 0 -12px rgba(80,15,55,.13);
 }
 
-/* ---------------- PHOTO ---------------- */
-
-.photo-frame {
-  text-align: center;
+.cake-top{
+  position:absolute;
+  left:5px;
+  top:47px;
+  width:150px;
+  height:27px;
+  border-radius:50%;
+  background:#fff0f9;
 }
 
-.photo-frame img {
-  display: block;
-  width: min(100%, 430px);
-  max-height: 650px;
-  object-fit: cover;
-  margin: 10px auto 0;
-  border-radius: 20px;
-  border: 2px solid rgba(255,255,255,.15);
-  box-shadow:
-    0 20px 50px rgba(0,0,0,.45),
-    0 0 30px rgba(255,95,180,.12);
+.candle{
+  position:absolute;
+  top:10px;
+  width:10px;
+  height:40px;
+  border-radius:5px;
+  background:repeating-linear-gradient(135deg,#fff 0 5px,#ff65a8 5px 10px);
+  z-index:3;
 }
 
-/* ---------------- SECRET MAIL ---------------- */
+.candle:nth-child(1){left:27px}
+.candle:nth-child(2){left:55px}
+.candle:nth-child(3){left:83px}
+.candle:nth-child(4){left:111px}
+.candle:nth-child(5){left:139px}
 
-.mail-wrap {
-  text-align: center;
+.flame{
+  position:absolute;
+  top:-16px;
+  left:1px;
+  width:9px;
+  height:15px;
+  border-radius:50%;
+  background:#ffd35b;
+  box-shadow:0 0 17px #ff9d25;
+  animation:flame .7s infinite alternate;
 }
 
-.envelope {
-  width: 150px;
-  height: 100px;
-  margin: 20px auto;
-  position: relative;
-  cursor: pointer;
-  transform-style: preserve-3d;
-  transition: transform .3s ease;
+@keyframes flame{
+  from{transform:scale(.8) rotate(-4deg)}
+  to{transform:scale(1.15) rotate(4deg)}
 }
 
-.envelope:hover {
-  transform: translateY(-5px);
+.blown .flame{display:none}
+
+/* ---------- PHOTO ---------- */
+
+.photo-frame{text-align:center}
+
+.photo-frame img{
+  display:block;
+  width:min(100%,450px);
+  max-height:650px;
+  object-fit:cover;
+  margin:10px auto;
+  border-radius:22px;
+  border:2px solid rgba(255,255,255,.15);
+  box-shadow:0 20px 55px rgba(0,0,0,.4);
+  opacity:0;
+  transform:scale(.92);
+  animation:photoReveal 1.5s ease forwards;
 }
 
-.envelope-body {
-  position: absolute;
-  inset: 0;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #fff, #ffd4ea);
-  box-shadow: 0 15px 35px rgba(0,0,0,.3);
+@keyframes photoReveal{
+  to{opacity:1;transform:scale(1)}
 }
 
-.envelope-flap {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-left: 75px solid transparent;
-  border-right: 75px solid transparent;
-  border-top: 55px solid #ff72b5;
-  transform-origin: top;
-  transition: transform .5s ease;
-  z-index: 3;
+/* ---------- SECRET MAIL ---------- */
+
+.mail-wrap{text-align:center}
+
+.envelope{
+  position:relative;
+  width:160px;
+  height:105px;
+  margin:25px auto;
+  cursor:pointer;
+  transition:.3s;
 }
 
-.envelope.letter-open .envelope-flap {
-  transform: rotateX(180deg);
+.envelope:hover{transform:translateY(-5px)}
+
+.env-body{
+  position:absolute;
+  inset:0;
+  border-radius:10px;
+  background:linear-gradient(135deg,#fff,#ffd5eb);
+  box-shadow:0 15px 40px rgba(0,0,0,.35);
 }
 
-.heart {
-  position: absolute;
-  z-index: 4;
-  left: 50%;
-  top: 48%;
-  transform: translate(-50%, -50%);
-  font-size: 35px;
+.env-flap{
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:3;
+  border-left:80px solid transparent;
+  border-right:80px solid transparent;
+  border-top:60px solid #ff6db2;
+  transform-origin:top;
+  transition:.6s;
 }
 
-.secret-message {
-  display: none;
-  margin: 18px auto 0;
-  max-width: 650px;
-  padding: 22px;
-  border-radius: 20px;
-  background: rgba(255,105,180,.1);
-  border: 1px solid rgba(255,155,210,.15);
-  line-height: 1.9;
-  color: #f7e8f2;
-  animation: reveal .6s ease;
+.envelope.open .env-flap{
+  transform:rotateX(180deg);
 }
 
-.secret-message.show {
-  display: block;
+.env-heart{
+  position:absolute;
+  z-index:4;
+  left:50%;
+  top:48%;
+  transform:translate(-50%,-50%);
+  font-size:38px;
 }
 
-@keyframes reveal {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
+.secret{
+  display:none;
+  max-width:680px;
+  margin:20px auto 0;
+  padding:23px;
+  border-radius:21px;
+  background:rgba(255,95,177,.1);
+  border:1px solid rgba(255,155,210,.15);
+  line-height:1.9;
+  color:#f6e7f2;
+  animation:appear .7s ease;
+}
+
+.secret.show{display:block}
+
+@keyframes appear{
+  from{opacity:0;transform:translateY(15px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* ---------- CODE ---------- */
+
+.code-box{
+  max-width:480px;
+  margin:18px auto 0;
+  text-align:center;
+}
+
+.code-input{
+  width:100%;
+  padding:13px 15px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(0,0,0,.18);
+  color:#fff;
+  outline:none;
+  text-align:center;
+  font-size:16px;
+}
+
+.code-input::placeholder{color:#a997ad}
+
+.code-result{
+  margin-top:15px;
+  line-height:1.8;
+  color:#ffd8eb;
+}
+
+/* ---------- SURPRISE BOXES ---------- */
+
+.choice-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:20px;
+}
+
+.choice{
+  min-height:145px;
+  padding:18px 10px;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.055);
+  cursor:pointer;
+  text-align:center;
+  transition:.25s;
+}
+
+.choice:hover{
+  transform:translateY(-5px);
+  background:rgba(255,255,255,.1);
+}
+
+.choice-icon{
+  font-size:40px;
+  margin-bottom:10px;
+}
+
+.choice strong{
+  display:block;
+  color:#ffd5e9;
+  margin-bottom:5px;
+}
+
+.choice span{
+  font-size:11px;
+  color:#c5b3c7;
+}
+
+.choice-content{
+  display:none;
+  margin-top:20px;
+  padding:22px;
+  border-radius:20px;
+  background:rgba(255,255,255,.055);
+  line-height:1.9;
+  text-align:center;
+  animation:appear .5s ease;
+}
+
+.choice-content.show{display:block}
+
+/* ---------- TIMELINE ---------- */
+
+.timeline{
+  max-width:680px;
+  margin:auto;
+}
+
+.timeline-item{
+  position:relative;
+  padding:17px 18px 17px 48px;
+  margin:13px 0;
+  border-left:2px solid rgba(255,130,195,.35);
+  color:#e9ddea;
+  line-height:1.7;
+}
+
+.timeline-item::before{
+  content:"";
+  position:absolute;
+  left:-9px;
+  top:20px;
+  width:15px;
+  height:15px;
+  border-radius:50%;
+  background:#ff76b7;
+  box-shadow:0 0 18px rgba(255,118,183,.6);
+}
+
+.timeline-item strong{
+  display:block;
+  color:#ffd3e8;
+  margin-bottom:4px;
+}
+
+/* ---------- SMILE CARDS ---------- */
+
+.smile-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:11px;
+  margin-top:20px;
+}
+
+.smile{
+  padding:18px;
+  border-radius:18px;
+  background:rgba(255,255,255,.055);
+  border:1px solid rgba(255,255,255,.08);
+  text-align:center;
+  line-height:1.7;
+  color:#e9ddeb;
+}
+
+/* ---------- CONFETTI ---------- */
+
+.confetti{
+  position:fixed;
+  top:-20px;
+  width:9px;
+  height:15px;
+  z-index:9999;
+  pointer-events:none;
+  animation:fall linear forwards;
+}
+
+@keyframes fall{
+  to{
+    transform:translate3d(var(--x),110vh,0) rotate(720deg);
+    opacity:0;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+}
+
+/* ---------- BALLOONS ---------- */
+
+.balloon{
+  position:fixed;
+  bottom:-120px;
+  width:47px;
+  height:60px;
+  border-radius:50%;
+  z-index:2;
+  opacity:.72;
+  animation:balloonUp linear forwards;
+}
+
+.balloon::after{
+  content:"";
+  position:absolute;
+  width:1px;
+  height:90px;
+  top:58px;
+  left:50%;
+  background:rgba(255,255,255,.4);
+}
+
+@keyframes balloonUp{
+  to{transform:translateY(-125vh) translateX(var(--drift))}
+}
+
+/* ---------- HEART BURST ---------- */
+
+.burst-heart{
+  position:fixed;
+  z-index:9998;
+  pointer-events:none;
+  font-size:25px;
+  animation:heartBurst 2.2s ease-out forwards;
+}
+
+@keyframes heartBurst{
+  to{
+    transform:translate(var(--x),var(--y)) scale(.3) rotate(30deg);
+    opacity:0;
   }
 }
 
-/* ---------------- SURPRISE ---------------- */
+/* ---------- FOOTER ---------- */
 
-.surprise-box {
-  text-align: center;
+footer{
+  text-align:center;
+  padding:30px 10px 10px;
+  color:#a995ad;
+  font-size:12px;
 }
 
-.surprise-content {
-  display: none;
-  margin-top: 18px;
-  padding: 22px;
-  border-radius: 20px;
-  background: rgba(255,255,255,.06);
-  line-height: 1.9;
-  color: #f3e4ef;
+/* ---------- MOBILE ---------- */
+
+@media(max-width:650px){
+  .choice-grid{grid-template-columns:1fr}
+  .smile-grid{grid-template-columns:1fr}
 }
 
-.surprise-content.show {
-  display: block;
-  animation: reveal .7s ease;
-}
-
-/* ---------------- CONFETTI ---------------- */
-
-.confetti {
-  position: fixed;
-  top: -20px;
-  width: 9px;
-  height: 15px;
-  z-index: 9999;
-  pointer-events: none;
-  animation: fall linear forwards;
-}
-
-@keyframes fall {
-  to {
-    transform:
-      translate3d(var(--x), 110vh, 0)
-      rotate(720deg);
-    opacity: 0;
-  }
-}
-
-/* ---------------- BALLOONS ---------------- */
-
-.balloon {
-  position: fixed;
-  bottom: -120px;
-  width: 45px;
-  height: 57px;
-  border-radius: 50% 50% 45% 45%;
-  z-index: 1;
-  opacity: .65;
-  animation: balloonUp linear forwards;
-}
-
-.balloon::after {
-  content: "";
-  position: absolute;
-  width: 1px;
-  height: 80px;
-  background: rgba(255,255,255,.4);
-  top: 53px;
-  left: 50%;
-}
-
-@keyframes balloonUp {
-  to {
-    transform: translateY(-125vh) translateX(var(--drift));
-  }
-}
-
-/* ---------------- FOOTER ---------------- */
-
-footer {
-  text-align: center;
-  padding: 30px 10px 10px;
-  color: #bcaabd;
-  font-size: 12px;
-}
-
-/* ---------------- RESPONSIVE ---------------- */
-
-@media (max-width: 520px) {
-  .countdown {
-    gap: 5px;
-  }
-
-  .time-box {
-    padding: 13px 3px;
-  }
-
-  .hero,
-  .card {
-    border-radius: 22px;
-  }
-
-  .photo-frame img {
-    max-height: 600px;
-  }
+@media(max-width:500px){
+  .countdown{gap:5px}
+  .time{padding:13px 3px}
+  .hero,.card{border-radius:22px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- =========================================================
-     LOCKED COUNTDOWN SCREEN
-========================================================= -->
+<div id="background"></div>
+
+<!-- =====================================================
+     LOCKED SCREEN
+===================================================== -->
 
 <section id="lockScreen">
 
   <div class="lock-card">
 
-    <div class="lock-icon">🎁</div>
+    <div class="lock">🔐</div>
 
-    <div class="small-label">
-      🔐 A special surprise is waiting
+    <div class="badge">
+      🎁 PRIVATE BIRTHDAY SURPRISE
     </div>
 
     <h1>
       Something Beautiful<br>
-      Is Coming...
+      Is Waiting...
     </h1>
 
     <p>
-      This birthday surprise is locked for now. ❤️
-      Everything has been prepared especially for
-      <strong>Eeshal Ibrahim</strong>.
+      This surprise has been locked especially for
+      <strong>Eeshal Ibrahim</strong>. ❤️
+      <br>
+      Everything will remain hidden until the special day.
     </p>
 
     <div class="countdown">
 
-      <div class="time-box">
+      <div class="time">
         <strong id="days">00</strong>
         <span>Days</span>
       </div>
 
-      <div class="time-box">
+      <div class="time">
         <strong id="hours">00</strong>
         <span>Hours</span>
       </div>
 
-      <div class="time-box">
+      <div class="time">
         <strong id="minutes">00</strong>
         <span>Minutes</span>
       </div>
 
-      <div class="time-box">
+      <div class="time">
         <strong id="seconds">00</strong>
         <span>Seconds</span>
       </div>
@@ -605,12 +754,12 @@ footer {
     </div>
 
     <div class="waiting">
-      ⏳ Waiting for <strong>25 August</strong>...
+      ⏳ The surprise unlocks automatically on
+      <strong>25 August</strong>.
     </div>
 
     <p class="lock-note">
-      🇵🇰 The surprise automatically unlocks at
-      <strong>12:00 AM Pakistan time</strong>.
+      🇵🇰 Pakistan time • 12:00 AM
     </p>
 
   </div>
@@ -618,10 +767,30 @@ footer {
 </section>
 
 
-<!-- =========================================================
+<!-- =====================================================
+     CINEMATIC REVEAL
+===================================================== -->
+
+<div id="revealOverlay" class="hidden">
+
+  <div class="reveal-content">
+
+    <div class="reveal-lock">
+      🔓
+    </div>
+
+    <div class="reveal-text">
+      The wait is over... ❤️
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
      BIRTHDAY WEBSITE
-     Hidden until 25 August
-========================================================= -->
+===================================================== -->
 
 <main id="birthdaySite" class="hidden">
 
@@ -630,7 +799,7 @@ footer {
   <section class="hero">
 
     <div class="badge">
-      🎉 A special surprise made especially for you 🎉
+      🎉 THE SURPRISE IS OPEN 🎉
     </div>
 
     <h1>
@@ -639,9 +808,10 @@ footer {
     </h1>
 
     <p>
-      Wishing you endless happiness, smiles, peace,
-      success and unforgettable memories.
-      Today is all about you. ❤️
+      Today is your special day.
+      May this new chapter bring you happiness,
+      peace, success, beautiful memories,
+      and countless reasons to smile.
     </p>
 
     <div class="buttons">
@@ -654,8 +824,8 @@ footer {
         🎵 <span id="musicText">Play Music</span>
       </button>
 
-      <button class="secondary" onclick="openSurprise()">
-        🎁 Open Surprise
+      <button class="secondary" onclick="replayCelebration()">
+        🎊 Celebrate Again
       </button>
 
     </div>
@@ -664,28 +834,14 @@ footer {
 
       <div class="cake" id="cake">
 
-        <div class="candle">
-          <div class="flame"></div>
-        </div>
-
-        <div class="candle">
-          <div class="flame"></div>
-        </div>
-
-        <div class="candle">
-          <div class="flame"></div>
-        </div>
-
-        <div class="candle">
-          <div class="flame"></div>
-        </div>
-
-        <div class="candle">
-          <div class="flame"></div>
-        </div>
+        <div class="candle"><div class="flame"></div></div>
+        <div class="candle"><div class="flame"></div></div>
+        <div class="candle"><div class="flame"></div></div>
+        <div class="candle"><div class="flame"></div></div>
+        <div class="candle"><div class="flame"></div></div>
 
         <div class="cake-top"></div>
-        <div class="cake-bottom"></div>
+        <div class="cake-base"></div>
 
       </div>
 
@@ -694,7 +850,7 @@ footer {
   </section>
 
 
-  <!-- BIRTHDAY WISH -->
+  <!-- PERSONAL MESSAGE -->
 
   <section class="card">
 
@@ -706,28 +862,39 @@ footer {
 
       Happy Birthday, Eeshal! 🎂🎉
 
+      <br><br>
+
       May Allah bless you with happiness, peace,
       success, good health and countless beautiful moments.
 
-      May this new chapter of your life bring you closer
-      to everything your heart hopes for.
+      <br><br>
 
-      I hope your days ahead are filled with beautiful
-      memories, peaceful moments, genuine smiles and
-      wonderful opportunities.
+      May this new chapter of your life bring you
+      closer to everything your heart hopes for.
 
-      Keep believing, keep smiling, stay strong,
+      <br><br>
+
+      I hope the days ahead bring you genuine smiles,
+      peaceful moments, wonderful opportunities,
+      and memories that make you happy whenever
+      you look back on them.
+
+      <br><br>
+
+      Keep believing, stay strong, keep moving forward,
       and never lose hope in Allah's mercy.
 
-      May Allah guide you, protect you and bless your
-      future with everything that is good for you. 🌸✨
+      <br><br>
+
+      🤲 May Allah guide you, protect you,
+      and bless your future with what is best for you.
 
     </p>
 
   </section>
 
 
-  <!-- SPECIAL MEMORY -->
+  <!-- PHOTO -->
 
   <section class="card">
 
@@ -739,19 +906,13 @@ footer {
 
       <img
         src="eeshal.png"
-        alt="Eeshal Ibrahim"
-        id="birthdayPhoto"
-        onerror="showPhotoError()"
+        alt="A special birthday memory"
+        onerror="document.getElementById('photoError').classList.remove('hidden')"
       >
 
-      <p
-        id="photoError"
-        class="message hidden"
-        style="margin-top:15px;"
-      >
-        📸 The photo could not be loaded.
-        Please make sure <strong>eeshal.png</strong>
-        is in the same folder as index.html.
+      <p id="photoError" class="message hidden">
+        📸 Make sure <strong>eeshal.png</strong>
+        is uploaded beside index.html.
       </p>
 
     </div>
@@ -767,58 +928,53 @@ footer {
       💌 Secret Mail
     </h2>
 
+    <p class="message">
+      There is a private message waiting inside.
+      Tap the envelope when you're ready. ❤️
+    </p>
+
     <div class="mail-wrap">
 
-      <p class="message">
-        There is a little message hidden inside...
-        Tap the envelope. 💗
-      </p>
+      <div class="envelope" id="envelope" onclick="openMail()">
 
-      <div
-        class="envelope"
-        id="envelope"
-        onclick="openMail()"
-      >
+        <div class="env-body"></div>
+        <div class="env-flap"></div>
 
-        <div class="envelope-body"></div>
-
-        <div class="envelope-flap"></div>
-
-        <div class="heart">
+        <div class="env-heart">
           💗
         </div>
 
       </div>
 
-      <div
-        class="secret-message"
-        id="secretMessage"
-      >
+      <div class="secret" id="secretMessage">
 
-        <strong>
-          💌 A Little Message For You
-        </strong>
+        <strong>💌 A Little Message For You</strong>
 
         <br><br>
 
         Eeshal, on your special day, I simply wish
-        happiness and peace for you.
+        happiness, peace and goodness for you.
+
+        <br><br>
 
         May Allah make your future beautiful,
-        protect your heart, guide your steps and
-        give you countless reasons to smile.
-
-        Whatever life brings, I hope you always
-        remember that you deserve happiness,
-        kindness and beautiful moments.
-
-        Keep smiling and keep moving forward. 🌸
+        protect your heart, guide your steps,
+        and give you countless reasons to smile.
 
         <br><br>
 
-        <strong>
-          Happy Birthday once again! 🎂❤️
-        </strong>
+        Whatever life brings, I hope you continue
+        moving forward with patience, strength
+        and hope.
+
+        <br><br>
+
+        You deserve beautiful moments,
+        genuine happiness and a peaceful future.
+
+        <br><br>
+
+        ❤️ Happy Birthday once again.
 
       </div>
 
@@ -827,50 +983,142 @@ footer {
   </section>
 
 
-  <!-- SURPRISE -->
+  <!-- SECRET CODE -->
 
   <section class="card">
 
     <h2 class="section-title">
-      🎁 One More Surprise
+      🔑 One More Secret
     </h2>
 
-    <div class="surprise-box">
+    <p class="message">
+      A small secret is hidden here.
+      Enter the special code to reveal it.
+    </p>
 
-      <p class="message">
-        Think you're finished? Not yet. 😄
-      </p>
+    <div class="code-box">
 
-      <button onclick="openSurprise()">
-        ✨ Reveal My Surprise
-      </button>
-
-      <div
-        class="surprise-content"
-        id="surpriseContent"
+      <input
+        id="secretCode"
+        class="code-input"
+        type="password"
+        placeholder="Enter secret code"
+        autocomplete="off"
       >
 
-        🌸✨ <strong>A New Chapter</strong> ✨🌸
+      <div class="buttons">
 
-        <br><br>
+        <button onclick="checkCode()">
+          🔓 Unlock Secret
+        </button>
 
-        May your new year of life be filled with
-        new opportunities, beautiful memories,
-        peaceful days and genuine happiness.
+      </div>
 
-        May every difficult moment become a lesson,
-        every prayer become a source of strength,
-        and every new day bring something beautiful.
+      <div
+        id="codeResult"
+        class="code-result"
+      ></div>
 
-        <br><br>
+    </div>
 
-        🎂 Happy Birthday, Eeshal Ibrahim! ❤️
+  </section>
 
-        <br><br>
 
-        May Allah bless your life with goodness,
-        peace, success and happiness.
+  <!-- CHOOSE YOUR SURPRISE -->
 
+  <section class="card">
+
+    <h2 class="section-title">
+      🎁 Choose Your Surprise
+    </h2>
+
+    <p class="message">
+      Three little surprises are waiting.
+      Open them one by one. ✨
+    </p>
+
+    <div class="choice-grid">
+
+      <div class="choice" onclick="showChoice(1)">
+        <div class="choice-icon">💌</div>
+        <strong>My Letter</strong>
+        <span>A special message</span>
+      </div>
+
+      <div class="choice" onclick="showChoice(2)">
+        <div class="choice-icon">📸</div>
+        <strong>Your Memory</strong>
+        <span>A special moment</span>
+      </div>
+
+      <div class="choice" onclick="showChoice(3)">
+        <div class="choice-icon">🎁</div>
+        <strong>One Last Surprise</strong>
+        <span>Something beautiful</span>
+      </div>
+
+    </div>
+
+    <div id="choice1" class="choice-content">
+      💌 Sometimes a simple message can carry
+      a lot of good wishes. May your future be
+      filled with peace, happiness and beautiful days.
+    </div>
+
+    <div id="choice2" class="choice-content">
+      📸 Every beautiful memory becomes part of
+      the story of life. May you create many more
+      moments worth remembering.
+    </div>
+
+    <div id="choice3" class="choice-content">
+      🎁 The final surprise is simply this:
+      may the next chapter of your life be kinder,
+      brighter and happier than you expect.
+      <br><br>
+      🤲 InshaAllah.
+    </div>
+
+  </section>
+
+
+  <!-- TIMELINE -->
+
+  <section class="card">
+
+    <h2 class="section-title">
+      💭 A Little Birthday Journey
+    </h2>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <strong>🌸 Today</strong>
+        A new year of your life begins.
+      </div>
+
+      <div class="timeline-item">
+        <strong>✨ The Memories</strong>
+        Keep the good moments close
+        and learn from the difficult ones.
+      </div>
+
+      <div class="timeline-item">
+        <strong>🌱 The Future</strong>
+        New opportunities, new experiences
+        and new reasons to smile are ahead.
+      </div>
+
+      <div class="timeline-item">
+        <strong>🤲 The Wish</strong>
+        May Allah guide you toward what
+        is best for you.
+      </div>
+
+      <div class="timeline-item">
+        <strong>❤️ The Message</strong>
+        Keep moving forward with patience,
+        hope and a positive heart.
       </div>
 
     </div>
@@ -878,36 +1126,122 @@ footer {
   </section>
 
 
-  <!-- FINAL MESSAGE -->
+  <!-- REASONS TO SMILE -->
 
   <section class="card">
 
     <h2 class="section-title">
-      🌙 A Final Wish
+      🌸 Reasons To Smile
+    </h2>
+
+    <div class="smile-grid">
+
+      <div class="smile">
+        🌟 There are still beautiful days ahead.
+      </div>
+
+      <div class="smile">
+        🌷 Every new day is another opportunity.
+      </div>
+
+      <div class="smile">
+        ✨ Your future can hold wonderful surprises.
+      </div>
+
+      <div class="smile">
+        🤲 Allah's mercy is always greater than our worries.
+      </div>
+
+      <div class="smile">
+        💖 You can always choose hope.
+      </div>
+
+      <div class="smile">
+        🌙 Difficult moments do not define your whole story.
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- DUA -->
+
+  <section class="card">
+
+    <h2 class="section-title">
+      🤲 A Special Dua
     </h2>
 
     <p class="message">
 
-      May Allah bless you today and always.
+      May Allah bless your life with peace,
+      happiness and goodness.
 
-      May He protect you from sadness,
-      guide you toward what is best,
-      give you strength during difficult times,
-      and fill your life with peace and happiness.
+      <br><br>
 
-      May the coming year of your life be better
-      than the last.
+      May He protect you from hardship,
+      guide your decisions,
+      strengthen your heart,
+      and open doors of opportunity for you.
 
-      Keep smiling. Keep believing.
+      <br><br>
+
+      May your future be filled with barakah,
+      beautiful experiences and people who
+      genuinely wish you well.
+
+      <br><br>
+
+      May Allah grant you what is best for you
+      in this life and the next.
+
+      <br><br>
+
+      🤲 Ameen.
+
+    </p>
+
+  </section>
+
+
+  <!-- FINAL SURPRISE -->
+
+  <section class="card">
+
+    <h2 class="section-title">
+      🌙 One Final Wish
+    </h2>
+
+    <p class="message">
+
+      When this page ends,
+      your birthday doesn't.
+
+      <br><br>
+
+      A new chapter is beginning.
+
+      <br><br>
+
+      May it bring you more smiles than tears,
+      more peace than worry,
+      more success than disappointment,
+      and more beautiful memories than you can count.
+
+      <br><br>
+
+      Keep smiling.
+      Keep believing.
       Keep moving forward.
 
       <br><br>
 
-      🤲 InshaAllah, beautiful days are ahead.
+      🎂 Happy Birthday, Eeshal Ibrahim! ❤️
 
       <br><br>
 
-      🎉 Happy Birthday, Eeshal! 🎂❤️
+      🤲 May Allah bless you always.
 
     </p>
 
@@ -923,13 +1257,7 @@ footer {
 </main>
 
 
-<!-- =========================================================
-     OPTIONAL MUSIC
-     
-     IMPORTANT:
-     Replace birthday-song.mp3 with your own music file
-     if you want music.
-========================================================= -->
+<!-- OPTIONAL MUSIC -->
 
 <audio id="birthdayMusic" loop preload="auto">
   <source src="birthday-song.mp3" type="audio/mpeg">
@@ -938,217 +1266,384 @@ footer {
 
 <script>
 
-/* =========================================================
-   BIRTHDAY DATE
-   Pakistan time: Asia/Karachi
+/* =====================================================
+   SETTINGS
+===================================================== */
 
-   The website unlocks every year on:
-   25 August at 12:00 AM Pakistan time.
-========================================================= */
+const BIRTHDAY_MONTH = 8;
+const BIRTHDAY_DAY = 25;
 
-const birthdayMonth = 7; // August = 7 in JavaScript
-const birthdayDay = 25;
+/*
+   Secret code.
+
+   You can change this to anything you want.
+*/
+const SECRET_CODE = "EESHAL25";
 
 
-/* =========================================================
-   GET PAKISTAN DATE/TIME
-========================================================= */
+/* =====================================================
+   BACKGROUND
+===================================================== */
 
-function getPakistanParts() {
+const background =
+  document.getElementById("background");
 
-  const parts = new Intl.DateTimeFormat(
-    "en-US",
-    {
-      timeZone: "Asia/Karachi",
-      year: "numeric",
-      month: "2-digit",
-      day: "2-digit",
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
-      hourCycle: "h23"
-    }
-  ).formatToParts(new Date());
 
-  const result = {};
+function createStars(){
 
-  parts.forEach(part => {
-    if (part.type !== "literal") {
-      result[part.type] = Number(part.value);
+  for(let i=0;i<90;i++){
+
+    const star =
+      document.createElement("div");
+
+    star.className="star";
+
+    star.style.left =
+      Math.random()*100+"vw";
+
+    star.style.top =
+      Math.random()*100+"vh";
+
+    star.style.animationDelay =
+      Math.random()*4+"s";
+
+    star.style.animationDuration =
+      (2+Math.random()*4)+"s";
+
+    background.appendChild(star);
+
+  }
+
+}
+
+
+function createShootingStar(){
+
+  const star =
+    document.createElement("div");
+
+  star.className="shooting-star";
+
+  star.style.left =
+    (60+Math.random()*40)+"vw";
+
+  star.style.top =
+    (Math.random()*45)+"vh";
+
+  background.appendChild(star);
+
+  setTimeout(
+    ()=>star.remove(),
+    2200
+  );
+
+}
+
+
+function createFloatingHeart(){
+
+  const heart =
+    document.createElement("div");
+
+  heart.className="bg-heart";
+
+  heart.textContent =
+    ["♡","♥","💗","💖","✨"]
+    [Math.floor(Math.random()*5)];
+
+  heart.style.left =
+    Math.random()*100+"vw";
+
+  heart.style.setProperty(
+    "--drift",
+    (Math.random()*160-80)+"px"
+  );
+
+  heart.style.animationDuration =
+    (7+Math.random()*7)+"s";
+
+  background.appendChild(heart);
+
+  setTimeout(
+    ()=>heart.remove(),
+    15000
+  );
+
+}
+
+
+createStars();
+
+setInterval(
+  createShootingStar,
+  4500
+);
+
+setInterval(
+  createFloatingHeart,
+  1400
+);
+
+
+/* =====================================================
+   PAKISTAN TIME
+===================================================== */
+
+function pakistanNow(){
+
+  const parts =
+    new Intl.DateTimeFormat(
+      "en-US",
+      {
+        timeZone:"Asia/Karachi",
+        year:"numeric",
+        month:"numeric",
+        day:"numeric",
+        hour:"numeric",
+        minute:"numeric",
+        second:"numeric",
+        hourCycle:"h23"
+      }
+    ).formatToParts(new Date());
+
+  const result={};
+
+  parts.forEach(p=>{
+    if(p.type!=="literal"){
+      result[p.type]=Number(p.value);
     }
   });
 
   return result;
+
 }
 
 
-/* =========================================================
-   GET NEXT BIRTHDAY
-========================================================= */
+/* =====================================================
+   TARGET DATE
+===================================================== */
 
-function getNextBirthday() {
+function getBirthdayTarget(){
 
-  const p = getPakistanParts();
+  const p =
+    pakistanNow();
 
-  let year = p.year;
+  let year =
+    p.year;
 
   /*
-    We use a UTC timestamp representing the Pakistan
-    calendar date at midnight. Since Pakistan is UTC+5,
-    25 August 00:00 Pakistan = 24 August 19:00 UTC.
+    Pakistan is UTC+5.
+    12:00 AM Pakistan =
+    19:00 UTC on the previous day.
   */
 
-  let target = Date.UTC(
-    year,
-    birthdayMonth,
-    birthdayDay,
-    -5,
-    0,
-    0
-  );
-
-  if (Date.now() >= target) {
-
-    target = Date.UTC(
-      year + 1,
-      birthdayMonth,
-      birthdayDay,
+  let target =
+    Date.UTC(
+      year,
+      BIRTHDAY_MONTH-1,
+      BIRTHDAY_DAY,
       -5,
       0,
       0
     );
 
+  /*
+    Once this year's birthday has passed,
+    prepare next year's countdown.
+  */
+
+  if(Date.now()>=target){
+
+    target =
+      Date.UTC(
+        year+1,
+        BIRTHDAY_MONTH-1,
+        BIRTHDAY_DAY,
+        -5,
+        0,
+        0
+      );
+
   }
 
   return target;
+
 }
 
 
-/* =========================================================
+/* =====================================================
    COUNTDOWN
-========================================================= */
+===================================================== */
 
-const lockScreen = document.getElementById("lockScreen");
-const birthdaySite = document.getElementById("birthdaySite");
+const lockScreen =
+  document.getElementById("lockScreen");
 
-const daysEl = document.getElementById("days");
-const hoursEl = document.getElementById("hours");
-const minutesEl = document.getElementById("minutes");
-const secondsEl = document.getElementById("seconds");
+const birthdaySite =
+  document.getElementById("birthdaySite");
+
+const revealOverlay =
+  document.getElementById("revealOverlay");
+
+let unlocked=false;
 
 
-function updateCountdown() {
+function updateCountdown(){
 
-  const target = getNextBirthday();
+  if(unlocked)return;
 
-  const difference = target - Date.now();
+  const difference =
+    getBirthdayTarget()-Date.now();
 
-  if (difference <= 0) {
+  if(difference<=0){
 
     unlockBirthday();
-
     return;
 
   }
 
-  const totalSeconds =
-    Math.floor(difference / 1000);
+  const total =
+    Math.floor(
+      difference/1000
+    );
 
   const days =
-    Math.floor(totalSeconds / 86400);
+    Math.floor(
+      total/86400
+    );
 
   const hours =
-    Math.floor((totalSeconds % 86400) / 3600);
+    Math.floor(
+      (total%86400)/3600
+    );
 
   const minutes =
-    Math.floor((totalSeconds % 3600) / 60);
+    Math.floor(
+      (total%3600)/60
+    );
 
   const seconds =
-    totalSeconds % 60;
+    total%60;
 
+  document.getElementById("days")
+    .textContent=
+    String(days).padStart(2,"0");
 
-  daysEl.textContent =
-    String(days).padStart(2, "0");
+  document.getElementById("hours")
+    .textContent=
+    String(hours).padStart(2,"0");
 
-  hoursEl.textContent =
-    String(hours).padStart(2, "0");
+  document.getElementById("minutes")
+    .textContent=
+    String(minutes).padStart(2,"0");
 
-  minutesEl.textContent =
-    String(minutes).padStart(2, "0");
+  document.getElementById("seconds")
+    .textContent=
+    String(seconds).padStart(2,"0");
 
-  secondsEl.textContent =
-    String(seconds).padStart(2, "0");
 }
 
 
-/* =========================================================
-   UNLOCK BIRTHDAY
-========================================================= */
+setInterval(
+  updateCountdown,
+  1000
+);
 
-let birthdayUnlocked = false;
+updateCountdown();
 
 
-function unlockBirthday() {
+/* =====================================================
+   UNLOCK
+===================================================== */
 
-  if (birthdayUnlocked) return;
+function unlockBirthday(){
 
-  birthdayUnlocked = true;
+  if(unlocked)return;
+
+  unlocked=true;
 
   lockScreen.classList.add("hidden");
 
   birthdaySite.classList.remove("hidden");
 
-  document.title =
-    "🎂 Happy Birthday Eeshal Ibrahim! ❤️";
+  revealOverlay.classList.remove("hidden");
+
+  setTimeout(()=>{
+
+    revealOverlay.style.opacity="0";
+
+    setTimeout(()=>{
+
+      revealOverlay.classList.add("hidden");
+
+    },1400);
+
+  },2600);
 
   startCelebration();
 
 }
 
 
-/* =========================================================
-   START CELEBRATION
-========================================================= */
+/* =====================================================
+   CELEBRATION
+===================================================== */
 
-function startCelebration() {
+function startCelebration(){
 
-  createConfetti(100);
+  createConfetti(160);
 
-  createBalloons(12);
+  createBalloons(18);
 
-  setTimeout(() => {
-    createConfetti(80);
-  }, 2500);
+  heartBurst();
+
+  setTimeout(
+    ()=>createConfetti(100),
+    2500
+  );
+
+  setTimeout(
+    ()=>createBalloons(10),
+    3500
+  );
 
 }
 
 
-/* =========================================================
+function replayCelebration(){
+
+  createConfetti(140);
+
+  createBalloons(15);
+
+  heartBurst();
+
+}
+
+
+/* =====================================================
    CONFETTI
-========================================================= */
+===================================================== */
 
-function createConfetti(amount = 60) {
+function createConfetti(amount=80){
 
-  for (let i = 0; i < amount; i++) {
+  const pieces=[
+    "🎉","✨","💗","⭐","🌸"
+  ];
+
+  for(let i=0;i<amount;i++){
 
     const piece =
       document.createElement("div");
 
-    piece.className = "confetti";
+    piece.className="confetti";
+
+    piece.textContent =
+      Math.random()>.7
+      ? pieces[Math.floor(Math.random()*pieces.length)]
+      : "";
 
     piece.style.left =
-      Math.random() * 100 + "vw";
-
-    piece.style.setProperty(
-      "--x",
-      (Math.random() * 250 - 125) + "px"
-    );
-
-    piece.style.animationDuration =
-      (3 + Math.random() * 4) + "s";
-
-    piece.style.animationDelay =
-      (Math.random() * 1.5) + "s";
+      Math.random()*100+"vw";
 
     piece.style.background =
       [
@@ -1158,184 +1653,275 @@ function createConfetti(amount = 60) {
         "#6ee7ff",
         "#ffffff",
         "#ff8fbf"
-      ][Math.floor(Math.random() * 6)];
+      ][
+        Math.floor(Math.random()*6)
+      ];
+
+    piece.style.setProperty(
+      "--x",
+      (Math.random()*260-130)+"px"
+    );
+
+    piece.style.animationDuration =
+      (3+Math.random()*4)+"s";
+
+    piece.style.animationDelay =
+      Math.random()*1.2+"s";
 
     document.body.appendChild(piece);
 
-    setTimeout(() => {
-      piece.remove();
-    }, 8500);
+    setTimeout(
+      ()=>piece.remove(),
+      8500
+    );
 
   }
 
 }
 
 
-/* =========================================================
+/* =====================================================
    BALLOONS
-========================================================= */
+===================================================== */
 
-function createBalloons(amount = 10) {
+function createBalloons(amount=12){
 
-  for (let i = 0; i < amount; i++) {
+  const colors=[
+    "#ff5cac",
+    "#8d7aff",
+    "#ffd166",
+    "#ff8fbf",
+    "#7ee8fa"
+  ];
+
+  for(let i=0;i<amount;i++){
 
     const balloon =
       document.createElement("div");
 
-    balloon.className = "balloon";
+    balloon.className="balloon";
 
     balloon.style.left =
-      Math.random() * 100 + "vw";
+      Math.random()*100+"vw";
+
+    balloon.style.background =
+      colors[
+        Math.floor(Math.random()*colors.length)
+      ];
 
     balloon.style.setProperty(
       "--drift",
-      (Math.random() * 180 - 90) + "px"
+      (Math.random()*180-90)+"px"
     );
 
     balloon.style.animationDuration =
-      (8 + Math.random() * 8) + "s";
-
-    balloon.style.background =
-      [
-        "#ff5cac",
-        "#8d7aff",
-        "#ffd166",
-        "#ff8fbf",
-        "#7ee8fa"
-      ][Math.floor(Math.random() * 5)];
+      (8+Math.random()*8)+"s";
 
     document.body.appendChild(balloon);
 
-    setTimeout(() => {
-      balloon.remove();
-    }, 18000);
+    setTimeout(
+      ()=>balloon.remove(),
+      18000
+    );
 
   }
 
 }
 
 
-/* =========================================================
-   BLOW CANDLES
-========================================================= */
+/* =====================================================
+   HEART BURST
+===================================================== */
 
-function blowCandles() {
+function heartBurst(){
+
+  for(let i=0;i<35;i++){
+
+    const heart =
+      document.createElement("div");
+
+    heart.className="burst-heart";
+
+    heart.textContent=
+      ["❤️","💗","💖","✨"]
+      [Math.floor(Math.random()*4)];
+
+    heart.style.left=
+      "50vw";
+
+    heart.style.top=
+      "45vh";
+
+    heart.style.setProperty(
+      "--x",
+      (Math.random()*500-250)+"px"
+    );
+
+    heart.style.setProperty(
+      "--y",
+      (Math.random()*500-250)+"px"
+    );
+
+    document.body.appendChild(heart);
+
+    setTimeout(
+      ()=>heart.remove(),
+      2300
+    );
+
+  }
+
+}
+
+
+/* =====================================================
+   CAKE
+===================================================== */
+
+function blowCandles(){
 
   const cake =
     document.getElementById("cake");
 
   cake.classList.add("blown");
 
-  createConfetti(45);
+  createConfetti(60);
 
-  setTimeout(() => {
-
-    alert(
-      "🎂 Wish made! ❤️\n\n" +
-      "May Allah make your wish beautiful " +
-      "and bless your future. 🤲✨"
-    );
-
-  }, 400);
+  alert(
+    "🎂 Wish made! ❤️\n\n" +
+    "May Allah make your wish beautiful " +
+    "and bless your future. 🤲✨"
+  );
 
 }
 
 
-/* =========================================================
+/* =====================================================
    SECRET MAIL
-========================================================= */
+===================================================== */
 
-function openMail() {
+function openMail(){
 
   const envelope =
     document.getElementById("envelope");
 
-  const message =
+  const secret =
     document.getElementById("secretMessage");
 
-  envelope.classList.toggle("letter-open");
+  envelope.classList.toggle("open");
 
-  message.classList.toggle("show");
-
-}
-
-
-/* =========================================================
-   SURPRISE
-========================================================= */
-
-function openSurprise() {
-
-  const surprise =
-    document.getElementById("surpriseContent");
-
-  surprise.classList.add("show");
-
-  createConfetti(70);
-
-  surprise.scrollIntoView({
-    behavior: "smooth",
-    block: "center"
-  });
+  secret.classList.toggle("show");
 
 }
 
 
-/* =========================================================
-   PHOTO ERROR
-========================================================= */
+/* =====================================================
+   SECRET CODE
+===================================================== */
 
-function showPhotoError() {
+function checkCode(){
+
+  const input =
+    document.getElementById("secretCode");
+
+  const result =
+    document.getElementById("codeResult");
+
+  const code =
+    input.value.trim().toUpperCase();
+
+  if(code===SECRET_CODE){
+
+    result.innerHTML =
+      "🎉 <strong>Secret unlocked!</strong><br><br>" +
+      "Eeshal, may this next chapter bring you " +
+      "beautiful surprises, peaceful moments, " +
+      "and countless reasons to smile. ❤️<br><br>" +
+      "🤲 May Allah bless your journey.";
+
+    createConfetti(70);
+
+  }else{
+
+    result.textContent =
+      "🔒 That code isn't correct. Try again. ❤️";
+
+  }
+
+}
+
+
+/* =====================================================
+   SURPRISE CHOICES
+===================================================== */
+
+function showChoice(number){
 
   document
-    .getElementById("photoError")
-    .classList.remove("hidden");
+    .querySelectorAll(".choice-content")
+    .forEach(el=>{
+      el.classList.remove("show");
+    });
+
+  const selected =
+    document.getElementById(
+      "choice"+number
+    );
+
+  selected.classList.add("show");
+
+  selected.scrollIntoView({
+    behavior:"smooth",
+    block:"center"
+  });
+
+  createConfetti(25);
 
 }
 
 
-/* =========================================================
+/* =====================================================
    MUSIC
-========================================================= */
+===================================================== */
 
 const music =
   document.getElementById("birthdayMusic");
 
-const musicText =
-  document.getElementById("musicText");
-
-let musicPlaying = false;
+let musicPlaying=false;
 
 
-async function toggleMusic() {
+async function toggleMusic(){
 
-  try {
+  const text =
+    document.getElementById("musicText");
 
-    if (!musicPlaying) {
+  try{
+
+    if(!musicPlaying){
 
       await music.play();
 
-      musicPlaying = true;
+      musicPlaying=true;
 
-      musicText.textContent =
-        "Music Playing!";
+      text.textContent=
+        "Music Playing";
 
-    } else {
+    }else{
 
       music.pause();
 
-      musicPlaying = false;
+      musicPlaying=false;
 
-      musicText.textContent =
+      text.textContent=
         "Play Music";
 
     }
 
-  } catch (error) {
+  }catch(error){
 
     alert(
-      "🎵 Add a file named birthday-song.mp3 " +
-      "to your GitHub repository first."
+      "🎵 If you want music, upload " +
+      "birthday-song.mp3 beside index.html."
     );
 
   }
@@ -1343,35 +1929,27 @@ async function toggleMusic() {
 }
 
 
-/* =========================================================
-   INITIALIZE
-========================================================= */
+/* =====================================================
+   EXTRA BIRTHDAY CHECK
+===================================================== */
 
-updateCountdown();
+setInterval(()=>{
 
-setInterval(updateCountdown, 1000);
+  if(unlocked)return;
 
+  const p =
+    pakistanNow();
 
-/*
-  Safety check every 10 seconds.
-  This makes sure the site unlocks even if the
-  countdown happens while the page is open.
-*/
-
-setInterval(() => {
-
-  const p = getPakistanParts();
-
-  if (
-    p.month === 8 &&
-    p.day === 25
-  ) {
+  if(
+    p.month===BIRTHDAY_MONTH &&
+    p.day===BIRTHDAY_DAY
+  ){
 
     unlockBirthday();
 
   }
 
-}, 10000);
+},10000);
 
 </script>
 
