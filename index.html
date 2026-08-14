@@ -20,13 +20,19 @@ html {
 
 body {
   min-height: 100vh;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
   color: #fff;
   background:
-    radial-gradient(circle at 15% 15%, rgba(255,88,166,.22), transparent 28%),
-    radial-gradient(circle at 85% 20%, rgba(135,92,255,.25), transparent 30%),
-    radial-gradient(circle at 50% 90%, rgba(255,170,210,.14), transparent 35%),
-    linear-gradient(135deg,#100817,#24112f 45%,#160b21);
+    radial-gradient(circle at 15% 15%, rgba(255, 88, 166, .22), transparent 28%),
+    radial-gradient(circle at 85% 20%, rgba(135, 92, 255, .25), transparent 30%),
+    radial-gradient(circle at 50% 90%, rgba(255, 170, 210, .14), transparent 35%),
+    linear-gradient(135deg, #100817, #24112f 45%, #160b21);
   overflow-x: hidden;
 }
 
@@ -35,7 +41,8 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(circle,rgba(255,255,255,.8) 1px,transparent 1.5px);
+  background:
+    radial-gradient(circle, rgba(255,255,255,.8) 1px, transparent 1.5px);
   background-size: 75px 75px;
   opacity: .22;
   animation: stars 18s linear infinite;
@@ -51,7 +58,7 @@ body::before {
   display: none !important;
 }
 
-/* LOCK SCREEN */
+/* ---------------- LOCK SCREEN ---------------- */
 
 #lockScreen {
   min-height: 100vh;
@@ -64,7 +71,7 @@ body::before {
 }
 
 .lock-card {
-  width: min(700px,100%);
+  width: min(700px, 100%);
   padding: 35px 22px;
   text-align: center;
   border: 1px solid rgba(255,255,255,.15);
@@ -72,7 +79,9 @@ body::before {
   background: rgba(255,255,255,.08);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  box-shadow: 0 25px 80px rgba(0,0,0,.4),inset 0 1px rgba(255,255,255,.12);
+  box-shadow:
+    0 25px 80px rgba(0,0,0,.4),
+    inset 0 1px rgba(255,255,255,.12);
 }
 
 .lock-icon {
@@ -91,16 +100,16 @@ body::before {
   padding: 8px 14px;
   border-radius: 999px;
   font-size: 13px;
-  background: rgba(255,90,175,.16);
-  border: 1px solid rgba(255,130,200,.25);
+  background: rgba(255, 90, 175, .16);
+  border: 1px solid rgba(255, 130, 200, .25);
   margin-bottom: 16px;
 }
 
 .lock-card h1 {
-  font-size: clamp(30px,8vw,52px);
+  font-size: clamp(30px, 8vw, 52px);
   line-height: 1.05;
   margin-bottom: 14px;
-  background: linear-gradient(90deg,#fff,#ffb7df,#c9b8ff);
+  background: linear-gradient(90deg, #fff, #ffb7df, #c9b8ff);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -122,7 +131,7 @@ body::before {
 
 .countdown {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 8px;
   max-width: 560px;
   margin: 25px auto 10px;
@@ -137,7 +146,7 @@ body::before {
 
 .time-box strong {
   display: block;
-  font-size: clamp(24px,7vw,40px);
+  font-size: clamp(24px, 7vw, 40px);
   color: #ffd2e8;
 }
 
@@ -156,23 +165,26 @@ body::before {
   opacity: .7;
 }
 
-/* MAIN WEBSITE */
+/* ---------------- MAIN WEBSITE ---------------- */
 
 #birthdaySite {
   position: relative;
   z-index: 2;
-  width: min(900px,100%);
+  width: min(900px, 100%);
   margin: auto;
   padding: 25px 14px 60px;
 }
 
-.hero,.card {
+.hero,
+.card {
   background: rgba(255,255,255,.08);
   border: 1px solid rgba(255,255,255,.14);
   border-radius: 26px;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 18px 60px rgba(0,0,0,.3),inset 0 1px rgba(255,255,255,.08);
+  box-shadow:
+    0 18px 60px rgba(0,0,0,.3),
+    inset 0 1px rgba(255,255,255,.08);
 }
 
 .hero {
@@ -184,17 +196,17 @@ body::before {
   display: inline-block;
   padding: 8px 14px;
   border-radius: 999px;
-  background: rgba(255,76,171,.15);
-  border: 1px solid rgba(255,143,205,.2);
+  background: rgba(255, 76, 171, .15);
+  border: 1px solid rgba(255, 143, 205, .2);
   font-size: 12px;
   margin-bottom: 12px;
 }
 
 .hero h1 {
-  font-size: clamp(34px,9vw,58px);
+  font-size: clamp(34px, 9vw, 58px);
   line-height: 1.05;
   margin-bottom: 12px;
-  background: linear-gradient(90deg,#fff,#ffc0e3,#cabaff);
+  background: linear-gradient(90deg, #fff, #ffc0e3, #cabaff);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -222,9 +234,9 @@ button {
   border-radius: 999px;
   font-size: 13px;
   font-weight: 700;
-  background: linear-gradient(135deg,#ff4fac,#8d5cff);
-  box-shadow: 0 8px 25px rgba(255,71,170,.2);
-  transition: transform .2s ease,box-shadow .2s ease;
+  background: linear-gradient(135deg, #ff4fac, #8d5cff);
+  box-shadow: 0 8px 25px rgba(255, 71, 170, .2);
+  transition: transform .2s ease, box-shadow .2s ease;
 }
 
 button:hover {
@@ -248,7 +260,7 @@ button.secondary {
 .section-title {
   text-align: center;
   color: #ffd5e9;
-  font-size: clamp(22px,6vw,31px);
+  font-size: clamp(22px, 6vw, 31px);
   margin-bottom: 17px;
 }
 
@@ -259,7 +271,7 @@ button.secondary {
   font-size: 15px;
 }
 
-/* CAKE */
+/* ---------------- CAKE ---------------- */
 
 .cake-area {
   text-align: center;
@@ -280,8 +292,8 @@ button.secondary {
   width: 129px;
   height: 65px;
   border-radius: 12px 12px 20px 20px;
-  background: linear-gradient(#ffb5cf,#d9578e);
-  box-shadow: inset 0 -12px rgba(110,25,70,.12);
+  background: linear-gradient(#ffb5cf, #d9578e);
+  box-shadow: inset 0 -12px rgba(110, 25, 70, .12);
 }
 
 .cake-top {
@@ -299,7 +311,13 @@ button.secondary {
   width: 9px;
   height: 34px;
   top: 5px;
-  background: repeating-linear-gradient(135deg,#fff,#fff 5px,#ff70ae 5px,#ff70ae 9px);
+  background: repeating-linear-gradient(
+    135deg,
+    #fff,
+    #fff 5px,
+    #ff70ae 5px,
+    #ff70ae 9px
+  );
   border-radius: 5px;
 }
 
@@ -315,10 +333,10 @@ button.secondary {
   left: 1px;
   width: 8px;
   height: 13px;
-  border-radius: 50%;
+  border-radius: 50% 50% 50% 50%;
   background: #ffd35c;
   box-shadow: 0 0 15px #ff9d28;
-  animation: flame .7s ease-in-out infinite alternate;
+  animation: flame 0.7s ease-in-out infinite alternate;
 }
 
 @keyframes flame {
@@ -330,7 +348,7 @@ button.secondary {
   display: none;
 }
 
-/* PHOTO */
+/* ---------------- PHOTO ---------------- */
 
 .photo-frame {
   text-align: center;
@@ -338,16 +356,18 @@ button.secondary {
 
 .photo-frame img {
   display: block;
-  width: min(100%,430px);
+  width: min(100%, 430px);
   max-height: 650px;
   object-fit: cover;
   margin: 10px auto 0;
   border-radius: 20px;
   border: 2px solid rgba(255,255,255,.15);
-  box-shadow: 0 20px 50px rgba(0,0,0,.45),0 0 30px rgba(255,95,180,.12);
+  box-shadow:
+    0 20px 50px rgba(0,0,0,.45),
+    0 0 30px rgba(255,95,180,.12);
 }
 
-/* SECRET MAIL */
+/* ---------------- SECRET MAIL ---------------- */
 
 .mail-wrap {
   text-align: center;
@@ -371,7 +391,7 @@ button.secondary {
   position: absolute;
   inset: 0;
   border-radius: 10px;
-  background: linear-gradient(135deg,#fff,#ffd4ea);
+  background: linear-gradient(135deg, #fff, #ffd4ea);
   box-shadow: 0 15px 35px rgba(0,0,0,.3);
 }
 
@@ -398,7 +418,7 @@ button.secondary {
   z-index: 4;
   left: 50%;
   top: 48%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   font-size: 35px;
 }
 
@@ -430,7 +450,7 @@ button.secondary {
   }
 }
 
-/* SURPRISE */
+/* ---------------- SURPRISE ---------------- */
 
 .surprise-box {
   text-align: center;
@@ -451,53 +471,7 @@ button.secondary {
   animation: reveal .7s ease;
 }
 
-/* QR SHARE */
-
-.qr-card {
-  text-align: center;
-}
-
-.qr-container {
-  margin: 20px auto;
-  padding: 15px;
-  width: fit-content;
-  max-width: 100%;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 15px 45px rgba(0,0,0,.35);
-}
-
-#qrCode {
-  width: 220px;
-  height: 220px;
-  display: block;
-  max-width: 100%;
-}
-
-.share-link {
-  display: block;
-  width: 100%;
-  max-width: 650px;
-  margin: 15px auto;
-  padding: 13px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(0,0,0,.18);
-  color: #ffd6ea;
-  text-align: center;
-  font-size: 12px;
-  word-break: break-all;
-}
-
-.share-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 9px;
-  margin-top: 15px;
-}
-
-/* CONFETTI */
+/* ---------------- CONFETTI ---------------- */
 
 .confetti {
   position: fixed;
@@ -511,12 +485,14 @@ button.secondary {
 
 @keyframes fall {
   to {
-    transform: translate3d(var(--x),110vh,0) rotate(720deg);
+    transform:
+      translate3d(var(--x), 110vh, 0)
+      rotate(720deg);
     opacity: 0;
   }
 }
 
-/* BALLOONS */
+/* ---------------- BALLOONS ---------------- */
 
 .balloon {
   position: fixed;
@@ -545,7 +521,7 @@ button.secondary {
   }
 }
 
-/* FOOTER */
+/* ---------------- FOOTER ---------------- */
 
 footer {
   text-align: center;
@@ -554,7 +530,9 @@ footer {
   font-size: 12px;
 }
 
-@media (max-width:520px) {
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 520px) {
   .countdown {
     gap: 5px;
   }
@@ -563,17 +541,13 @@ footer {
     padding: 13px 3px;
   }
 
-  .hero,.card {
+  .hero,
+  .card {
     border-radius: 22px;
   }
 
   .photo-frame img {
     max-height: 600px;
-  }
-
-  #qrCode {
-    width: 200px;
-    height: 200px;
   }
 }
 </style>
@@ -581,9 +555,9 @@ footer {
 
 <body>
 
-<!-- =====================================================
-     LOCK SCREEN
-===================================================== -->
+<!-- =========================================================
+     LOCKED COUNTDOWN SCREEN
+========================================================= -->
 
 <section id="lockScreen">
 
@@ -644,9 +618,10 @@ footer {
 </section>
 
 
-<!-- =====================================================
-     BIRTHDAY SITE
-===================================================== -->
+<!-- =========================================================
+     BIRTHDAY WEBSITE
+     Hidden until 25 August
+========================================================= -->
 
 <main id="birthdaySite" class="hidden">
 
@@ -664,8 +639,8 @@ footer {
     </h1>
 
     <p>
-      Wishing you endless happiness, smiles,
-      peace, success and unforgettable memories.
+      Wishing you endless happiness, smiles, peace,
+      success and unforgettable memories.
       Today is all about you. ❤️
     </p>
 
@@ -719,7 +694,7 @@ footer {
   </section>
 
 
-  <!-- BIRTHDAY MESSAGE -->
+  <!-- BIRTHDAY WISH -->
 
   <section class="card">
 
@@ -752,7 +727,7 @@ footer {
   </section>
 
 
-  <!-- PHOTO -->
+  <!-- SPECIAL MEMORY -->
 
   <section class="card">
 
@@ -806,6 +781,7 @@ footer {
       >
 
         <div class="envelope-body"></div>
+
         <div class="envelope-flap"></div>
 
         <div class="heart">
@@ -902,63 +878,6 @@ footer {
   </section>
 
 
-  <!-- =================================================
-       QR CODE & SHARE
-  ================================================== -->
-
-  <section class="card qr-card">
-
-    <h2 class="section-title">
-      📱 Scan & Share
-    </h2>
-
-    <p class="message">
-      Want to share this birthday surprise?
-      Scan the QR code with another phone. ❤️
-    </p>
-
-    <div class="qr-container">
-
-      <img
-        id="qrCode"
-        alt="QR code for the birthday website"
-      >
-
-    </div>
-
-    <p class="message">
-      Scan this code to open the birthday surprise.
-    </p>
-
-    <div class="share-link">
-      https://vipsaim.github.io/birthday-website/
-    </div>
-
-    <div class="share-buttons">
-
-      <button onclick="copyWebsiteLink()">
-        📋 Copy Link
-      </button>
-
-      <button onclick="shareWebsite()">
-        📤 Share
-      </button>
-
-      <button onclick="openWhatsApp()">
-        💬 WhatsApp
-      </button>
-
-    </div>
-
-    <p
-      id="copyStatus"
-      class="message"
-      style="margin-top:15px;font-size:13px;"
-    ></p>
-
-  </section>
-
-
   <!-- FINAL MESSAGE -->
 
   <section class="card">
@@ -1004,7 +923,13 @@ footer {
 </main>
 
 
-<!-- MUSIC -->
+<!-- =========================================================
+     OPTIONAL MUSIC
+     
+     IMPORTANT:
+     Replace birthday-song.mp3 with your own music file
+     if you want music.
+========================================================= -->
 
 <audio id="birthdayMusic" loop preload="auto">
   <source src="birthday-song.mp3" type="audio/mpeg">
@@ -1013,20 +938,21 @@ footer {
 
 <script>
 
-/* =====================================================
-   SETTINGS
-===================================================== */
+/* =========================================================
+   BIRTHDAY DATE
+   Pakistan time: Asia/Karachi
 
-const birthdayMonth = 7; // August
+   The website unlocks every year on:
+   25 August at 12:00 AM Pakistan time.
+========================================================= */
+
+const birthdayMonth = 7; // August = 7 in JavaScript
 const birthdayDay = 25;
 
-const websiteURL =
-  "https://vipsaim.github.io/birthday-website/";
 
-
-/* =====================================================
-   PAKISTAN DATE/TIME
-===================================================== */
+/* =========================================================
+   GET PAKISTAN DATE/TIME
+========================================================= */
 
 function getPakistanParts() {
 
@@ -1047,26 +973,30 @@ function getPakistanParts() {
   const result = {};
 
   parts.forEach(part => {
-
     if (part.type !== "literal") {
       result[part.type] = Number(part.value);
     }
-
   });
 
   return result;
 }
 
 
-/* =====================================================
-   NEXT BIRTHDAY
-===================================================== */
+/* =========================================================
+   GET NEXT BIRTHDAY
+========================================================= */
 
 function getNextBirthday() {
 
   const p = getPakistanParts();
 
   let year = p.year;
+
+  /*
+    We use a UTC timestamp representing the Pakistan
+    calendar date at midnight. Since Pakistan is UTC+5,
+    25 August 00:00 Pakistan = 24 August 19:00 UTC.
+  */
 
   let target = Date.UTC(
     year,
@@ -1094,38 +1024,24 @@ function getNextBirthday() {
 }
 
 
-/* =====================================================
+/* =========================================================
    COUNTDOWN
-===================================================== */
+========================================================= */
 
-const lockScreen =
-  document.getElementById("lockScreen");
+const lockScreen = document.getElementById("lockScreen");
+const birthdaySite = document.getElementById("birthdaySite");
 
-const birthdaySite =
-  document.getElementById("birthdaySite");
-
-const daysEl =
-  document.getElementById("days");
-
-const hoursEl =
-  document.getElementById("hours");
-
-const minutesEl =
-  document.getElementById("minutes");
-
-const secondsEl =
-  document.getElementById("seconds");
-
-let birthdayUnlocked = false;
+const daysEl = document.getElementById("days");
+const hoursEl = document.getElementById("hours");
+const minutesEl = document.getElementById("minutes");
+const secondsEl = document.getElementById("seconds");
 
 
 function updateCountdown() {
 
-  const target =
-    getNextBirthday();
+  const target = getNextBirthday();
 
-  const difference =
-    target - Date.now();
+  const difference = target - Date.now();
 
   if (difference <= 0) {
 
@@ -1150,23 +1066,27 @@ function updateCountdown() {
   const seconds =
     totalSeconds % 60;
 
+
   daysEl.textContent =
-    String(days).padStart(2,"0");
+    String(days).padStart(2, "0");
 
   hoursEl.textContent =
-    String(hours).padStart(2,"0");
+    String(hours).padStart(2, "0");
 
   minutesEl.textContent =
-    String(minutes).padStart(2,"0");
+    String(minutes).padStart(2, "0");
 
   secondsEl.textContent =
-    String(seconds).padStart(2,"0");
+    String(seconds).padStart(2, "0");
 }
 
 
-/* =====================================================
-   UNLOCK
-===================================================== */
+/* =========================================================
+   UNLOCK BIRTHDAY
+========================================================= */
+
+let birthdayUnlocked = false;
+
 
 function unlockBirthday() {
 
@@ -1181,15 +1101,14 @@ function unlockBirthday() {
   document.title =
     "🎂 Happy Birthday Eeshal Ibrahim! ❤️";
 
-  generateQRCode();
-
   startCelebration();
+
 }
 
 
-/* =====================================================
-   CELEBRATION
-===================================================== */
+/* =========================================================
+   START CELEBRATION
+========================================================= */
 
 function startCelebration() {
 
@@ -1199,14 +1118,14 @@ function startCelebration() {
 
   setTimeout(() => {
     createConfetti(80);
-  },2500);
+  }, 2500);
 
 }
 
 
-/* =====================================================
+/* =========================================================
    CONFETTI
-===================================================== */
+========================================================= */
 
 function createConfetti(amount = 60) {
 
@@ -1245,16 +1164,16 @@ function createConfetti(amount = 60) {
 
     setTimeout(() => {
       piece.remove();
-    },8500);
+    }, 8500);
 
   }
 
 }
 
 
-/* =====================================================
+/* =========================================================
    BALLOONS
-===================================================== */
+========================================================= */
 
 function createBalloons(amount = 10) {
 
@@ -1289,16 +1208,16 @@ function createBalloons(amount = 10) {
 
     setTimeout(() => {
       balloon.remove();
-    },18000);
+    }, 18000);
 
   }
 
 }
 
 
-/* =====================================================
+/* =========================================================
    BLOW CANDLES
-===================================================== */
+========================================================= */
 
 function blowCandles() {
 
@@ -1317,14 +1236,14 @@ function blowCandles() {
       "and bless your future. 🤲✨"
     );
 
-  },400);
+  }, 400);
 
 }
 
 
-/* =====================================================
+/* =========================================================
    SECRET MAIL
-===================================================== */
+========================================================= */
 
 function openMail() {
 
@@ -1341,9 +1260,9 @@ function openMail() {
 }
 
 
-/* =====================================================
+/* =========================================================
    SURPRISE
-===================================================== */
+========================================================= */
 
 function openSurprise() {
 
@@ -1362,9 +1281,9 @@ function openSurprise() {
 }
 
 
-/* =====================================================
+/* =========================================================
    PHOTO ERROR
-===================================================== */
+========================================================= */
 
 function showPhotoError() {
 
@@ -1375,9 +1294,9 @@ function showPhotoError() {
 }
 
 
-/* =====================================================
+/* =========================================================
    MUSIC
-===================================================== */
+========================================================= */
 
 const music =
   document.getElementById("birthdayMusic");
@@ -1424,131 +1343,24 @@ async function toggleMusic() {
 }
 
 
-/* =====================================================
-   QR CODE
-   Uses a public QR generator to create the image.
-===================================================== */
-
-function generateQRCode() {
-
-  const qr =
-    document.getElementById("qrCode");
-
-  qr.src =
-    "https://api.qrserver.com/v1/create-qr-code/?" +
-    "size=500x500&data=" +
-    encodeURIComponent(websiteURL);
-
-}
-
-
-/* =====================================================
-   COPY LINK
-===================================================== */
-
-async function copyWebsiteLink() {
-
-  const status =
-    document.getElementById("copyStatus");
-
-  try {
-
-    await navigator.clipboard.writeText(
-      websiteURL
-    );
-
-    status.textContent =
-      "✅ Birthday website link copied!";
-
-  } catch (error) {
-
-    status.textContent =
-      "📋 Copy failed. Long-press the link above to copy it.";
-
-  }
-
-}
-
-
-/* =====================================================
-   SHARE
-===================================================== */
-
-async function shareWebsite() {
-
-  const shareData = {
-
-    title: "🎂 Happy Birthday Eeshal!",
-    text: "A special birthday surprise for Eeshal Ibrahim ❤️",
-    url: websiteURL
-
-  };
-
-  try {
-
-    if (navigator.share) {
-
-      await navigator.share(shareData);
-
-    } else {
-
-      await copyWebsiteLink();
-
-    }
-
-  } catch (error) {
-
-    if (error.name !== "AbortError") {
-      await copyWebsiteLink();
-    }
-
-  }
-
-}
-
-
-/* =====================================================
-   WHATSAPP
-===================================================== */
-
-function openWhatsApp() {
-
-  const message =
-    "🎂 A special birthday surprise for Eeshal Ibrahim! ❤️\n\n" +
-    websiteURL;
-
-  const whatsappURL =
-    "https://wa.me/?text=" +
-    encodeURIComponent(message);
-
-  window.open(
-    whatsappURL,
-    "_blank"
-  );
-
-}
-
-
-/* =====================================================
-   START
-===================================================== */
+/* =========================================================
+   INITIALIZE
+========================================================= */
 
 updateCountdown();
 
-setInterval(
-  updateCountdown,
-  1000
-);
+setInterval(updateCountdown, 1000);
 
 
 /*
-  Extra birthday check every 10 seconds.
+  Safety check every 10 seconds.
+  This makes sure the site unlocks even if the
+  countdown happens while the page is open.
 */
 
 setInterval(() => {
 
-  const p =
-    getPakistanParts();
+  const p = getPakistanParts();
 
   if (
     p.month === 8 &&
@@ -1559,7 +1371,7 @@ setInterval(() => {
 
   }
 
-},10000);
+}, 10000);
 
 </script>
 
