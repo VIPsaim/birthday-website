@@ -3,352 +3,408 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#16091f">
-<title>Happy Birthday Eeshal Ibrahim ❤️</title>
+<meta name="theme-color" content="#160b17">
+<title>A Little Memory For Eeshal ❤️</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+*{box-sizing:border-box}
 
-html{
-  scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth}
 
 body{
+  margin:0;
   min-height:100vh;
-  overflow-x:hidden;
-  font-family:Arial,Helvetica,sans-serif;
+  font-family:Georgia,"Times New Roman",serif;
   color:#fff;
   background:
-    radial-gradient(circle at 15% 20%,rgba(255,80,190,.20),transparent 25%),
-    radial-gradient(circle at 85% 25%,rgba(120,80,255,.22),transparent 28%),
-    radial-gradient(circle at 50% 90%,rgba(255,100,180,.16),transparent 30%),
-    linear-gradient(135deg,#100718,#25102f,#16091f);
+    radial-gradient(circle at 15% 10%,rgba(255,170,215,.13),transparent 30%),
+    radial-gradient(circle at 85% 35%,rgba(190,130,255,.10),transparent 30%),
+    linear-gradient(145deg,#100811,#241325,#160b17);
 }
 
-body::before{
-  content:"";
-  position:fixed;
-  inset:-50%;
-  pointer-events:none;
-  z-index:0;
-  opacity:.5;
-  background:
-    radial-gradient(circle,rgba(255,255,255,.13) 0 1px,transparent 2px);
-  background-size:65px 65px;
-  animation:stars 35s linear infinite;
-}
+button,input{font:inherit}
 
-@keyframes stars{
-  from{transform:translate(0,0)}
-  to{transform:translate(65px,65px)}
-}
+.hidden{display:none!important}
 
 .container{
-  width:min(950px,94%);
+  width:min(920px,94%);
   margin:auto;
-  padding:25px 0 70px;
-  position:relative;
-  z-index:2;
+  padding:22px 0 65px;
 }
 
 .card{
-  position:relative;
-  margin:20px 0;
-  padding:28px 24px;
+  background:rgba(40,22,44,.78);
+  border:1px solid rgba(255,255,255,.11);
   border-radius:24px;
-  background:rgba(55,27,67,.72);
-  border:1px solid rgba(255,255,255,.13);
-  box-shadow:
-    0 15px 45px rgba(0,0,0,.30),
-    inset 0 1px rgba(255,255,255,.07);
-  backdrop-filter:blur(12px);
-  overflow:hidden;
+  padding:28px;
+  margin:20px 0;
+  box-shadow:0 18px 45px rgba(0,0,0,.24);
 }
 
-.card::before{
-  content:"";
-  position:absolute;
-  width:100px;
-  height:100px;
-  right:-35px;
-  top:-35px;
-  border-radius:50%;
-  background:rgba(255,70,190,.18);
-  filter:blur(25px);
-  animation:glow 4s ease-in-out infinite alternate;
-  pointer-events:none;
-}
+.center{text-align:center}
 
-@keyframes glow{
-  from{transform:scale(.8);opacity:.4}
-  to{transform:scale(1.4);opacity:1}
-}
+/* ================= LOCK SCREEN ================= */
 
 #lockScreen{
   min-height:100vh;
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:20px;
-  position:relative;
-  z-index:10;
+  padding:18px;
 }
 
 .lock-card{
   width:min(650px,100%);
   text-align:center;
-  padding:40px 25px;
 }
 
 .lock-icon{
-  font-size:70px;
-  animation:lockPulse 2s infinite;
+  font-size:62px;
+  margin-bottom:8px;
 }
 
-@keyframes lockPulse{
-  0%,100%{transform:scale(1)}
-  50%{transform:scale(1.12)}
+.lock-card h1{
+  margin:0;
+  font-size:clamp(32px,8vw,54px);
+  color:#ffd8eb;
 }
 
-.lock-title{
-  font-size:clamp(30px,7vw,52px);
-  margin:15px 0 10px;
-  background:linear-gradient(90deg,#fff,#ffb4e3,#fff);
-  -webkit-background-clip:text;
-  color:transparent;
+.lock-card h2{
+  font-size:20px;
+  font-weight:normal;
+  color:#e8b5cf;
+  margin:12px 0 24px;
 }
 
-.lock-subtitle{
-  opacity:.85;
-  line-height:1.7;
-  margin-bottom:25px;
+.lock-text{
+  line-height:1.9;
+  opacity:.84;
 }
 
 .countdown{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:10px;
-  margin:25px 0;
+  gap:8px;
+  margin:28px 0;
 }
 
-.time-box{
-  padding:15px 5px;
+.time{
+  background:rgba(255,255,255,.055);
+  border:1px solid rgba(255,255,255,.1);
   border-radius:15px;
-  background:rgba(0,0,0,.18);
-  border:1px solid rgba(255,255,255,.10);
+  padding:14px 4px;
 }
 
-.time-number{
+.time strong{
   display:block;
-  font-size:clamp(25px,7vw,42px);
-  font-weight:bold;
-  color:#ffd0ec;
+  font-family:Arial,sans-serif;
+  font-size:clamp(25px,7vw,40px);
+  color:#ffd0e7;
 }
 
-.time-label{
+.time small{
+  font-family:Arial,sans-serif;
   font-size:10px;
-  opacity:.7;
   text-transform:uppercase;
+  opacity:.6;
 }
 
-.code-area{
-  margin-top:25px;
+.code-box{
+  padding:20px;
+  border-radius:18px;
+  background:rgba(0,0,0,.15);
+}
+
+.code-box h3{
+  margin-top:0;
+  color:#ffd2e8;
 }
 
 .code-input{
-  width:100%;
-  max-width:380px;
-  padding:15px 18px;
-  border-radius:30px;
+  width:min(350px,100%);
+  padding:13px 15px;
+  border-radius:12px;
   border:1px solid rgba(255,255,255,.18);
-  background:rgba(0,0,0,.25);
-  color:white;
-  text-align:center;
-  font-size:17px;
+  background:rgba(255,255,255,.07);
+  color:#fff;
   outline:none;
+  text-align:center;
 }
 
-.code-input:focus{
-  border-color:#ff69c4;
-  box-shadow:0 0 20px rgba(255,80,190,.25);
+.code-input::placeholder{
+  color:rgba(255,255,255,.5);
 }
 
 .btn{
-  border:none;
-  padding:13px 22px;
-  margin:10px 5px;
+  border:0;
   border-radius:30px;
+  padding:12px 22px;
+  margin:10px 4px;
+  background:#b74f86;
   color:#fff;
-  font-weight:bold;
   cursor:pointer;
-  background:linear-gradient(135deg,#ff4db8,#8b4cff);
-  box-shadow:0 7px 25px rgba(220,60,190,.30);
-  transition:.25s;
+  font-family:Arial,sans-serif;
+  font-weight:bold;
 }
 
-.btn:hover{
-  transform:translateY(-2px) scale(1.03);
-}
+.btn:hover{background:#c86198}
 
-.error{
-  color:#ff9fcf;
-  margin-top:10px;
+.status{
   min-height:20px;
+  margin-top:7px;
+  font-family:Arial,sans-serif;
+  font-size:14px;
 }
 
-.hidden{
-  display:none!important;
+.lock-note{
+  margin-top:20px;
+  line-height:1.8;
+  opacity:.7;
+  font-size:14px;
 }
+
+/* ================= SPECIAL COVER ================= */
 
 #birthdayPage{
   display:none;
 }
 
-.hero{
+.cover{
   text-align:center;
-  padding:35px 20px;
+  padding:42px 25px 38px;
 }
 
-.badge{
-  display:inline-block;
-  padding:8px 14px;
-  border-radius:20px;
-  background:rgba(255,100,190,.14);
-  border:1px solid rgba(255,150,220,.22);
+.cover-top{
+  color:#e4a8c6;
+  font-family:Arial,sans-serif;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+
+.cover-symbol{
+  font-size:55px;
+  margin:18px 0 5px;
+}
+
+.cover h1{
+  margin:0;
+  font-size:clamp(38px,9vw,68px);
+  color:#ffd8ea;
+}
+
+.cover-name{
+  font-size:clamp(22px,5vw,32px);
+  color:#efb8d3;
+  margin-top:8px;
+}
+
+.cover-divider{
+  width:90px;
+  height:1px;
+  background:rgba(255,255,255,.25);
+  margin:25px auto;
+}
+
+.cover-message{
+  max-width:650px;
+  margin:auto;
+  line-height:1.9;
+  opacity:.84;
+}
+
+.cover-date{
+  margin:24px 0 8px;
+  color:#f3c2da;
+  font-family:Arial,sans-serif;
+  font-weight:bold;
+}
+
+.cover-date small{
+  display:block;
+  margin-top:7px;
+  opacity:.65;
+  font-weight:normal;
+}
+
+.cover-links{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  margin-top:25px;
+}
+
+.cover-link{
+  padding:10px 15px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.045);
+  color:#f3c8dc;
+  font-family:Arial,sans-serif;
   font-size:13px;
 }
 
-.hero h1{
-  font-size:clamp(35px,9vw,68px);
-  margin:15px 0 5px;
-  background:linear-gradient(90deg,#fff,#ffb8df,#fff);
-  -webkit-background-clip:text;
-  color:transparent;
-}
-
-.hero h2{
-  font-size:clamp(20px,5vw,32px);
-  color:#ffd2eb;
-}
-
-.hero p{
-  line-height:1.8;
-  margin-top:12px;
-  opacity:.9;
-}
-
-.cake{
-  font-size:90px;
-  margin:18px auto;
-  animation:cakeFloat 3s ease-in-out infinite;
-}
-
-@keyframes cakeFloat{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-10px)}
-}
+/* ================= SECTION TITLES ================= */
 
 .section-title{
   text-align:center;
-  color:#ffd2ea;
-  font-size:clamp(23px,5vw,31px);
-  margin-bottom:18px;
+  color:#ffd1e7;
+  margin-top:0;
+  font-size:28px;
 }
 
-.center{
+.section-subtitle{
   text-align:center;
+  line-height:1.8;
+  opacity:.75;
 }
 
-.gallery-intro{
+/* ================= COUNTER ================= */
+
+.counter{
   text-align:center;
-  opacity:.85;
-  margin-bottom:20px;
-  line-height:1.7;
+  color:#efbad4;
+  font-family:Arial,sans-serif;
+  font-size:14px;
 }
+
+/* ================= TIMELINE ================= */
+
+.timeline{margin-top:25px}
+
+.timeline-item{
+  padding:18px 20px;
+  margin:12px 0;
+  border-left:3px solid #b85b8d;
+  background:rgba(255,255,255,.035);
+  border-radius:0 14px 14px 0;
+}
+
+.timeline-item strong{color:#efb5d0}
+
+.timeline-item p{
+  margin-bottom:0;
+  line-height:1.8;
+  opacity:.8;
+}
+
+/* ================= GALLERY ================= */
 
 .gallery{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:12px;
+  gap:14px;
+  margin-top:25px;
 }
 
 .memory{
-  position:relative;
-  border-radius:17px;
   overflow:hidden;
+  border-radius:18px;
+  background:#24162a;
+  border:1px solid rgba(255,255,255,.1);
   cursor:pointer;
-  aspect-ratio:1.45/1;
-  background:#26152e;
-  border:1px solid rgba(255,255,255,.12);
-  transition:.35s;
-}
-
-.memory:hover{
-  transform:scale(1.025);
-  box-shadow:0 0 25px rgba(255,80,190,.25);
 }
 
 .memory img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
   display:block;
-  transition:.5s;
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
 }
 
-.memory:hover img{
-  transform:scale(1.06);
+.memory-caption{
+  padding:12px;
+  text-align:center;
+  font-size:14px;
+  line-height:1.5;
+  color:#f0c6d9;
 }
 
-.memory-heart{
-  position:absolute;
-  right:8px;
-  bottom:8px;
-  width:30px;
-  height:30px;
-  border-radius:50%;
-  display:flex;
+.memory-caption small{
+  display:block;
+  margin-top:4px;
+  opacity:.58;
+}
+
+/* ================= LIGHTBOX ================= */
+
+#lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.93);
+  display:none;
   align-items:center;
   justify-content:center;
-  background:rgba(255,50,130,.82);
+  z-index:1000;
+  padding:20px;
 }
 
-.secret-mail-card{
+#lightbox.show{display:flex}
+
+#lightbox img{
+  max-width:95%;
+  max-height:85vh;
+  border-radius:18px;
+}
+
+.close{
+  position:absolute;
+  right:20px;
+  top:12px;
+  font-size:36px;
+  cursor:pointer;
+}
+
+/* ================= HIDDEN WORDS ================= */
+
+.hidden-word{
+  color:#e5a6c6;
+  text-decoration:underline dotted;
+  cursor:pointer;
+}
+
+.word-message{
+  display:none;
+  margin:15px auto;
+  padding:14px 18px;
+  max-width:650px;
   text-align:center;
+  border-radius:14px;
+  background:rgba(255,255,255,.05);
+  color:#ffd5e8;
+  line-height:1.7;
 }
 
-.mail-box{
-  padding:10px;
+.word-message.show{display:block}
+
+/* ================= THINGS NEVER SAID ================= */
+
+.never-said{
+  line-height:2;
+  text-align:center;
+  color:#f2cadb;
 }
+
+.never-said p{margin:15px 0}
+
+/* ================= SECRET MAIL ================= */
+
+.mail-card{text-align:center}
 
 .envelope{
-  width:120px;
-  height:85px;
-  margin:20px auto;
+  width:130px;
+  height:90px;
+  margin:25px auto 15px;
   position:relative;
   cursor:pointer;
-  transition:.4s;
-  filter:drop-shadow(0 0 18px rgba(255,70,190,.45));
 }
 
-.envelope:hover{
-  transform:scale(1.08);
-}
-
-.envelope-body{
+.envelope-back{
   position:absolute;
   inset:0;
-  background:linear-gradient(135deg,#ff5db1,#8c4cff);
-  border-radius:10px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:45px;
-  z-index:2;
+  background:#9d4777;
+  border-radius:12px;
 }
 
 .envelope-flap{
@@ -357,223 +413,122 @@ body::before{
   left:0;
   width:0;
   height:0;
-  border-left:60px solid transparent;
-  border-right:60px solid transparent;
-  border-top:48px solid #ff9ace;
-  z-index:3;
-  transform-origin:top;
-  transition:.8s;
+  border-left:65px solid transparent;
+  border-right:65px solid transparent;
+  border-top:52px solid #d879a7;
+  z-index:2;
 }
 
-.envelope.open .envelope-flap{
-  transform:rotateX(180deg);
+.envelope-heart{
+  position:absolute;
+  z-index:3;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  font-size:35px;
 }
 
 .mail-hint{
-  opacity:.8;
-  margin:12px;
+  opacity:.75;
+  line-height:1.7;
 }
 
-.hidden-mail-surprise{
-  display:none;
-  animation:reveal 1.2s ease;
-}
-
-.hidden-mail-surprise.show{
-  display:block;
-}
-
-@keyframes reveal{
-  from{
-    opacity:0;
-    transform:translateY(35px) scale(.94);
-  }
-  to{
-    opacity:1;
-    transform:none;
-  }
-}
+/* ================= LETTER ================= */
 
 .secret-letter{
-  max-width:760px;
-  margin:30px auto 10px;
-  padding:28px 24px;
-  text-align:left;
+  margin-top:30px;
+  background:#fff8fc;
+  color:#3d2134;
+  padding:28px 25px;
   border-radius:20px;
-  background:
-    linear-gradient(
-      rgba(255,246,252,.97),
-      rgba(255,241,249,.97)
-    );
-  color:#351b32;
-  box-shadow:0 12px 35px rgba(0,0,0,.25);
-  border:1px solid rgba(255,255,255,.5);
+  text-align:left;
+  line-height:1.9;
 }
 
 .secret-letter h3{
   text-align:center;
-  color:#8e356f;
+  color:#8e426d;
   font-size:25px;
-  margin-bottom:22px;
-}
-
-.secret-letter .letter-name{
-  font-size:20px;
-  font-weight:bold;
-  color:#542445;
-  margin-bottom:18px;
 }
 
 .secret-letter p{
-  line-height:1.9;
   margin:0 0 17px;
 }
 
-.secret-letter .short-lines{
+.secret-letter .name{
+  font-weight:bold;
+  font-size:20px;
+  color:#683654;
+}
+
+.special-line{
   text-align:center;
   font-weight:bold;
-  color:#74305d;
-  line-height:2;
+  color:#8e426d;
 }
 
-.secret-letter .signature{
-  text-align:right;
-  margin-top:25px;
-  font-style:italic;
-  color:#74305d;
+/* ================= FINAL PHOTO ================= */
+
+.final-photo{
+  margin-top:32px;
+  text-align:center;
 }
 
-.reveal-title{
-  font-size:27px;
-  font-weight:bold;
-  margin:25px 0 15px;
-  color:#ffd1e9;
+.final-photo-frame{
+  width:min(430px,92%);
+  margin:20px auto;
+  padding:7px;
+  border-radius:20px;
+  background:#b35b8b;
 }
 
-.reveal-message,
-.photo-message,
-.final-message{
-  max-width:650px;
-  margin:15px auto;
-  line-height:1.9;
-}
-
-.hidden-photo-frame{
-  width:min(90%,430px);
-  margin:28px auto;
-  padding:8px;
-  border-radius:22px;
-  background:linear-gradient(135deg,#ff4db8,#ffd1ef,#8d4dff);
-  box-shadow:0 0 35px rgba(255,70,190,.55);
-  animation:photoGlow 2s ease-in-out infinite alternate;
-}
-
-@keyframes photoGlow{
-  from{transform:scale(1)}
-  to{transform:scale(1.015)}
-}
-
-.hidden-eeshal-photo{
+.final-photo-frame img{
   width:100%;
   display:block;
-  border-radius:16px;
+  border-radius:14px;
 }
+
+/* ================= FINAL ================= */
+
+.keep-memory{text-align:center}
+
+.final-hidden{
+  display:none;
+  margin-top:25px;
+  padding:22px;
+  border-radius:18px;
+  background:rgba(255,255,255,.05);
+  line-height:1.9;
+  color:#ffd3e7;
+}
+
+.final-hidden.show{display:block}
 
 footer{
   text-align:center;
-  opacity:.65;
+  opacity:.5;
+  font-size:13px;
+  line-height:1.8;
   padding:25px 10px;
-  line-height:1.7;
-}
-
-.lightbox{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.9);
-  z-index:9999;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-}
-
-.lightbox.show{
-  display:flex;
-}
-
-.lightbox img{
-  max-width:95%;
-  max-height:85vh;
-  border-radius:18px;
-  box-shadow:0 0 40px rgba(255,100,210,.45);
-}
-
-.close-lightbox{
-  position:absolute;
-  top:18px;
-  right:20px;
-  font-size:35px;
-  cursor:pointer;
-}
-
-.confetti{
-  position:fixed;
-  top:-30px;
-  z-index:9998;
-  pointer-events:none;
-  animation:fall linear forwards;
-}
-
-@keyframes fall{
-  to{
-    transform:translateY(110vh) rotate(720deg);
-    opacity:0;
-  }
-}
-
-.balloon{
-  position:fixed;
-  bottom:-120px;
-  z-index:1;
-  pointer-events:none;
-  animation:balloonUp linear forwards;
-  opacity:.7;
-}
-
-@keyframes balloonUp{
-  to{
-    transform:translateY(-120vh) translateX(50px);
-  }
 }
 
 @media(max-width:600px){
 
-  .card{
-    padding:22px 15px;
-  }
+  .card{padding:22px 16px}
 
-  .countdown{
-    gap:6px;
-  }
+  .countdown{gap:5px}
 
-  .time-box{
-    padding:12px 3px;
-  }
+  .time{padding:12px 3px}
 
-  .gallery{
-    gap:9px;
-  }
-
-  .memory{
-    border-radius:13px;
-  }
+  .gallery{gap:9px}
 
   .secret-letter{
     padding:22px 17px;
+    font-size:15px;
   }
 
-  .secret-letter p{
-    line-height:1.8;
+  .cover-links{
+    gap:7px;
   }
 }
 </style>
@@ -581,228 +536,306 @@ footer{
 
 <body>
 
-<!-- ================================
-     LOCKED SCREEN
-================================ -->
+<!-- =====================================================
+     LOCKED COVER
+===================================================== -->
 
-<div id="lockScreen">
+<section id="lockScreen">
 
   <div class="card lock-card">
 
     <div class="lock-icon">🔐</div>
 
-    <h1 class="lock-title">
-      SURPRISE LOCKED
-    </h1>
+    <h1>SURPRISE LOCKED</h1>
 
-    <p class="lock-subtitle">
-      A special birthday surprise is waiting for you. 💖
+    <h2>A little memory box is waiting...</h2>
+
+    <p class="lock-text">
+      This little corner of memories is waiting for the right moment.
+      <br><br>
+      Come back on <strong>25 August at 12:00 AM</strong>...
       <br>
-      Everything will be revealed at the right moment.
+      or use the secret code if you already have it. ❤️
     </p>
 
     <div class="countdown">
 
-      <div class="time-box">
-        <span class="time-number" id="days">00</span>
-        <span class="time-label">Days</span>
+      <div class="time">
+        <strong id="days">00</strong>
+        <small>Days</small>
       </div>
 
-      <div class="time-box">
-        <span class="time-number" id="hours">00</span>
-        <span class="time-label">Hours</span>
+      <div class="time">
+        <strong id="hours">00</strong>
+        <small>Hours</small>
       </div>
 
-      <div class="time-box">
-        <span class="time-number" id="minutes">00</span>
-        <span class="time-label">Minutes</span>
+      <div class="time">
+        <strong id="minutes">00</strong>
+        <small>Minutes</small>
       </div>
 
-      <div class="time-box">
-        <span class="time-number" id="seconds">00</span>
-        <span class="time-label">Seconds</span>
+      <div class="time">
+        <strong id="seconds">00</strong>
+        <small>Seconds</small>
       </div>
 
     </div>
 
-    <p>
-      ⏳ Countdown to
-      <strong>25 August at 12:00 AM</strong>
-    </p>
+    <div class="code-box">
 
-    <div class="code-area">
-
-      <p style="margin-bottom:10px;">
-        🔑 Or enter the secret code
-      </p>
+      <h3>🔑 Secret Code</h3>
 
       <input
-        type="password"
         id="secretCode"
         class="code-input"
+        type="password"
         placeholder="Enter secret code"
-        autocomplete="off"
-      >
+        autocomplete="off">
 
       <br>
 
       <button class="btn" onclick="checkCode()">
-        🔓 Unlock Surprise
+        Unlock Surprise
       </button>
 
-      <div class="error" id="codeError"></div>
+      <div id="codeStatus" class="status"></div>
 
     </div>
 
+    <p class="lock-note">
+      Two ways to open the surprise:
+      <br>
+      🔑 Correct secret code
+      <br>
+      🕛 Countdown reaches 25 August at 12:00 AM
+    </p>
+
   </div>
 
-</div>
+</section>
 
 
-<!-- ================================
+<!-- =====================================================
      BIRTHDAY PAGE
-================================ -->
+===================================================== -->
 
 <div id="birthdayPage">
 
 <main class="container">
 
-  <!-- HERO -->
 
-  <section class="card hero">
+  <!-- SPECIAL COVER -->
 
-    <div class="badge">
-      💌 Made especially for you 💌
+  <section class="card cover">
+
+    <div class="cover-top">
+      A private little birthday memory
     </div>
 
-    <h1>
-      🎂 Happy Birthday
-    </h1>
+    <div class="cover-symbol">🌙</div>
 
-    <h2>
+    <h1>A Little Something For You</h1>
+
+    <div class="cover-name">
       Eeshal Ibrahim ❤️
-    </h2>
+    </div>
 
-    <p>
-      Today is your special day.
-      May it be filled with happiness,
-      peace, smiles and beautiful memories.
+    <div class="cover-divider"></div>
+
+    <p class="cover-message">
+      Some memories are too special to simply disappear.
+      <br><br>
+      So I kept a few pictures, a few words, and a few thoughts
+      here — waiting for the right moment for you to discover them.
     </p>
 
-    <div class="cake">
-      🎂
+    <div class="cover-date">
+      🎂 25 August
+      <small>A birthday worth remembering</small>
     </div>
 
-    <button class="btn" onclick="startCelebration()">
-      🎉 Celebrate
+    <div class="cover-links">
+
+      <div class="cover-link">📸 Memories</div>
+      <div class="cover-link">💌 Secret Mail</div>
+      <div class="cover-link">🤍 One Last Memory</div>
+
+    </div>
+
+    <br>
+
+    <button
+      class="btn"
+      onclick="document.getElementById('memories').scrollIntoView({behavior:'smooth'})">
+
+      Begin the Memories →
+
     </button>
 
   </section>
 
 
-  <!-- ================================
-       SIX PHOTO MEMORY GALLERY
-  ================================= -->
+  <!-- COUNTER -->
+
+  <section class="card counter">
+
+    📸 6 memories
+    &nbsp;•&nbsp;
+    💌 1 secret letter
+    &nbsp;•&nbsp;
+    🤍 1 final memory
+
+  </section>
+
+
+  <!-- TIMELINE -->
 
   <section class="card">
+
+    <h2 class="section-title">
+      🕰️ A Little Memory Timeline
+    </h2>
+
+    <p class="section-subtitle">
+      Not every moment needs a date to remain meaningful.
+    </p>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <strong>🌸 The Little Moments</strong>
+        <p>
+          The conversations, smiles, jokes and ordinary moments
+          that slowly became memories worth keeping.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <strong>❤️ The Memories</strong>
+        <p>
+          Some pictures may only take a second to look at,
+          but the memories behind them can last much longer.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <strong>🤍 The Difficult Days</strong>
+        <p>
+          Not every chapter was perfect, but even difficult moments
+          can teach us patience, understanding and gratitude.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <strong>🌙 The Future</strong>
+        <p>
+          Whatever Allah has written for the future,
+          I pray that it is beautiful, peaceful and full of goodness.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SIX MEMORIES -->
+
+  <section class="card" id="memories">
 
     <h2 class="section-title">
       📸 Six Special Memories
     </h2>
 
-    <p class="gallery-intro">
-      Six memories are waiting here. ❤️
+    <p class="section-subtitle">
+      Tap a picture to see it larger.
       <br>
-      Tap any photo to see it larger.
+      Every memory has a little thought hidden underneath.
     </p>
 
     <div class="gallery">
 
-      <div
-        class="memory"
-        onclick="openPhoto('Miss together pictures.jpeg')">
+      <div class="memory"
+           onclick="openPhoto('Miss together pictures.jpeg')">
 
         <img
           src="Miss together pictures.jpeg"
-          alt="Special memory">
+          alt="Memory 1">
 
-        <div class="memory-heart">
-          ❤️
+        <div class="memory-caption">
+          A moment worth remembering.
+          <small>Some moments become precious later.</small>
         </div>
 
       </div>
 
-
-      <div
-        class="memory"
-        onclick="openPhoto('The beautiful yellow.jpg')">
+      <div class="memory"
+           onclick="openPhoto('The beautiful yellow.jpg')">
 
         <img
           src="The beautiful yellow.jpg"
-          alt="Beautiful memory">
+          alt="Memory 2">
 
-        <div class="memory-heart">
-          ❤️
+        <div class="memory-caption">
+          A little piece of happiness.
+          <small>Simple moments can stay forever.</small>
         </div>
 
       </div>
 
-
-      <div
-        class="memory"
-        onclick="openPhoto('The best mirror.jpeg')">
+      <div class="memory"
+           onclick="openPhoto('The best mirror.jpeg')">
 
         <img
           src="The best mirror.jpeg"
-          alt="Mirror memory">
+          alt="Memory 3">
 
-        <div class="memory-heart">
-          ❤️
+        <div class="memory-caption">
+          A picture, a moment, a memory.
+          <small>Some memories don't need explanations.</small>
         </div>
 
       </div>
 
-
-      <div
-        class="memory"
-        onclick="openPhoto('The black.jpg')">
+      <div class="memory"
+           onclick="openPhoto('The black.jpg')">
 
         <img
           src="The black.jpg"
-          alt="Special memory">
+          alt="Memory 4">
 
-        <div class="memory-heart">
-          ❤️
+        <div class="memory-caption">
+          Another chapter.
+          <small>Every chapter leaves something behind.</small>
         </div>
 
       </div>
 
-
-      <div
-        class="memory"
-        onclick="openPhoto('The dreaming is grandfather.png')">
+      <div class="memory"
+           onclick="openPhoto('The dreaming is grandfather.png')">
 
         <img
           src="The dreaming is grandfather.png"
-          alt="Family memory">
+          alt="Memory 5">
 
-        <div class="memory-heart">
-          ❤️
+        <div class="memory-caption">
+          A memory close to the heart.
+          <small>Family memories are especially precious.</small>
         </div>
 
       </div>
 
-
-      <div
-        class="memory"
-        onclick="openPhoto('The weather is beautiful.jpg')">
+      <div class="memory"
+           onclick="openPhoto('The weather is beautiful.jpg')">
 
         <img
           src="The weather is beautiful.jpg"
-          alt="Beautiful weather memory">
+          alt="Memory 6">
 
-        <div class="memory-heart">
-          ❤️
+        <div class="memory-caption">
+          A beautiful day.
+          <small>Some days become beautiful memories.</small>
         </div>
 
       </div>
@@ -812,69 +845,156 @@ footer{
   </section>
 
 
-  <!-- ================================
-       SECRET MAIL
-  ================================= -->
+  <!-- HIDDEN WORDS -->
 
-  <section class="card secret-mail-card">
+  <section class="card center">
+
+    <h2 class="section-title">
+      🔎 Little Things Hidden Here
+    </h2>
+
+    <p class="section-subtitle">
+      Five little words are hidden here.
+      <br>
+      Tap them when you find them.
+    </p>
+
+    <p style="line-height:2.2;margin-top:20px;">
+
+      A
+      <span class="hidden-word"
+            onclick="findWord(this,'memory')">
+        memory
+      </span>
+
+      can begin with a simple
+
+      <span class="hidden-word"
+            onclick="findWord(this,'smile')">
+        smile
+      </span>,
+
+      continue with
+
+      <span class="hidden-word"
+            onclick="findWord(this,'hope')">
+        hope
+      </span>,
+
+      grow through
+
+      <span class="hidden-word"
+            onclick="findWord(this,'patience')">
+        patience
+      </span>,
+
+      and remain a beautiful
+
+      <span class="hidden-word"
+            onclick="findWord(this,'prayer')">
+        prayer
+      </span>.
+
+    </p>
+
+    <div id="wordProgress" class="word-message">
+      You found <strong id="wordCount">0</strong> of 5 hidden words. 🔎
+    </div>
+
+    <div id="wordComplete" class="word-message">
+      🤍 You found them all.
+      <br><br>
+      Some things are hidden not because they are meant
+      to stay secret forever, but because discovering them
+      makes them more meaningful.
+    </div>
+
+  </section>
+
+
+  <!-- THINGS I NEVER SAID -->
+
+  <section class="card">
+
+    <h2 class="section-title">
+      💭 Things I Never Said
+    </h2>
+
+    <div class="never-said">
+
+      <p>
+        Sometimes I didn't know how to put certain feelings into words.
+      </p>
+
+      <p>
+        Sometimes silence was easier than explaining everything.
+      </p>
+
+      <p>
+        Sometimes a memory said more than a conversation ever could.
+      </p>
+
+      <p>
+        And sometimes the best thing I could do was simply pray
+        that you would be happy.
+      </p>
+
+      <p>
+        Whatever the future brings,
+        I hope it brings you peace. 🤍
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- SECRET MAIL -->
+
+  <section class="card mail-card">
 
     <h2 class="section-title">
       💌 Secret Mail
     </h2>
 
-    <div class="mail-box">
+    <p class="section-subtitle">
+      I have something more to tell you...
+      <br>
+      Open the letter when you're ready.
+    </p>
 
-      <div
-        class="envelope"
-        id="envelope"
-        onclick="openSecretMail()">
+    <div class="envelope"
+         onclick="openMail()">
 
-        <div class="envelope-flap"></div>
+      <div class="envelope-back"></div>
+      <div class="envelope-flap"></div>
 
-        <div class="envelope-body">
-          💗
-        </div>
-
+      <div class="envelope-heart">
+        ❤️
       </div>
-
-      <p class="mail-hint">
-        💌 There is something special waiting inside...
-      </p>
-
-      <button
-        class="btn"
-        onclick="openSecretMail()">
-
-        💖 Open My Secret Message
-
-      </button>
 
     </div>
 
+    <button class="btn" onclick="openMail()">
+      💌 Open My Secret Message
+    </button>
 
-    <!-- ================================
-         SECRET MESSAGE
-    ================================= -->
 
-    <div
-      id="hiddenMailSurprise"
-      class="hidden-mail-surprise">
+    <div id="secretMail" class="hidden">
 
       <div class="secret-letter">
 
-        <h3>
-          💌 My Secret Message
-        </h3>
+        <h3>💌 My Secret Message</h3>
 
-        <div class="letter-name">
+        <p class="name">
           Eeshal,
-        </div>
+        </p>
 
         <p>
           I wanted to leave something here that wasn’t just another birthday wish.
           I wanted to write something from my heart — something that carries the
-          feelings, memories, prayers, and words that are sometimes impossible
-          to say out loud.
+          feelings, memories, prayers, and words that are sometimes impossible to
+          say out loud.
         </p>
 
         <p>
@@ -887,8 +1007,8 @@ footer{
           I still remember the little things — the conversations, the smiles, the
           jokes, the moments that seemed ordinary at the time but became precious
           memories later. The pictures, the laughter, the happiness, the difficult
-          moments, and everything we experienced together became a part of a
-          chapter that I will always remember. ❤️
+          moments, and everything we experienced together became a part of a chapter
+          that I will always remember. ❤️
         </p>
 
         <p>
@@ -1011,12 +1131,12 @@ footer{
 
         <p>
           If that person is meant to be me someday, then InshaAllah, I hope we can
-          build something even more beautiful than anything we once imagined — a
-          relationship based not only on love, but also on trust, loyalty,
+          build something even more beautiful than anything we once imagined —
+          a relationship based not only on love, but also on trust, loyalty,
           forgiveness, patience, communication, and understanding.
         </p>
 
-        <p class="short-lines">
+        <p class="special-line">
           A life where we grow together.
           <br>
           A life where we support each other.
@@ -1025,8 +1145,8 @@ footer{
           <br>
           A life where we hold each other up during the difficult days.
           <br>
-          A life where, years from now, we can look back and be thankful that we
-          chose each other.
+          A life where, years from now, we can look back and be thankful
+          that we chose each other.
         </p>
 
         <p>
@@ -1037,7 +1157,7 @@ footer{
           For now, I simply want to say:
         </p>
 
-        <p style="text-align:center;font-size:21px;font-weight:bold;color:#8e356f;">
+        <p class="special-line">
           Happy Birthday, Eeshal Ibrahim. 🎂❤️
         </p>
 
@@ -1061,102 +1181,87 @@ footer{
           always have a place in my heart. ❤️🌸
         </p>
 
-        <p style="text-align:center;font-size:20px;font-weight:bold;color:#8e356f;">
+        <p class="special-line">
           Happy Birthday once again, Eeshal. 🎂
         </p>
 
         <p>
-          May Allah bless your today, your tomorrow, and every beautiful day that
-          comes after. 🤲❤️
+          May Allah bless your today, your tomorrow, and every beautiful day
+          that comes after. 🤲❤️
         </p>
 
-        <p class="signature">
+        <p style="text-align:right;font-style:italic;">
           — From someone who once dreamed of making a lifetime of memories with you.
         </p>
 
       </div>
 
 
-      <!-- HIDDEN EESHAL PHOTO -->
+      <!-- FINAL HIDDEN PHOTO -->
 
-      <div class="reveal-title">
-        🖼️ One More Little Surprise
+      <div class="final-photo">
+
+        <h2 class="section-title">
+          🖼️ One Last Memory...
+        </h2>
+
+        <p class="section-subtitle">
+          I kept one picture separate from the gallery.
+          <br>
+          This is the last little surprise.
+        </p>
+
+        <div class="final-photo-frame">
+
+          <img
+            src="eeshal.png"
+            alt="One last special memory">
+
+        </div>
+
       </div>
-
-      <p class="reveal-message">
-        And after all those words... there is one more memory I kept hidden for
-        you. ❤️
-      </p>
-
-      <div class="hidden-photo-frame">
-
-        <img
-          src="eeshal.png"
-          alt="A special hidden birthday memory"
-          class="hidden-eeshal-photo">
-
-      </div>
-
-      <p class="photo-message">
-        🌸 Keep smiling, keep shining, and always remember that you deserve
-        beautiful moments in life. 💖
-      </p>
-
-      <p class="final-message">
-
-        🎂 Happy Birthday, Eeshal Ibrahim!
-
-        <br><br>
-
-        May Allah fill your life with happiness, peace, success and countless
-        beautiful memories.
-
-        <br><br>
-
-        🤲 May Allah protect you, guide you and bless your future.
-
-        <br><br>
-
-        ❤️🌸❤️
-
-      </p>
 
     </div>
 
   </section>
 
 
-  <!-- ================================
-       FINAL SECTION
-  ================================= -->
+  <!-- FINAL KEEP MEMORY -->
 
-  <section class="card center">
+  <section class="card keep-memory">
 
     <h2 class="section-title">
-      🎁 One Last Thing
+      🤍 Keep This Memory
     </h2>
 
-    <p style="line-height:1.9;">
+    <p class="section-subtitle">
+      You reached the end of the little memory box.
+    </p>
 
-      Some birthdays are celebrated with gifts.
+    <button class="btn"
+            onclick="keepMemory()">
 
-      <br>
+      🤍 Keep This Memory
 
-      Some are celebrated with words.
+    </button>
 
-      <br>
+    <div id="finalMessage" class="final-hidden">
 
-      And some memories are kept quietly,
-      waiting for the right moment to be discovered.
+      Some memories don't need to be explained.
 
       <br><br>
 
-      This little page was made especially for you. ❤️
+      They just need to be remembered.
 
-    </p>
+      <br><br>
 
-    <div style="font-size:45px;margin-top:20px;">
-      🌸 💖 🎂 💖 🌸
+      Thank you for being a beautiful part of a chapter
+      that will always have a place in my memories. ❤️
+
+      <br><br>
+
+      May your tomorrow be even more beautiful than your today.
+
     </div>
 
   </section>
@@ -1164,12 +1269,11 @@ footer{
 
   <footer>
 
-    Made with ❤️ especially for Eeshal Ibrahim.
+    Made with ❤️ as a little birthday memory.
 
     <br>
 
-    May Allah bless your new year with happiness,
-    peace and beautiful memories. 🤲
+    A small collection of memories, words and wishes.
 
   </footer>
 
@@ -1180,35 +1284,31 @@ footer{
 
 <!-- PHOTO LIGHTBOX -->
 
-<div
-  class="lightbox"
-  id="lightbox"
-  onclick="closePhoto()">
+<div id="lightbox" onclick="closeLightbox()">
 
-  <div class="close-lightbox">
-    ✕
-  </div>
+  <div class="close">×</div>
 
-  <img
-    id="lightboxImage"
-    src=""
-    alt="Memory">
+  <img id="lightboxImage" src="" alt="Memory">
 
 </div>
 
 
 <script>
 
-/* =========================================
+/* =====================================================
    SECRET CODE
-========================================= */
+===================================================== */
 
 const SECRET_CODE = "EESHAL25";
 
+let unlocked = false;
+let foundWords = new Set();
 
-/* =========================================
-   NEXT 25 AUGUST AT MIDNIGHT
-========================================= */
+
+/* =====================================================
+   BIRTHDAY DATE
+   25 AUGUST — 12:00 AM
+===================================================== */
 
 function getBirthdayDate(){
 
@@ -1222,6 +1322,7 @@ function getBirthdayDate(){
     25,
     0,
     0,
+    0,
     0
   );
 
@@ -1233,6 +1334,7 @@ function getBirthdayDate(){
       25,
       0,
       0,
+      0,
       0
     );
 
@@ -1242,13 +1344,13 @@ function getBirthdayDate(){
 }
 
 
-/* =========================================
+/* =====================================================
    COUNTDOWN
-========================================= */
-
-let countdownTimer;
+===================================================== */
 
 function updateCountdown(){
+
+  if(unlocked) return;
 
   const now = new Date();
 
@@ -1258,16 +1360,14 @@ function updateCountdown(){
 
   if(difference <= 0){
 
-    unlockBirthday();
+    unlockPage();
 
     return;
 
   }
 
   const days =
-    Math.floor(
-      difference / 86400000
-    );
+    Math.floor(difference / 86400000);
 
   const hours =
     Math.floor(
@@ -1284,281 +1384,108 @@ function updateCountdown(){
       (difference % 60000) / 1000
     );
 
-  document.getElementById("days")
-    .textContent =
+
+  document.getElementById("days").textContent =
     String(days).padStart(2,"0");
 
-  document.getElementById("hours")
-    .textContent =
+  document.getElementById("hours").textContent =
     String(hours).padStart(2,"0");
 
-  document.getElementById("minutes")
-    .textContent =
+  document.getElementById("minutes").textContent =
     String(minutes).padStart(2,"0");
 
-  document.getElementById("seconds")
-    .textContent =
+  document.getElementById("seconds").textContent =
     String(seconds).padStart(2,"0");
 
 }
 
 updateCountdown();
 
-countdownTimer =
-  setInterval(updateCountdown,1000);
+setInterval(updateCountdown,1000);
 
 
-/* =========================================
-   SECRET CODE
-========================================= */
+/* =====================================================
+   CHECK SECRET CODE
+===================================================== */
 
 function checkCode(){
 
   const input =
-    document
-      .getElementById("secretCode")
-      .value
-      .trim();
+    document.getElementById("secretCode");
 
-  const error =
-    document
-      .getElementById("codeError");
+  const status =
+    document.getElementById("codeStatus");
 
-  if(
-    input.toUpperCase() ===
-    SECRET_CODE
-  ){
+  const code =
+    input.value.trim().toUpperCase();
 
-    error.textContent =
-      "🔓 Correct! Opening your surprise...";
 
-    error.style.color =
-      "#a8ffcf";
+  if(code === SECRET_CODE){
 
-    setTimeout(
-      unlockBirthday,
-      600
-    );
+    status.textContent =
+      "✓ Correct code. Opening the surprise...";
+
+    status.style.color = "#9ff0bd";
+
+    setTimeout(unlockPage,500);
 
   }else{
 
-    error.textContent =
-      "💗 That code isn't correct. Try again.";
+    status.textContent =
+      "That code isn't correct.";
 
-    document
-      .getElementById("secretCode")
-      .value = "";
+    status.style.color = "#f3a3bd";
+
+    input.value = "";
+
+    input.focus();
 
   }
 
 }
 
 
-/* ENTER KEY */
+/* ENTER TO SUBMIT */
 
 document
-  .getElementById("secretCode")
-  .addEventListener(
-    "keydown",
-    function(event){
+.getElementById("secretCode")
+.addEventListener("keydown",function(event){
 
-      if(event.key === "Enter"){
-        checkCode();
-      }
+  if(event.key === "Enter"){
 
-    }
-  );
+    checkCode();
+
+  }
+
+});
 
 
-/* =========================================
+/* =====================================================
    UNLOCK
-========================================= */
+===================================================== */
 
-function unlockBirthday(){
+function unlockPage(){
 
-  clearInterval(countdownTimer);
+  if(unlocked) return;
 
-  document
-    .getElementById("lockScreen")
-    .classList.add("hidden");
+  unlocked = true;
 
   document
-    .getElementById("birthdayPage")
-    .style.display =
-    "block";
+  .getElementById("lockScreen")
+  .style.display = "none";
 
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+  document
+  .getElementById("birthdayPage")
+  .style.display = "block";
 
-  startCelebration();
+  window.scrollTo(0,0);
 
 }
 
 
-/* =========================================
-   CELEBRATION
-========================================= */
-
-function startCelebration(){
-
-  createConfetti(100);
-
-  createBalloons(12);
-
-}
-
-
-/* =========================================
-   CONFETTI
-========================================= */
-
-function createConfetti(amount){
-
-  const symbols = [
-    "🎉",
-    "✨",
-    "💖",
-    "💕",
-    "🌸",
-    "🎊",
-    "⭐",
-    "💗"
-  ];
-
-  for(let i=0;i<amount;i++){
-
-    const piece =
-      document.createElement("div");
-
-    piece.className =
-      "confetti";
-
-    piece.textContent =
-      symbols[
-        Math.floor(
-          Math.random() *
-          symbols.length
-        )
-      ];
-
-    piece.style.left =
-      Math.random()*100 + "vw";
-
-    piece.style.fontSize =
-      (14 + Math.random()*18) + "px";
-
-    const duration =
-      2500 + Math.random()*3500;
-
-    piece.style.animationDuration =
-      duration + "ms";
-
-    document.body.appendChild(piece);
-
-    setTimeout(
-      () => piece.remove(),
-      duration
-    );
-
-  }
-
-}
-
-
-/* =========================================
-   BALLOONS
-========================================= */
-
-function createBalloons(amount){
-
-  const symbols = [
-    "🎈",
-    "🎈",
-    "🎈",
-    "💗"
-  ];
-
-  for(let i=0;i<amount;i++){
-
-    const balloon =
-      document.createElement("div");
-
-    balloon.className =
-      "balloon";
-
-    balloon.textContent =
-      symbols[
-        Math.floor(
-          Math.random() *
-          symbols.length
-        )
-      ];
-
-    balloon.style.left =
-      Math.random()*100 + "vw";
-
-    balloon.style.fontSize =
-      (28 + Math.random()*28) + "px";
-
-    const duration =
-      6000 + Math.random()*7000;
-
-    balloon.style.animationDuration =
-      duration + "ms";
-
-    document.body.appendChild(balloon);
-
-    setTimeout(
-      () => balloon.remove(),
-      duration
-    );
-
-  }
-
-}
-
-
-/* =========================================
-   SECRET MAIL
-========================================= */
-
-function openSecretMail(){
-
-  const envelope =
-    document.getElementById("envelope");
-
-  const surprise =
-    document.getElementById(
-      "hiddenMailSurprise"
-    );
-
-  envelope.classList.add("open");
-
-  setTimeout(() => {
-
-    surprise.classList.add("show");
-
-    createConfetti(60);
-
-    setTimeout(() => {
-
-      surprise.scrollIntoView({
-        behavior:"smooth",
-        block:"center"
-      });
-
-    },100);
-
-  },700);
-
-}
-
-
-/* =========================================
+/* =====================================================
    PHOTO LIGHTBOX
-========================================= */
+===================================================== */
 
 function openPhoto(filename){
 
@@ -1568,65 +1495,103 @@ function openPhoto(filename){
   const image =
     document.getElementById("lightboxImage");
 
-  image.src =
-    filename;
+  image.src = filename;
 
   lightbox.classList.add("show");
 
 }
 
 
-function closePhoto(){
+function closeLightbox(){
 
   document
-    .getElementById("lightbox")
-    .classList.remove("show");
+  .getElementById("lightbox")
+  .classList.remove("show");
 
 }
 
 
-/* =========================================
-   ESCAPE KEY
-========================================= */
+document.addEventListener("keydown",function(event){
 
-document.addEventListener(
-  "keydown",
-  function(event){
+  if(event.key === "Escape"){
 
-    if(event.key === "Escape"){
-
-      closePhoto();
-
-    }
-
-  }
-);
-
-
-/* =========================================
-   BACKGROUND BALLOONS
-========================================= */
-
-setInterval(() => {
-
-  const page =
-    document.getElementById(
-      "birthdayPage"
-    );
-
-  if(
-    page.style.display !== "none"
-  ){
-
-    if(Math.random() > .35){
-
-      createBalloons(1);
-
-    }
+    closeLightbox();
 
   }
 
-},5000);
+});
+
+
+/* =====================================================
+   HIDDEN WORDS
+===================================================== */
+
+function findWord(element,word){
+
+  if(foundWords.has(word)) return;
+
+  foundWords.add(word);
+
+  element.style.color = "#fff";
+
+  element.style.textDecoration = "none";
+
+  document
+  .getElementById("wordProgress")
+  .classList.add("show");
+
+  document
+  .getElementById("wordCount")
+  .textContent = foundWords.size;
+
+
+  if(foundWords.size === 5){
+
+    document
+    .getElementById("wordComplete")
+    .classList.add("show");
+
+  }
+
+}
+
+
+/* =====================================================
+   OPEN SECRET MAIL
+===================================================== */
+
+function openMail(){
+
+  const mail =
+    document.getElementById("secretMail");
+
+  mail.classList.remove("hidden");
+
+  mail.scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+
+}
+
+
+/* =====================================================
+   FINAL MEMORY
+===================================================== */
+
+function keepMemory(){
+
+  const message =
+    document.getElementById("finalMessage");
+
+  message.classList.add("show");
+
+  message.scrollIntoView({
+    behavior:"smooth",
+    block:"center"
+  });
+
+}
 
 </script>
 
