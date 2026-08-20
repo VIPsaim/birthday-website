@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#16091f">
+
 <title>Happy Birthday, Eeshal Ibrahim ❤️</title>
 
 <style>
@@ -18,95 +20,100 @@ html{
 
 body{
   font-family:Arial,Helvetica,sans-serif;
-  min-height:100vh;
   color:#fff;
-  background:
-    radial-gradient(circle at 15% 10%,rgba(255,80,180,.22),transparent 25%),
-    radial-gradient(circle at 85% 20%,rgba(130,80,255,.25),transparent 28%),
-    linear-gradient(145deg,#12051c,#24102f,#13091e);
+  min-height:100vh;
   overflow-x:hidden;
+  background:
+    radial-gradient(circle at 10% 10%,rgba(255,93,183,.22),transparent 27%),
+    radial-gradient(circle at 90% 15%,rgba(137,88,255,.22),transparent 28%),
+    radial-gradient(circle at 50% 90%,rgba(255,90,180,.12),transparent 30%),
+    linear-gradient(145deg,#10051a,#24102f,#12081d);
 }
 
-/* Background stars */
 body::before{
   content:"";
   position:fixed;
   inset:0;
   pointer-events:none;
-  opacity:.5;
+  z-index:-1;
+  opacity:.45;
   background-image:
     radial-gradient(circle,rgba(255,255,255,.8) 1px,transparent 1px),
-    radial-gradient(circle,rgba(255,150,230,.7) 1px,transparent 1px);
-  background-size:55px 55px,85px 85px;
-  background-position:0 0,30px 20px;
-  z-index:-1;
+    radial-gradient(circle,rgba(255,170,230,.65) 1px,transparent 1px);
+  background-size:55px 55px,90px 90px;
+  background-position:0 0,25px 30px;
 }
 
 .hidden{
-  display:none !important;
+  display:none!important;
 }
 
 .container{
   width:min(94%,900px);
   margin:auto;
-  padding:22px 0 50px;
+  padding:20px 0 55px;
 }
 
-/* ---------- COVER ---------- */
+/* ================= COVER ================= */
 
 .cover{
   min-height:100vh;
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
   padding:20px;
 }
 
 .cover-card{
-  width:min(100%,650px);
+  width:min(100%,680px);
   text-align:center;
-  padding:42px 25px;
-  border:1px solid rgba(255,255,255,.18);
+  padding:40px 22px;
   border-radius:30px;
-  background:rgba(255,255,255,.08);
-  backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,.15);
+  background:rgba(255,255,255,.075);
+  backdrop-filter:blur(16px);
   box-shadow:
-    0 20px 60px rgba(0,0,0,.45),
-    0 0 50px rgba(255,65,180,.12);
+    0 25px 70px rgba(0,0,0,.45),
+    0 0 55px rgba(255,75,180,.12);
 }
 
 .moon{
   font-size:58px;
-  margin-bottom:12px;
-  animation:floatMoon 3s ease-in-out infinite;
+  margin-bottom:10px;
+  animation:moonFloat 3s ease-in-out infinite;
 }
 
-@keyframes floatMoon{
+@keyframes moonFloat{
   0%,100%{transform:translateY(0)}
   50%{transform:translateY(-10px)}
 }
 
 .cover-card h1{
-  font-size:clamp(28px,7vw,48px);
-  margin-bottom:12px;
-  background:linear-gradient(90deg,#fff,#ffb6e7,#d6b5ff,#fff);
+  font-size:clamp(30px,8vw,50px);
+  line-height:1.15;
+  margin-bottom:15px;
+  background:linear-gradient(
+    90deg,
+    #fff,
+    #ffb4e6,
+    #d4b8ff,
+    #fff
+  );
   -webkit-background-clip:text;
   color:transparent;
 }
 
-.cover-card .subtitle{
-  color:#f3dcec;
-  line-height:1.7;
-  margin-bottom:28px;
+.cover-subtitle{
+  color:#ead9e9;
+  line-height:1.75;
+  margin-bottom:25px;
 }
 
-/* ---------- LOCK ---------- */
-
 .lock-box{
+  padding:23px 17px;
+  border-radius:23px;
   background:rgba(0,0,0,.22);
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:22px;
-  padding:24px 18px;
+  border:1px solid rgba(255,255,255,.11);
 }
 
 .lock-title{
@@ -118,50 +125,63 @@ body::before{
 .countdown{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:8px;
-  margin:18px 0 24px;
+  gap:7px;
+  margin:15px 0 23px;
 }
 
 .time-box{
-  padding:12px 5px;
-  border-radius:15px;
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.1);
+  padding:11px 3px;
+  border-radius:14px;
+  background:rgba(255,255,255,.075);
+  border:1px solid rgba(255,255,255,.08);
 }
 
 .time-number{
   display:block;
   font-size:24px;
   font-weight:bold;
-  color:#ffb4e5;
+  color:#ffb5e6;
 }
 
 .time-label{
-  font-size:11px;
-  color:#d9c9df;
+  display:block;
+  margin-top:3px;
+  font-size:10px;
+  color:#cdbed3;
   text-transform:uppercase;
 }
 
+.divider{
+  height:1px;
+  margin:21px 0;
+  background:linear-gradient(
+    90deg,
+    transparent,
+    #ff82c7,
+    transparent
+  );
+}
+
 .code-title{
-  margin:18px 0 9px;
-  color:#f6d8ee;
+  color:#f3d8ed;
+  margin-bottom:9px;
 }
 
 .code-input{
   width:100%;
   padding:14px;
-  border-radius:13px;
-  border:1px solid rgba(255,255,255,.2);
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.18);
   outline:none;
-  background:rgba(0,0,0,.3);
-  color:white;
+  background:rgba(0,0,0,.32);
+  color:#fff;
   text-align:center;
   font-size:16px;
   letter-spacing:2px;
 }
 
 .code-input::placeholder{
-  color:#bdaec3;
+  color:#a99bab;
 }
 
 .btn{
@@ -169,108 +189,171 @@ body::before{
   border-radius:999px;
   padding:13px 22px;
   margin-top:13px;
-  color:#fff;
-  font-weight:bold;
+  color:white;
+  background:linear-gradient(90deg,#ff3fa9,#914fff);
   font-size:15px;
+  font-weight:bold;
   cursor:pointer;
-  background:linear-gradient(90deg,#ff3da8,#9d4dff);
-  box-shadow:0 8px 25px rgba(255,60,170,.25);
+  box-shadow:0 9px 28px rgba(255,50,170,.23);
   transition:.2s;
 }
 
 .btn:active{
-  transform:scale(.97);
+  transform:scale(.96);
 }
 
 .status{
   min-height:22px;
-  margin-top:12px;
-  color:#ffc5e8;
+  margin-top:11px;
+  color:#ffbde7;
   font-size:14px;
 }
 
 .unlock-note{
   margin-top:14px;
+  color:#bbaabd;
   font-size:12px;
-  line-height:1.6;
-  color:#bdaec3;
+  line-height:1.65;
 }
 
-/* ---------- MAIN ---------- */
-
-main{
-  padding-top:15px;
-}
+/* ================= GENERAL SECTIONS ================= */
 
 .section{
   margin-bottom:18px;
-  padding:26px 20px;
+  padding:27px 19px;
   border-radius:25px;
-  border:1px solid rgba(255,255,255,.13);
-  background:rgba(255,255,255,.075);
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.07);
   backdrop-filter:blur(12px);
   box-shadow:0 15px 45px rgba(0,0,0,.22);
 }
 
-.hero{
+.section-title{
   text-align:center;
-  padding:35px 20px;
+  font-size:26px;
+  margin-bottom:10px;
 }
 
-.hero .cake{
-  font-size:58px;
+.section-intro{
+  text-align:center;
+  color:#d7c8dc;
+  font-size:14px;
+  line-height:1.7;
+}
+
+/* ================= BIRTHDAY HERO ================= */
+
+.hero{
+  text-align:center;
+  padding:38px 18px;
+}
+
+.hero-cake{
+  font-size:65px;
   margin-bottom:10px;
 }
 
 .hero h2{
-  font-size:clamp(27px,7vw,43px);
-  background:linear-gradient(90deg,#fff,#ffb4e4,#d4b2ff);
+  font-size:clamp(29px,8vw,46px);
+  line-height:1.15;
+  background:linear-gradient(
+    90deg,
+    #fff,
+    #ffb7e5,
+    #d9bdff
+  );
   -webkit-background-clip:text;
   color:transparent;
 }
 
 .hero p{
-  margin-top:14px;
-  color:#ead8e8;
-  line-height:1.7;
+  margin-top:16px;
+  color:#dfcfe2;
+  line-height:1.75;
 }
 
-.divider{
-  height:1px;
-  background:linear-gradient(90deg,transparent,#ff8dca,transparent);
-  margin:24px 0;
+.birthday-badge{
+  display:inline-block;
+  margin-top:20px;
+  padding:8px 15px;
+  border-radius:999px;
+  background:rgba(255,255,255,.08);
+  color:#ffc8e9;
+  border:1px solid rgba(255,255,255,.1);
 }
 
-/* ---------- MEMORY GALLERY ---------- */
+/* ================= SPECIAL COVER ================= */
 
-.section-title{
+.special-cover{
   text-align:center;
-  font-size:25px;
-  margin-bottom:9px;
 }
 
-.section-intro{
-  text-align:center;
-  color:#d9c8df;
-  font-size:14px;
-  line-height:1.6;
-  margin-bottom:20px;
+.special-symbol{
+  font-size:45px;
+  margin-bottom:10px;
 }
+
+.special-cover h3{
+  color:#ffd0eb;
+  font-size:24px;
+  margin-bottom:12px;
+}
+
+.special-cover p{
+  color:#d9c9de;
+  line-height:1.8;
+}
+
+/* ================= MEMORY CARDS ================= */
+
+.memory-cards{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin-top:20px;
+}
+
+.memory-card{
+  padding:18px 12px;
+  border-radius:18px;
+  text-align:center;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.09);
+}
+
+.memory-card .icon{
+  font-size:28px;
+  margin-bottom:8px;
+}
+
+.memory-card h4{
+  color:#ffc5e8;
+  margin-bottom:6px;
+}
+
+.memory-card p{
+  color:#cdbfd2;
+  font-size:12px;
+  line-height:1.55;
+}
+
+/* ================= GALLERY ================= */
 
 .gallery{
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:10px;
+  margin-top:20px;
 }
 
 .photo-card{
   position:relative;
   overflow:hidden;
-  border-radius:17px;
-  background:#24152d;
-  cursor:pointer;
   aspect-ratio:1/1;
+  border-radius:18px;
+  cursor:pointer;
   border:1px solid rgba(255,255,255,.1);
+  background:#21132a;
 }
 
 .photo-card img{
@@ -282,34 +365,33 @@ main{
 }
 
 .photo-card:hover img{
-  transform:scale(1.06);
+  transform:scale(1.07);
 }
 
-.heart{
+.photo-heart{
   position:absolute;
-  right:9px;
+  right:8px;
   bottom:8px;
-  width:29px;
-  height:29px;
+  width:30px;
+  height:30px;
   display:flex;
   align-items:center;
   justify-content:center;
   border-radius:50%;
-  background:rgba(255,35,110,.9);
-  box-shadow:0 4px 15px rgba(255,0,100,.3);
+  background:rgba(255,35,115,.9);
 }
 
-/* ---------- IMAGE VIEWER ---------- */
+/* ================= IMAGE VIEWER ================= */
 
 .viewer{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.9);
+  z-index:1000;
   display:none;
   align-items:center;
   justify-content:center;
   padding:20px;
-  z-index:1000;
+  background:rgba(0,0,0,.92);
 }
 
 .viewer.active{
@@ -318,27 +400,27 @@ main{
 
 .viewer img{
   max-width:96%;
-  max-height:82vh;
-  border-radius:18px;
+  max-height:83vh;
   object-fit:contain;
+  border-radius:18px;
   box-shadow:0 20px 70px #000;
 }
 
 .close-viewer{
   position:absolute;
-  right:18px;
   top:15px;
+  right:15px;
   width:45px;
   height:45px;
   border:0;
   border-radius:50%;
   background:rgba(255,255,255,.15);
   color:#fff;
-  font-size:26px;
+  font-size:27px;
   cursor:pointer;
 }
 
-/* ---------- SECRET MAIL ---------- */
+/* ================= SECRET MAIL ================= */
 
 .mail-section{
   text-align:center;
@@ -346,22 +428,21 @@ main{
 
 .mail-icon{
   font-size:55px;
-  margin:5px 0 8px;
+  margin:8px 0;
 }
 
 .mail-preview{
-  color:#d8c7df;
-  line-height:1.6;
-  font-size:14px;
+  color:#d7c7dd;
+  line-height:1.7;
 }
 
 .mail-content{
   display:none;
   text-align:left;
   margin-top:22px;
-  padding:22px;
+  padding:21px;
   border-radius:20px;
-  background:rgba(0,0,0,.2);
+  background:rgba(0,0,0,.22);
   border:1px solid rgba(255,255,255,.1);
 }
 
@@ -384,16 +465,17 @@ main{
 .mail-content h3{
   text-align:center;
   color:#ffb8e5;
-  margin-bottom:20px;
+  margin-bottom:22px;
 }
 
 .mail-content p{
-  color:#eadde9;
-  line-height:1.8;
+  color:#e4d8e5;
+  line-height:1.82;
   margin-bottom:16px;
+  font-size:14px;
 }
 
-/* ---------- HIDDEN WORD ---------- */
+/* ================= HIDDEN EESHAL ================= */
 
 .discovery{
   text-align:center;
@@ -404,37 +486,83 @@ main{
   flex-wrap:wrap;
   justify-content:center;
   gap:8px;
-  margin-top:18px;
+  margin-top:20px;
 }
 
 .secret-word{
-  padding:8px 13px;
+  padding:9px 13px;
   border-radius:999px;
-  background:rgba(255,255,255,.07);
-  color:#e4d5e8;
+  color:#d9c9df;
+  background:rgba(255,255,255,.065);
+  border:1px solid rgba(255,255,255,.09);
   cursor:pointer;
-  border:1px solid rgba(255,255,255,.08);
   transition:.25s;
+  font-size:13px;
 }
 
 .secret-word:hover{
-  background:rgba(255,80,180,.2);
+  background:rgba(255,80,180,.16);
 }
 
 .secret-word.found{
   color:#fff;
-  background:linear-gradient(90deg,#ff4bab,#8e50ff);
-  box-shadow:0 5px 18px rgba(255,60,180,.25);
+  background:linear-gradient(90deg,#ff4aa9,#8d50ff);
+  box-shadow:0 6px 20px rgba(255,60,180,.22);
 }
 
-.discovery-message{
-  min-height:24px;
-  margin-top:15px;
-  color:#ffb7e5;
+.letter-reveal{
+  display:flex;
+  justify-content:center;
+  gap:7px;
+  margin-top:20px;
+}
+
+.letter-box{
+  width:39px;
+  height:43px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:11px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  color:#777;
   font-weight:bold;
 }
 
-/* ---------- FINAL MEMORY ---------- */
+.letter-box.revealed{
+  color:#fff;
+  background:linear-gradient(145deg,#ff4baa,#8d4fff);
+  box-shadow:0 6px 20px rgba(255,60,180,.2);
+}
+
+.hidden-message{
+  display:none;
+  margin-top:22px;
+  padding:22px 16px;
+  border-radius:20px;
+  background:rgba(255,255,255,.065);
+  border:1px solid rgba(255,255,255,.1);
+}
+
+.hidden-message.show{
+  display:block;
+  animation:fadeUp .6s ease;
+}
+
+.hidden-message h3{
+  color:#ffc5e9;
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.hidden-message p{
+  color:#ddd0e1;
+  line-height:1.75;
+  font-size:14px;
+}
+
+/* ================= FINAL MEMORY ================= */
 
 .final-memory{
   text-align:center;
@@ -445,65 +573,92 @@ main{
   max-width:500px;
   max-height:650px;
   object-fit:cover;
-  border-radius:22px;
-  margin:18px auto;
   display:block;
-  border:1px solid rgba(255,255,255,.14);
-  box-shadow:0 20px 50px rgba(0,0,0,.35);
+  margin:20px auto;
+  border-radius:23px;
+  border:1px solid rgba(255,255,255,.13);
+  box-shadow:0 22px 55px rgba(0,0,0,.4);
 }
 
-.final-text{
-  color:#e9dce9;
+.final-memory-text{
+  color:#d9cadf;
   line-height:1.8;
 }
 
-/* ---------- END ---------- */
+/* ================= FINAL SURPRISE ================= */
+
+.final-surprise{
+  text-align:center;
+}
+
+.final-surprise-box{
+  display:none;
+  margin-top:20px;
+  padding:23px 17px;
+  border-radius:20px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+}
+
+.final-surprise-box.show{
+  display:block;
+  animation:fadeUp .6s ease;
+}
+
+.final-surprise-box h3{
+  color:#ffc6e9;
+  margin-bottom:12px;
+}
+
+.final-surprise-box p{
+  color:#ded1e1;
+  line-height:1.8;
+}
+
+/* ================= END ================= */
 
 .ending{
   text-align:center;
-  padding:42px 20px;
+  padding:43px 18px;
 }
 
 .ending-heart{
-  font-size:48px;
-  margin-bottom:10px;
+  font-size:50px;
+  margin-bottom:9px;
 }
 
 .ending h2{
-  font-size:30px;
+  font-size:31px;
   color:#ffd0ec;
 }
 
 .ending p{
-  margin-top:12px;
-  color:#d8c8df;
-  line-height:1.7;
+  margin-top:13px;
+  color:#d3c5da;
+  line-height:1.75;
 }
 
 .footer{
   text-align:center;
-  color:#8f7f98;
+  color:#85758e;
   font-size:12px;
   margin-top:25px;
 }
 
-/* ---------- RESPONSIVE ---------- */
+/* ================= MOBILE ================= */
 
 @media(max-width:520px){
+
   .container{
     width:94%;
   }
 
   .section{
-    padding:22px 14px;
+    padding:23px 14px;
   }
 
   .countdown{
     gap:5px;
-  }
-
-  .time-box{
-    padding:10px 3px;
   }
 
   .time-number{
@@ -512,6 +667,10 @@ main{
 
   .time-label{
     font-size:9px;
+  }
+
+  .memory-cards{
+    gap:8px;
   }
 
   .gallery{
@@ -526,36 +685,56 @@ main{
     font-size:14px;
     line-height:1.75;
   }
+
+  .letter-box{
+    width:36px;
+    height:40px;
+  }
 }
 
 @media(max-width:350px){
+
   .gallery{
     grid-template-columns:1fr;
+  }
+
+  .memory-cards{
+    grid-template-columns:1fr;
+  }
+
+  .letter-box{
+    width:32px;
   }
 }
 </style>
 </head>
 
+
 <body>
 
-<!-- ================= COVER / LOCK ================= -->
+<!-- =====================================================
+     COVER / LOCK
+===================================================== -->
 
 <section id="cover" class="cover">
+
   <div class="cover-card">
 
     <div class="moon">🌙</div>
 
     <h1>A Little Surprise For You</h1>
 
-    <p class="subtitle">
+    <p class="cover-subtitle">
       Some memories are too special to simply disappear.
       <br>
-      So I kept a few of them here for you. ❤️
+      So I kept a few of them here, especially for you. ❤️
     </p>
 
     <div class="lock-box">
 
-      <div class="lock-title">🔐 SURPRISE LOCKED</div>
+      <div class="lock-title">
+        🔐 SURPRISE LOCKED
+      </div>
 
       <div class="countdown">
 
@@ -583,7 +762,9 @@ main{
 
       <div class="divider"></div>
 
-      <div class="code-title">🔑 Or unlock it with the secret code</div>
+      <div class="code-title">
+        🔑 Or unlock it with the secret code
+      </div>
 
       <input
         id="codeInput"
@@ -600,108 +781,207 @@ main{
       <div id="status" class="status"></div>
 
       <div class="unlock-note">
-        The surprise can be opened in either of two ways:
+        Two ways to open the surprise:
         <br>
-        enter the correct secret code, or wait until
+        enter the correct code, or wait until
         <strong>25 August 2026 at 12:00 AM</strong>.
       </div>
 
     </div>
+
   </div>
+
 </section>
 
 
-<!-- ================= MAIN CONTENT ================= -->
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
 
 <main id="mainContent" class="hidden">
 
 <div class="container">
 
-  <!-- Birthday reveal -->
+
+  <!-- BIRTHDAY REVEAL -->
+
   <section class="section hero">
 
-    <div class="cake">🎂</div>
+    <div class="hero-cake">
+      🎂
+    </div>
 
-    <h2>Happy Birthday, Eeshal Ibrahim! ❤️</h2>
+    <h2>
+      Happy Birthday,
+      <br>
+      Eeshal Ibrahim! ❤️
+    </h2>
 
     <p>
-      Today is a little reminder of the memories,
-      smiles and moments that deserve to be remembered.
+      Today is a little celebration of you,
+      the memories we made, and the moments
+      worth keeping.
     </p>
+
+    <div class="birthday-badge">
+      ✨ A special little birthday memory ✨
+    </div>
 
   </section>
 
 
-  <!-- Special cover message -->
-  <section class="section">
+  <!-- SPECIAL COVER -->
 
-    <h2 class="section-title">✨ A Little Chapter</h2>
+  <section class="section special-cover">
 
-    <p class="section-intro">
+    <div class="special-symbol">
+      🌙✨
+    </div>
+
+    <h3>
+      A Little Chapter Kept For You
+    </h3>
+
+    <p>
       Not everything needs a long explanation.
-      Sometimes a few memories say enough.
+      Sometimes a picture, a memory, or a few words
+      can say what the heart remembers.
     </p>
 
-    <p class="section-intro">
-      These pictures hold little pieces of moments that became
-      special simply because they happened.
+    <br>
+
+    <p>
+      This little page is simply a collection of
+      memories, thoughts, and birthday wishes
+      made especially for <strong>Eeshal Ibrahim</strong>.
     </p>
 
   </section>
 
 
-  <!-- 6 PHOTO GALLERY -->
+  <!-- EXTRA MEMORY CARDS -->
+
   <section class="section">
 
-    <h2 class="section-title">📸 Our Special Memories</h2>
+    <h2 class="section-title">
+      ✨ Little Things Worth Remembering
+    </h2>
 
     <p class="section-intro">
-      Six little memories, kept here as part of your birthday surprise.
-      ❤️ Tap any picture to see it bigger.
+      A few small thoughts hidden between the memories.
+    </p>
+
+    <div class="memory-cards">
+
+      <div class="memory-card">
+        <div class="icon">😊</div>
+        <h4>A Smile</h4>
+        <p>
+          Some smiles become memories
+          without us even realizing it.
+        </p>
+      </div>
+
+      <div class="memory-card">
+        <div class="icon">📖</div>
+        <h4>A Chapter</h4>
+        <p>
+          Every person we meet becomes
+          part of our story in some way.
+        </p>
+      </div>
+
+      <div class="memory-card">
+        <div class="icon">🌸</div>
+        <h4>A Moment</h4>
+        <p>
+          Ordinary moments can become
+          extraordinary memories later.
+        </p>
+      </div>
+
+      <div class="memory-card">
+        <div class="icon">❤️</div>
+        <h4>A Memory</h4>
+        <p>
+          Some memories stay special
+          simply because they mattered.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- 6 PHOTO MEMORY GALLERY -->
+
+  <section class="section">
+
+    <h2 class="section-title">
+      📸 Six Special Memories
+    </h2>
+
+    <p class="section-intro">
+      Six little pieces of the past,
+      kept here as part of this birthday surprise.
+      ❤️
     </p>
 
     <div class="gallery">
 
       <div class="photo-card" onclick="openImage(this)">
-        <img src="Miss together pictures.jpeg"
-             alt="A special memory"
-             loading="lazy">
-        <span class="heart">❤️</span>
+        <img
+          src="Miss together pictures.jpeg"
+          alt="Special memory"
+          loading="lazy"
+        >
+        <span class="photo-heart">❤️</span>
       </div>
 
       <div class="photo-card" onclick="openImage(this)">
-        <img src="The beautiful yellow.jpg"
-             alt="A beautiful memory"
-             loading="lazy">
-        <span class="heart">❤️</span>
+        <img
+          src="The beautiful yellow.jpg"
+          alt="Beautiful memory"
+          loading="lazy"
+        >
+        <span class="photo-heart">❤️</span>
       </div>
 
       <div class="photo-card" onclick="openImage(this)">
-        <img src="The best mirror.jpeg"
-             alt="Mirror memory"
-             loading="lazy">
-        <span class="heart">❤️</span>
+        <img
+          src="The best mirror.jpeg"
+          alt="Mirror memory"
+          loading="lazy"
+        >
+        <span class="photo-heart">❤️</span>
       </div>
 
       <div class="photo-card" onclick="openImage(this)">
-        <img src="The black.jpg"
-             alt="A special memory"
-             loading="lazy">
-        <span class="heart">❤️</span>
+        <img
+          src="The black.jpg"
+          alt="Special memory"
+          loading="lazy"
+        >
+        <span class="photo-heart">❤️</span>
       </div>
 
       <div class="photo-card" onclick="openImage(this)">
-        <img src="The dreaming is grandfather.png"
-             alt="Family memory"
-             loading="lazy">
-        <span class="heart">❤️</span>
+        <img
+          src="The dreaming is grandfather.png"
+          alt="Family memory"
+          loading="lazy"
+        >
+        <span class="photo-heart">❤️</span>
       </div>
 
       <div class="photo-card" onclick="openImage(this)">
-        <img src="The weather is beautiful.jpg"
-             alt="Beautiful weather memory"
-             loading="lazy">
-        <span class="heart">❤️</span>
+        <img
+          src="The weather is beautiful.jpg"
+          alt="Beautiful weather memory"
+          loading="lazy"
+        >
+        <span class="photo-heart">❤️</span>
       </div>
 
     </div>
@@ -710,25 +990,35 @@ main{
 
 
   <!-- SECRET MAIL -->
+
   <section class="section mail-section">
 
-    <h2 class="section-title">💌 Secret Mail</h2>
+    <h2 class="section-title">
+      💌 Secret Mail
+    </h2>
 
-    <div class="mail-icon">💗</div>
+    <div class="mail-icon">
+      💌
+    </div>
 
     <p class="mail-preview">
-      There is one more little message waiting for you.
+      There is something more waiting behind this envelope.
     </p>
 
     <button class="btn" onclick="openMail()">
       💌 Open My Secret Message
     </button>
 
+
     <div id="mailContent" class="mail-content">
 
-      <h3>💌 My Secret Message</h3>
+      <h3>
+        💌 My Secret Message
+      </h3>
 
-      <p><strong>Eeshal,</strong></p>
+      <p>
+        <strong>Eeshal,</strong>
+      </p>
 
       <p>
         I wanted to leave something here that wasn’t just another birthday wish.
@@ -957,73 +1247,231 @@ main{
   </section>
 
 
-  <!-- HIDDEN WORD DISCOVERY -->
+  <!-- HIDDEN EESHAL DISCOVERY -->
+
   <section class="section discovery">
 
-    <h2 class="section-title">🔎 A Little Hidden Surprise</h2>
+    <h2 class="section-title">
+      🔎 A Hidden Message For Eeshal
+    </h2>
 
     <p class="section-intro">
-      Some words are hiding in plain sight.
-      Tap the words that feel special and discover the little message.
+      Six words are hiding below.
+      Tap each one and discover the letters behind them.
     </p>
 
-    <div class="hidden-words">
 
-      <span class="secret-word" onclick="findWord(this,'M')">memories</span>
-      <span class="secret-word" onclick="findWord(this,'E')">every</span>
-      <span class="secret-word" onclick="findWord(this,'S')">smile</span>
-      <span class="secret-word" onclick="findWord(this,'H')">heart</span>
-      <span class="secret-word" onclick="findWord(this,'A')">always</span>
-      <span class="secret-word" onclick="findWord(this,'L')">love</span>
+    <div class="letter-reveal">
+
+      <div id="letter0" class="letter-box">?</div>
+      <div id="letter1" class="letter-box">?</div>
+      <div id="letter2" class="letter-box">?</div>
+      <div id="letter3" class="letter-box">?</div>
+      <div id="letter4" class="letter-box">?</div>
+      <div id="letter5" class="letter-box">?</div>
 
     </div>
 
-    <div id="discoveryMessage" class="discovery-message"></div>
+
+    <div class="hidden-words">
+
+      <span
+        class="secret-word"
+        onclick="findWord(this,0)"
+      >
+        Every
+      </span>
+
+      <span
+        class="secret-word"
+        onclick="findWord(this,1)"
+      >
+        Every
+      </span>
+
+      <span
+        class="secret-word"
+        onclick="findWord(this,2)"
+      >
+        Some
+      </span>
+
+      <span
+        class="secret-word"
+        onclick="findWord(this,3)"
+      >
+        Happiness
+      </span>
+
+      <span
+        class="secret-word"
+        onclick="findWord(this,4)"
+      >
+        Always
+      </span>
+
+      <span
+        class="secret-word"
+        onclick="findWord(this,5)"
+      >
+        Life
+      </span>
+
+    </div>
+
+
+    <div id="discoveryMessage" class="hidden-message">
+
+      <h3>
+        EESHAL ❤️
+      </h3>
+
+      <p>
+        A name connected to memories I will always remember.
+      </p>
+
+      <br>
+
+      <p>
+        Every memory with you is worth keeping.
+      </p>
+
+      <p>
+        Every smile became a little part of the story.
+      </p>
+
+      <p>
+        Some moments stay special, even after time passes.
+      </p>
+
+      <p>
+        Happiness is what I sincerely wish for you.
+      </p>
+
+      <p>
+        Always keep believing in yourself.
+      </p>
+
+      <p>
+        Life may change, but beautiful memories remain.
+      </p>
+
+      <br>
+
+      <p>
+        <strong>
+          Happy Birthday, Eeshal Ibrahim. 🎂❤️
+        </strong>
+      </p>
+
+    </div>
 
   </section>
 
 
   <!-- FINAL MEMORY -->
+
   <section class="section final-memory">
 
-    <h2 class="section-title">🖼️ One Last Memory</h2>
+    <h2 class="section-title">
+      🖼️ One Last Memory
+    </h2>
 
     <p class="section-intro">
-      And here is one final picture, kept separately at the end.
+      And at the end, one final picture.
     </p>
 
-    <img src="eeshal.png"
-         alt="Eeshal Ibrahim final memory"
-         loading="lazy">
+    <img
+      src="eeshal.png"
+      alt="Eeshal Ibrahim final memory"
+      loading="lazy"
+    >
 
-    <p class="final-text">
+    <p class="final-memory-text">
       Some pictures are more than pictures.
-      They become little reminders of moments that once mattered.
-      ❤️
+      They become little reminders of moments
+      that once mattered. ❤️
     </p>
 
   </section>
 
 
+  <!-- FINAL SURPRISE -->
+
+  <section class="section final-surprise">
+
+    <h2 class="section-title">
+      🎁 One Last Little Surprise
+    </h2>
+
+    <p class="section-intro">
+      You made it to the end.
+      There is one final sentence waiting here.
+    </p>
+
+    <button
+      class="btn"
+      onclick="openFinalSurprise()"
+    >
+      🎁 Open Final Surprise
+    </button>
+
+    <div
+      id="finalSurprise"
+      class="final-surprise-box"
+    >
+
+      <h3>
+        ❤️ For Eeshal
+      </h3>
+
+      <p>
+        No matter how many years pass,
+        I hope you always remember that
+        your birthday was once important enough
+        for someone to create a whole little world
+        of memories just for you.
+      </p>
+
+      <br>
+
+      <p>
+        Happy Birthday, Eeshal Ibrahim. 🎂🌸
+      </p>
+
+    </div>
+
+  </section>
+
+
   <!-- ENDING -->
+
   <section class="section ending">
 
-    <div class="ending-heart">🤍</div>
+    <div class="ending-heart">
+      🤍
+    </div>
 
-    <h2>Keep This Memory</h2>
+    <h2>
+      Keep This Memory
+    </h2>
 
     <p>
-      Whatever tomorrow brings, I hope you keep these little memories
+      Whatever tomorrow brings,
+      I hope you keep these little memories
       somewhere safe in your heart.
     </p>
 
     <p>
-      Thank you for being part of a chapter worth remembering.
+      Thank you for being part of
+      a chapter worth remembering.
       🌸❤️
     </p>
 
     <p>
-      <strong>Happy Birthday, Eeshal Ibrahim. 🎂</strong>
+      <strong>
+        Happy Birthday, Eeshal Ibrahim. 🎂
+      </strong>
     </p>
 
   </section>
@@ -1034,14 +1482,33 @@ main{
   </div>
 
 </div>
+
 </main>
 
 
-<!-- IMAGE VIEWER -->
+<!-- =====================================================
+     IMAGE VIEWER
+===================================================== -->
 
-<div id="viewer" class="viewer" onclick="closeViewer(event)">
-  <button class="close-viewer" onclick="closeViewer()">×</button>
-  <img id="viewerImage" src="" alt="Memory">
+<div
+  id="viewer"
+  class="viewer"
+  onclick="closeViewer(event)"
+>
+
+  <button
+    class="close-viewer"
+    onclick="closeViewer()"
+  >
+    ×
+  </button>
+
+  <img
+    id="viewerImage"
+    src=""
+    alt="Memory"
+  >
+
 </div>
 
 
@@ -1053,12 +1520,8 @@ main{
 
 const SECRET_CODE = "EESHAL2004";
 
-/*
-  Countdown:
-  25 August 2026 at 12:00 AM
-  This means midnight at the beginning of 25 August.
-*/
-const UNLOCK_TIME = new Date("2026-08-25T00:00:00");
+const UNLOCK_TIME =
+  new Date("2026-08-25T00:00:00");
 
 
 /* =====================================================
@@ -1068,7 +1531,9 @@ const UNLOCK_TIME = new Date("2026-08-25T00:00:00");
 function updateCountdown(){
 
   const now = new Date();
-  const difference = UNLOCK_TIME - now;
+
+  const difference =
+    UNLOCK_TIME - now;
 
   if(difference <= 0){
 
@@ -1077,23 +1542,38 @@ function updateCountdown(){
     document.getElementById("minutes").textContent = "00";
     document.getElementById("seconds").textContent = "00";
 
-    unlockSite("The countdown has reached 25 August. ❤️");
+    unlockSite();
+
     return;
   }
 
-  const days = Math.floor(difference / (1000 * 60 * 60 * 24));
 
-  const hours = Math.floor(
-    (difference / (1000 * 60 * 60)) % 24
-  );
+  const days =
+    Math.floor(
+      difference /
+      (1000 * 60 * 60 * 24)
+    );
 
-  const minutes = Math.floor(
-    (difference / (1000 * 60)) % 60
-  );
 
-  const seconds = Math.floor(
-    (difference / 1000) % 60
-  );
+  const hours =
+    Math.floor(
+      (difference /
+      (1000 * 60 * 60)) % 24
+    );
+
+
+  const minutes =
+    Math.floor(
+      (difference /
+      (1000 * 60)) % 60
+    );
+
+
+  const seconds =
+    Math.floor(
+      (difference / 1000) % 60
+    );
+
 
   document.getElementById("days").textContent =
     String(days).padStart(2,"0");
@@ -1106,9 +1586,12 @@ function updateCountdown(){
 
   document.getElementById("seconds").textContent =
     String(seconds).padStart(2,"0");
+
 }
 
+
 updateCountdown();
+
 setInterval(updateCountdown,1000);
 
 
@@ -1119,43 +1602,60 @@ setInterval(updateCountdown,1000);
 function checkCode(){
 
   const input =
-    document.getElementById("codeInput").value.trim();
+    document
+      .getElementById("codeInput")
+      .value
+      .trim()
+      .toUpperCase();
 
-  if(input.toUpperCase() === SECRET_CODE){
 
-    unlockSite("Secret code accepted. ❤️");
+  if(input === SECRET_CODE){
+
+    unlockSite();
 
   }else{
 
     document.getElementById("status").textContent =
-      "❌ That code isn't correct. Try again.";
+      "❌ Incorrect code. Please try again.";
 
   }
+
 }
 
 
-/* Allow Enter key */
-document.getElementById("codeInput").addEventListener(
-  "keydown",
-  function(event){
+/* ENTER KEY */
 
-    if(event.key === "Enter"){
-      checkCode();
+document
+  .getElementById("codeInput")
+  .addEventListener(
+    "keydown",
+    function(event){
+
+      if(event.key === "Enter"){
+        checkCode();
+      }
+
     }
-
-  }
-);
+  );
 
 
 /* =====================================================
    UNLOCK
 ===================================================== */
 
-function unlockSite(message){
+function unlockSite(){
 
-  document.getElementById("cover").classList.add("hidden");
+  document
+    .getElementById("cover")
+    .classList
+    .add("hidden");
 
-  document.getElementById("mainContent").classList.remove("hidden");
+
+  document
+    .getElementById("mainContent")
+    .classList
+    .remove("hidden");
+
 
   window.scrollTo({
     top:0,
@@ -1174,7 +1674,9 @@ function openMail(){
   const mail =
     document.getElementById("mailContent");
 
+
   mail.classList.toggle("open");
+
 
   if(mail.classList.contains("open")){
 
@@ -1198,14 +1700,23 @@ function openMail(){
 
 function openImage(card){
 
-  const image = card.querySelector("img");
+  const image =
+    card.querySelector("img");
 
-  document.getElementById("viewerImage").src =
-    image.src;
 
-  document.getElementById("viewer").classList.add("active");
+  document
+    .getElementById("viewerImage")
+    .src = image.src;
+
+
+  document
+    .getElementById("viewer")
+    .classList
+    .add("active");
+
 
   document.body.style.overflow = "hidden";
+
 }
 
 
@@ -1217,7 +1728,11 @@ function closeViewer(event){
     event.target.classList.contains("close-viewer")
   ){
 
-    document.getElementById("viewer").classList.remove("active");
+    document
+      .getElementById("viewer")
+      .classList
+      .remove("active");
+
 
     document.body.style.overflow = "";
 
@@ -1227,28 +1742,49 @@ function closeViewer(event){
 
 
 /* =====================================================
-   HIDDEN WORD DISCOVERY
+   HIDDEN EESHAL DISCOVERY
 ===================================================== */
 
-let discovered = "";
+const hiddenLetters =
+  ["E","E","S","H","A","L"];
 
-function findWord(element,letter){
+let foundCount = 0;
 
-  if(element.classList.contains("found")){
+
+function findWord(element,index){
+
+  if(
+    element.classList.contains("found")
+  ){
     return;
   }
 
+
   element.classList.add("found");
 
-  discovered += letter;
 
-  document.getElementById("discoveryMessage").textContent =
-    "You found: " + discovered;
+  const letterBox =
+    document.getElementById(
+      "letter" + index
+    );
 
-  if(discovered === "MESHAL"){
 
-    document.getElementById("discoveryMessage").textContent =
-      "✨ You discovered the hidden message: MESHAL ❤️";
+  letterBox.textContent =
+    hiddenLetters[index];
+
+
+  letterBox.classList.add("revealed");
+
+
+  foundCount++;
+
+
+  if(foundCount === 6){
+
+    document
+      .getElementById("discoveryMessage")
+      .classList
+      .add("show");
 
   }
 
@@ -1256,20 +1792,54 @@ function findWord(element,letter){
 
 
 /* =====================================================
-   ESCAPE KEY FOR IMAGE VIEWER
+   FINAL SURPRISE
 ===================================================== */
 
-document.addEventListener("keydown",function(event){
+function openFinalSurprise(){
 
-  if(event.key === "Escape"){
+  const box =
+    document.getElementById(
+      "finalSurprise"
+    );
 
-    document.getElementById("viewer").classList.remove("active");
 
-    document.body.style.overflow = "";
+  box.classList.add("show");
+
+
+  setTimeout(function(){
+
+    box.scrollIntoView({
+      behavior:"smooth",
+      block:"center"
+    });
+
+  },100);
+
+}
+
+
+/* =====================================================
+   ESCAPE IMAGE VIEWER
+===================================================== */
+
+document.addEventListener(
+  "keydown",
+  function(event){
+
+    if(event.key === "Escape"){
+
+      document
+        .getElementById("viewer")
+        .classList
+        .remove("active");
+
+
+      document.body.style.overflow = "";
+
+    }
 
   }
-
-});
+);
 
 </script>
 
