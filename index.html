@@ -3,775 +3,1028 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#100817">
-
+<meta name="theme-color" content="#100615">
+<meta name="description" content="A special birthday memory for Eeshal Ibrahim">
 <title>Happy Birthday, Eeshal Ibrahim ❤️</title>
 
 <style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    color:#fff;
-    min-height:100vh;
-    overflow-x:hidden;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
     background:
-        radial-gradient(circle at 15% 10%,rgba(255,75,170,.18),transparent 28%),
-        radial-gradient(circle at 85% 20%,rgba(125,80,255,.18),transparent 30%),
-        linear-gradient(145deg,#09050d,#21102d,#0c0612);
+        radial-gradient(circle at 15% 10%, rgba(255, 77, 166, .18), transparent 28%),
+        radial-gradient(circle at 85% 20%, rgba(133, 77, 255, .18), transparent 30%),
+        linear-gradient(145deg, #08040d, #211029, #0b0611);
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-button,input{
-    font:inherit;
-}
-
-button{
-    cursor:pointer;
-}
+/* BACKGROUND EFFECTS */
 
 #stars,
 #hearts,
 #balloons,
-#petals{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    overflow:hidden;
-    z-index:0;
+#petals {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
 }
 
-.star{
-    position:absolute;
-    width:2px;
-    height:2px;
-    background:#fff;
-    border-radius:50%;
-    animation:twinkle 2s infinite alternate;
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #fff;
+    border-radius: 50%;
+    animation: twinkle 2s infinite alternate;
 }
 
-@keyframes twinkle{
-    from{opacity:.15;transform:scale(.5)}
-    to{opacity:1;transform:scale(1.5)}
+@keyframes twinkle {
+    from {
+        opacity: .15;
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.5);
+    }
 }
 
-.heart{
-    position:absolute;
-    bottom:-50px;
-    animation:heartFloat linear forwards;
+.heart {
+    position: absolute;
+    bottom: -50px;
+    animation: heartFloat linear forwards;
 }
 
-@keyframes heartFloat{
-    0%{transform:translateY(0) rotate(0);opacity:0}
-    15%{opacity:.8}
-    100%{transform:translateY(-110vh) rotate(360deg);opacity:0}
+@keyframes heartFloat {
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .8;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
 }
 
-.balloon{
-    position:absolute;
-    bottom:-130px;
-    font-size:42px;
-    animation:balloonFloat linear forwards;
+.balloon {
+    position: absolute;
+    bottom: -130px;
+    font-size: 42px;
+    animation: balloonFloat linear forwards;
 }
 
-@keyframes balloonFloat{
-    0%{transform:translateY(0) rotate(-5deg);opacity:0}
-    10%{opacity:.8}
-    50%{transform:translateY(-55vh) rotate(5deg)}
-    100%{transform:translateY(-120vh) rotate(-5deg);opacity:0}
+@keyframes balloonFloat {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: .85;
+    }
+
+    100% {
+        transform: translateY(-120vh);
+        opacity: 0;
+    }
 }
 
-.petal{
-    position:absolute;
-    top:-30px;
-    font-size:18px;
-    animation:petalFall linear forwards;
+.petal {
+    position: absolute;
+    top: -30px;
+    animation: petalFall linear forwards;
 }
 
-@keyframes petalFall{
-    0%{transform:translateY(-30px) rotate(0);opacity:0}
-    10%{opacity:.8}
-    100%{transform:translateY(110vh) translateX(100px) rotate(500deg);opacity:0}
+@keyframes petalFall {
+    0% {
+        transform: translateY(-30px) rotate(0);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: .8;
+    }
+
+    100% {
+        transform: translateY(110vh) translateX(100px) rotate(500deg);
+        opacity: 0;
+    }
 }
 
 /* LOCK SCREEN */
 
-#lockScreen{
-    position:fixed;
-    inset:0;
-    z-index:9999;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
+#lockScreen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+
     background:
-        radial-gradient(circle at 50% 20%,rgba(255,70,170,.22),transparent 30%),
-        linear-gradient(145deg,#09050d,#26102f,#0c0612);
-    transition:opacity .8s,visibility .8s;
+        radial-gradient(circle at 50% 20%, rgba(255, 70, 170, .22), transparent 30%),
+        linear-gradient(145deg, #09050d, #26102f, #0c0612);
+
+    transition: .8s;
 }
 
-#lockScreen.hidden{
-    opacity:0;
-    visibility:hidden;
-    pointer-events:none;
+#lockScreen.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
 
-.lockCard{
-    width:min(560px,100%);
-    padding:35px 23px;
-    text-align:center;
-    border-radius:30px;
-    border:1px solid rgba(255,255,255,.12);
-    background:rgba(42,20,52,.88);
-    backdrop-filter:blur(18px);
-    box-shadow:0 30px 90px rgba(0,0,0,.6);
+.lockCard {
+    width: min(560px, 100%);
+    padding: 36px 23px;
+    text-align: center;
+
+    border-radius: 30px;
+    border: 1px solid rgba(255,255,255,.12);
+
+    background: rgba(42,20,52,.92);
+    backdrop-filter: blur(18px);
+
+    box-shadow: 0 30px 90px rgba(0,0,0,.65);
 }
 
-.lockIcon{
-    font-size:58px;
-    animation:lockPulse 2s infinite;
+.lockIcon {
+    font-size: 60px;
+    animation: lockPulse 2s infinite;
 }
 
-@keyframes lockPulse{
-    50%{
-        transform:scale(1.12);
-        filter:drop-shadow(0 0 20px #ff69b4);
+@keyframes lockPulse {
+    50% {
+        transform: scale(1.12);
+        filter: drop-shadow(0 0 20px #ff69b4);
     }
 }
 
-.lockCard h1{
-    font-size:clamp(30px,8vw,50px);
-    margin:12px 0;
+.lockCard h1 {
+    font-size: clamp(30px, 8vw, 50px);
+    margin: 13px 0;
 }
 
-.lockCard h1 span{
-    color:#ff9bd3;
-    text-shadow:0 0 20px rgba(255,105,180,.6);
+.lockCard h1 span {
+    color: #ff9bd3;
 }
 
-.lockCard p{
-    color:#dfcde0;
-    line-height:1.7;
+.lockCard p {
+    color: #dfcde0;
+    line-height: 1.7;
 }
 
-.countdown{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:8px;
-    margin:25px 0 12px;
+.countdown {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin: 25px 0 12px;
 }
 
-.timeBox{
-    padding:14px 4px;
-    border-radius:15px;
-    background:rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.1);
+.timeBox {
+    padding: 14px 4px;
+    border-radius: 15px;
+    background: rgba(255,255,255,.06);
 }
 
-.timeBox strong{
-    display:block;
-    font-size:25px;
+.timeBox strong {
+    display: block;
+    font-size: 25px;
 }
 
-.timeBox small{
-    color:#c9b4ca;
-    font-size:10px;
-    text-transform:uppercase;
+.timeBox small {
+    color: #c9b4ca;
+    font-size: 10px;
 }
 
-.codeTitle{
-    margin-top:23px;
-    color:#ffc4e2;
+.codeTitle {
+    margin-top: 23px;
+    color: #ffc4e2;
 }
 
-.codeRow{
-    display:flex;
-    gap:8px;
-    margin-top:10px;
+.codeRow {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
 }
 
-#secretCode{
-    flex:1;
-    min-width:0;
-    padding:14px;
-    border-radius:13px;
-    border:1px solid rgba(255,255,255,.18);
-    background:rgba(0,0,0,.3);
-    color:#fff;
-    text-align:center;
-    outline:none;
-    letter-spacing:2px;
+#secretCode {
+    flex: 1;
+    min-width: 0;
+
+    padding: 14px;
+
+    border-radius: 13px;
+    border: 1px solid rgba(255,255,255,.18);
+
+    background: rgba(0,0,0,.3);
+
+    color: #fff;
+    text-align: center;
+
+    outline: none;
+    letter-spacing: 2px;
 }
 
-#secretCode:focus{
-    border-color:#ff75b9;
-    box-shadow:0 0 15px rgba(255,105,180,.2);
+#secretCode::placeholder {
+    color: #a994aa;
 }
 
-.mainButton{
-    border:0;
-    border-radius:14px;
-    padding:13px 20px;
-    color:#fff;
-    font-weight:bold;
-    background:linear-gradient(135deg,#ff4fa7,#8d4dff);
-    box-shadow:0 8px 25px rgba(255,79,167,.25);
-    transition:.25s;
+.mainButton {
+    border: 0;
+    border-radius: 14px;
+
+    padding: 13px 20px;
+
+    color: #fff;
+    font-weight: bold;
+
+    background: linear-gradient(135deg, #ff4fa7, #8d4dff);
+
+    box-shadow: 0 8px 25px rgba(255,79,167,.25);
+
+    transition: .25s;
 }
 
-.mainButton:hover{
-    transform:translateY(-2px) scale(1.02);
+.mainButton:hover {
+    transform: translateY(-2px) scale(1.02);
 }
 
-#errorMessage{
-    height:23px;
-    margin-top:8px;
-    color:#ff9abb;
-    font-size:13px;
+#errorMessage {
+    min-height: 23px;
+    margin-top: 8px;
+    color: #ff9abb;
+    font-size: 13px;
 }
 
-/* MAIN */
+/* WEBSITE */
 
-#website{
-    display:none;
-    position:relative;
-    z-index:2;
+#website {
+    display: none;
+    position: relative;
+    z-index: 2;
 }
 
-#website.show{
-    display:block;
+#website.show {
+    display: block;
 }
 
-.container{
-    width:min(950px,92%);
-    margin:auto;
+.container {
+    width: min(950px, 92%);
+    margin: auto;
 }
 
-section{
-    margin:20px auto;
-    padding:32px 22px;
-    border-radius:27px;
-    border:1px solid rgba(255,255,255,.1);
-    background:rgba(57,32,68,.72);
-    backdrop-filter:blur(13px);
-    box-shadow:0 20px 60px rgba(0,0,0,.35);
-    opacity:0;
-    transform:translateY(35px);
-    transition:opacity .8s,transform .8s;
+section {
+    margin: 20px auto;
+    padding: 32px 22px;
+
+    border-radius: 27px;
+    border: 1px solid rgba(255,255,255,.1);
+
+    background: rgba(57,32,68,.72);
+    backdrop-filter: blur(13px);
+
+    box-shadow: 0 20px 60px rgba(0,0,0,.35);
+
+    opacity: 0;
+    transform: translateY(35px);
+
+    transition: .8s;
 }
 
-section.visible{
-    opacity:1;
-    transform:none;
+section.visible {
+    opacity: 1;
+    transform: none;
 }
 
 /* HERO */
 
-.hero{
-    min-height:95vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    background:transparent;
-    border:0;
-    box-shadow:none;
+.hero {
+    min-height: 95vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background: transparent;
+    border: 0;
+    box-shadow: none;
 }
 
-.heroInner{
-    max-width:850px;
+.heroInner {
+    max-width: 850px;
 }
 
-.eyebrow{
-    letter-spacing:4px;
-    font-size:11px;
-    color:#ffb9dc;
-    text-transform:uppercase;
-    margin-bottom:18px;
+.eyebrow {
+    letter-spacing: 4px;
+    font-size: 11px;
+    color: #ffb9dc;
+    text-transform: uppercase;
+    margin-bottom: 18px;
 }
 
-.hero h1{
-    font-size:clamp(43px,11vw,82px);
-    line-height:1;
-    margin-bottom:20px;
+.hero h1 {
+    font-size: clamp(43px, 11vw, 82px);
+    line-height: 1;
+    margin-bottom: 20px;
 }
 
-.name{
-    display:block;
-    background:linear-gradient(90deg,#fff,#ff8bc8,#b68aff,#fff);
-    background-size:250%;
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
-    animation:shine 5s linear infinite;
+.name {
+    display: block;
+
+    background: linear-gradient(
+        90deg,
+        #fff,
+        #ff8bc8,
+        #b68aff,
+        #fff
+    );
+
+    background-size: 250%;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    animation: shine 5s linear infinite;
 }
 
-@keyframes shine{
-    to{background-position:250%}
-}
-
-.heroText{
-    max-width:730px;
-    margin:auto;
-    color:#e6d7e5;
-    line-height:1.85;
-    font-size:17px;
-}
-
-.coverBox{
-    margin:28px auto;
-    padding:23px;
-    border-radius:22px;
-    background:rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.1);
-}
-
-.coverBox p{
-    line-height:1.8;
-    color:#eadbea;
-}
-
-.scrollHint{
-    color:#ffafd7;
-    margin-top:30px;
-    animation:bounce 1.8s infinite;
-}
-
-@keyframes bounce{
-    50%{transform:translateY(8px)}
-}
-
-/* TITLES */
-
-.title{
-    text-align:center;
-    font-size:clamp(25px,7vw,38px);
-    margin-bottom:13px;
-}
-
-.title span{
-    color:#ff9fd2;
-}
-
-.intro{
-    text-align:center;
-    max-width:730px;
-    margin:0 auto 25px;
-    color:#dccbdc;
-    line-height:1.8;
-}
-
-/* REVEAL */
-
-.reveal{
-    text-align:center;
-}
-
-.cake{
-    font-size:82px;
-    animation:cakeGlow 2s infinite alternate;
-}
-
-@keyframes cakeGlow{
-    to{
-        filter:drop-shadow(0 0 28px rgba(255,118,184,.65));
-        transform:scale(1.05);
+@keyframes shine {
+    to {
+        background-position: 250%;
     }
 }
 
-.reveal h2{
-    font-size:clamp(30px,8vw,54px);
-    color:#ffd0e7;
-    margin:10px 0;
+.heroText {
+    max-width: 730px;
+    margin: auto;
+
+    color: #e6d7e5;
+
+    line-height: 1.85;
+    font-size: 17px;
+}
+
+.coverBox {
+    margin: 28px auto;
+    padding: 23px;
+
+    border-radius: 22px;
+
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.1);
+}
+
+.coverBox p {
+    line-height: 1.8;
+    color: #eadbea;
+}
+
+.scrollHint {
+    color: #ffafd7;
+    margin-top: 30px;
+    animation: bounce 1.8s infinite;
+}
+
+@keyframes bounce {
+    50% {
+        transform: translateY(8px);
+    }
+}
+
+/* GENERAL */
+
+.title {
+    text-align: center;
+    font-size: clamp(25px, 7vw, 38px);
+    margin-bottom: 13px;
+}
+
+.title span {
+    color: #ff9fd2;
+}
+
+.intro {
+    text-align: center;
+    max-width: 730px;
+    margin: 0 auto 25px;
+
+    color: #dccbdc;
+    line-height: 1.8;
+}
+
+/* CAKE */
+
+.reveal {
+    text-align: center;
+}
+
+.cake {
+    font-size: 82px;
+
+    animation: cakeGlow 2s infinite alternate;
+}
+
+@keyframes cakeGlow {
+    to {
+        filter: drop-shadow(0 0 28px rgba(255,118,184,.65));
+        transform: scale(1.05);
+    }
+}
+
+.reveal h2 {
+    font-size: clamp(30px, 8vw, 54px);
+    color: #ffd0e7;
+    margin: 10px 0;
 }
 
 /* CARDS */
 
-.grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:14px;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
 }
 
-.card{
-    padding:20px;
-    border-radius:19px;
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.08);
-    transition:.3s;
+.card {
+    padding: 20px;
+
+    border-radius: 19px;
+
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.08);
+
+    transition: .3s;
 }
 
-.card:hover{
-    transform:translateY(-5px);
-    background:rgba(255,255,255,.08);
+.card:hover {
+    transform: translateY(-5px);
 }
 
-.card h3{
-    color:#ffb4d9;
-    margin-bottom:8px;
+.card h3 {
+    color: #ffb4d9;
+    margin-bottom: 8px;
 }
 
-.card p{
-    color:#dccbdb;
-    line-height:1.75;
-    font-size:14px;
+.card p {
+    color: #dccbdb;
+    line-height: 1.75;
+    font-size: 14px;
 }
 
 /* GALLERY */
 
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:11px;
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 11px;
 }
 
-.photo{
-    position:relative;
-    overflow:hidden;
-    border-radius:18px;
-    aspect-ratio:1/1;
-    cursor:pointer;
-    border:1px solid rgba(255,255,255,.13);
-    background:#1d1027;
+.photo {
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    aspect-ratio: 1 / 1;
+
+    cursor: pointer;
+
+    border: 1px solid rgba(255,255,255,.13);
+
+    background: #1d1027;
 }
 
-.photo img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:transform .7s,filter .7s;
+.photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: .7s;
 }
 
-.photo:hover img{
-    transform:scale(1.08);
-    filter:brightness(1.12);
+.photo:hover img {
+    transform: scale(1.08);
 }
 
-.photo::after{
-    content:"❤️";
-    position:absolute;
-    right:10px;
-    bottom:10px;
-    width:34px;
-    height:34px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-    background:rgba(255,79,155,.8);
+.photo::after {
+    content: "❤️";
+
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255,79,155,.8);
 }
 
-.photoNumber{
-    position:absolute;
-    left:9px;
-    top:9px;
-    z-index:2;
-    padding:5px 8px;
-    border-radius:8px;
-    background:rgba(0,0,0,.6);
-    font-size:11px;
-}
+.photoNumber {
+    position: absolute;
+    left: 9px;
+    top: 9px;
 
-/* LIGHTBOX */
+    z-index: 2;
 
-#lightbox{
-    position:fixed;
-    inset:0;
-    z-index:10000;
-    display:none;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
-    background:rgba(0,0,0,.88);
-}
+    padding: 5px 8px;
 
-#lightbox.open{
-    display:flex;
-}
+    border-radius: 8px;
 
-#lightbox img{
-    max-width:95%;
-    max-height:88vh;
-    border-radius:18px;
-    box-shadow:0 20px 70px #000;
-}
+    background: rgba(0,0,0,.6);
 
-.closeButton{
-    position:absolute;
-    right:18px;
-    top:15px;
-    width:45px;
-    height:45px;
-    border:0;
-    border-radius:50%;
-    background:rgba(255,255,255,.12);
-    color:#fff;
-    font-size:25px;
+    font-size: 11px;
 }
 
 /* SECRET MAIL */
 
-.mail{
-    text-align:center;
+.mail {
+    text-align: center;
 }
 
-.envelope{
-    display:inline-block;
-    font-size:82px;
-    cursor:pointer;
-    animation:mailFloat 2s infinite;
+.envelope {
+    display: inline-block;
+
+    font-size: 82px;
+
+    cursor: pointer;
+
+    animation: mailFloat 2s infinite;
 }
 
-@keyframes mailFloat{
-    50%{
-        transform:translateY(-8px) rotate(-3deg);
+@keyframes mailFloat {
+    50% {
+        transform: translateY(-8px) rotate(-3deg);
     }
 }
 
-.letter{
-    display:none;
-    text-align:left;
-    margin-top:25px;
-    padding:25px;
-    border-radius:20px;
-    background:rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.1);
+.letter {
+    display: none;
+
+    text-align: left;
+
+    margin-top: 25px;
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.1);
 }
 
-.letter.open{
-    display:block;
-    animation:letterOpen .8s ease;
+.letter.open {
+    display: block;
+    animation: letterOpen .8s ease;
 }
 
-@keyframes letterOpen{
-    from{
-        opacity:0;
-        transform:translateY(20px) scale(.98);
+@keyframes letterOpen {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-    to{
-        opacity:1;
-        transform:none;
+
+    to {
+        opacity: 1;
+        transform: none;
     }
 }
 
-.letter h3{
-    text-align:center;
-    color:#ffb4d9;
-    margin-bottom:20px;
+.letter h3 {
+    text-align: center;
+    color: #ffb4d9;
+    margin-bottom: 20px;
 }
 
-.letter p{
-    color:#eadcea;
-    line-height:1.9;
-    margin-bottom:16px;
+.letter p {
+    color: #eadcea;
+    line-height: 1.9;
+    margin-bottom: 16px;
 }
 
-.signature{
-    text-align:right;
-    color:#ffafd5 !important;
+.signature {
+    text-align: right;
+    color: #ffafd5 !important;
+}
+
+/* VIDEO */
+
+.videoBox {
+    display: none;
+
+    margin-top: 28px;
+    padding: 13px;
+
+    border-radius: 23px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,100,180,.16),
+            rgba(140,80,255,.16)
+        );
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    box-shadow: 0 15px 50px rgba(0,0,0,.35);
+}
+
+.videoBox.show {
+    display: block;
+    animation: videoReveal .9s ease;
+}
+
+@keyframes videoReveal {
+    from {
+        opacity: 0;
+        transform: scale(.96) translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.videoTitle {
+    text-align: center;
+
+    color: #ffd0e7;
+
+    font-size: 25px;
+
+    margin: 10px 0 15px;
+}
+
+.videoWrapper {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 17px;
+
+    background: #000;
+
+    box-shadow: 0 0 30px rgba(255,92,174,.12);
+}
+
+video {
+    display: block;
+
+    width: 100%;
+    max-height: 620px;
+
+    border-radius: 17px;
+
+    background: #000;
+
+    outline: none;
+}
+
+.videoCaption {
+    text-align: center;
+
+    color: #dccbdc;
+
+    line-height: 1.7;
+
+    padding: 16px 8px 8px;
+}
+
+.videoEnd {
+    display: none;
+
+    text-align: center;
+
+    color: #ffafd5;
+
+    font-size: 18px;
+
+    padding-top: 12px;
+}
+
+.videoEnd.show {
+    display: block;
 }
 
 /* HIDDEN MESSAGE */
 
-.wordWall{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:9px;
+.wordWall {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 9px;
 }
 
-.word{
-    border:1px solid rgba(255,255,255,.12);
-    background:rgba(255,255,255,.05);
-    color:#cbb9cc;
-    padding:9px 12px;
-    border-radius:12px;
-    transition:.3s;
+.word {
+    border: 1px solid rgba(255,255,255,.12);
+
+    background: rgba(255,255,255,.05);
+
+    color: #cbb9cc;
+
+    padding: 9px 12px;
+
+    border-radius: 12px;
+
+    transition: .3s;
 }
 
-.word.found{
-    color:#fff;
-    background:linear-gradient(
-        135deg,
-        rgba(255,92,168,.35),
-        rgba(150,92,255,.35)
-    );
-    border-color:#ff8bc4;
-    box-shadow:0 0 20px rgba(255,105,179,.2);
-    transform:scale(1.04);
+.word.found {
+    color: #fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,92,168,.35),
+            rgba(150,92,255,.35)
+        );
+
+    border-color: #ff8bc4;
+
+    box-shadow: 0 0 20px rgba(255,105,179,.2);
 }
 
-#hiddenMessage{
-    text-align:center;
-    min-height:28px;
-    margin-top:20px;
-    color:#ffb8db;
-    line-height:1.7;
+#hiddenMessage {
+    text-align: center;
+
+    min-height: 28px;
+
+    margin-top: 20px;
+
+    color: #ffb8db;
+
+    line-height: 1.7;
 }
 
 /* LONG TEXT */
 
-.longText{
-    max-width:780px;
-    margin:auto;
+.longText {
+    max-width: 780px;
+    margin: auto;
 }
 
-.longText p{
-    color:#e0d0df;
-    line-height:1.9;
-    margin-bottom:18px;
+.longText p {
+    color: #e0d0df;
+
+    line-height: 1.9;
+
+    margin-bottom: 18px;
 }
 
-.quote{
-    padding:20px;
-    margin:24px 0;
-    border-left:3px solid #ff6bb6;
-    background:rgba(255,255,255,.05);
-    color:#ffd0e6;
-    line-height:1.8;
-    font-style:italic;
+.quote {
+    padding: 20px;
+
+    margin: 24px 0;
+
+    border-left: 3px solid #ff6bb6;
+
+    background: rgba(255,255,255,.05);
+
+    color: #ffd0e6;
+
+    line-height: 1.8;
+
+    font-style: italic;
 }
 
-/* FINAL */
+/* FINAL IMAGE */
 
-.final{
-    text-align:center;
+.final {
+    text-align: center;
 }
 
-.finalImage{
-    width:min(540px,100%);
-    margin:20px auto;
-    border-radius:25px;
-    overflow:hidden;
-    border:1px solid rgba(255,255,255,.15);
-    box-shadow:0 20px 65px rgba(0,0,0,.6);
+.finalImage {
+    width: min(540px, 100%);
+
+    margin: 20px auto;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    box-shadow: 0 20px 65px rgba(0,0,0,.6);
 }
 
-.finalImage img{
-    width:100%;
-    display:block;
-    animation:finalGlow 4s infinite alternate;
-}
-
-@keyframes finalGlow{
-    to{
-        filter:brightness(1.08)
-               drop-shadow(0 0 20px rgba(255,117,179,.2));
-    }
+.finalImage img {
+    width: 100%;
+    display: block;
 }
 
 /* ENDING */
 
-.ending{
-    min-height:65vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
+.ending {
+    min-height: 65vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
 }
 
-.endHeart{
-    font-size:75px;
-    animation:heartbeat 1.8s infinite;
+.endHeart {
+    font-size: 75px;
+
+    animation: heartbeat 1.8s infinite;
 }
 
-@keyframes heartbeat{
-    0%,100%{transform:scale(1)}
-    15%{transform:scale(1.12)}
-    30%{transform:scale(1)}
-    45%{transform:scale(1.07)}
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.12);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.07);
+    }
 }
 
-.ending h2{
-    font-size:clamp(32px,8vw,54px);
-    color:#ffd1e8;
-    margin:12px 0;
+.ending h2 {
+    font-size: clamp(32px, 8vw, 54px);
+
+    color: #ffd1e8;
+
+    margin: 12px 0;
 }
 
-.ending p{
-    color:#ddccdc;
-    line-height:1.9;
-    margin-bottom:15px;
+.ending p {
+    color: #ddccdc;
+
+    line-height: 1.9;
+
+    margin-bottom: 15px;
+}
+
+/* LIGHTBOX */
+
+#lightbox {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 10000;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(0,0,0,.88);
+}
+
+#lightbox.open {
+    display: flex;
+}
+
+#lightbox img {
+    max-width: 95%;
+    max-height: 88vh;
+
+    border-radius: 18px;
+}
+
+.closeButton {
+    position: absolute;
+
+    right: 18px;
+    top: 15px;
+
+    width: 45px;
+    height: 45px;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.12);
+
+    color: #fff;
+
+    font-size: 25px;
 }
 
 /* TOAST */
 
-#toast{
-    position:fixed;
-    z-index:11000;
-    bottom:22px;
-    left:50%;
-    transform:translate(-50%,20px);
-    opacity:0;
-    padding:12px 18px;
-    border-radius:14px;
-    background:#291633;
-    border:1px solid rgba(255,255,255,.15);
-    transition:.35s;
-    text-align:center;
-    max-width:90%;
+#toast {
+    position: fixed;
+
+    z-index: 11000;
+
+    bottom: 22px;
+
+    left: 50%;
+
+    transform: translate(-50%,20px);
+
+    opacity: 0;
+
+    padding: 12px 18px;
+
+    border-radius: 14px;
+
+    background: #291633;
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    transition: .35s;
+
+    text-align: center;
+
+    max-width: 90%;
 }
 
-#toast.show{
-    opacity:1;
-    transform:translate(-50%,0);
+#toast.show {
+    opacity: 1;
+
+    transform: translate(-50%,0);
 }
 
 /* MOBILE */
 
-@media(max-width:650px){
+@media (max-width: 650px) {
 
-    section{
-        padding:25px 16px;
-        border-radius:22px;
+    section {
+        padding: 25px 16px;
+        border-radius: 22px;
     }
 
-    .codeRow{
-        flex-direction:column;
+    .codeRow {
+        flex-direction: column;
     }
 
-    .codeRow .mainButton{
-        width:100%;
+    .codeRow .mainButton {
+        width: 100%;
     }
 
-    .grid{
-        grid-template-columns:1fr;
+    .grid {
+        grid-template-columns: 1fr;
     }
 
-    .gallery{
-        gap:8px;
+    .hero {
+        min-height: 90vh;
     }
 
-    .hero{
-        min-height:90vh;
-    }
-}
-
-@media(max-width:390px){
-
-    .gallery{
-        grid-template-columns:1fr;
+    .gallery {
+        grid-template-columns: 1fr 1fr;
     }
 
-    .countdown{
-        gap:5px;
-    }
-
-    .timeBox strong{
-        font-size:21px;
+    .lockCard {
+        padding: 30px 17px;
     }
 }
 </style>
 </head>
 
+
 <body>
+
+<!-- ANIMATED BACKGROUND -->
 
 <div id="stars"></div>
 <div id="hearts"></div>
@@ -779,7 +1032,7 @@ section.visible{
 <div id="petals"></div>
 
 
-<!-- SECRET CODE -->
+<!-- SECRET CODE SCREEN -->
 
 <div id="lockScreen">
 
@@ -797,6 +1050,9 @@ section.visible{
             A private birthday journey made especially
             for <strong>Eeshal Ibrahim</strong>. ❤️
         </p>
+
+
+        <!-- COUNTDOWN -->
 
         <div class="countdown">
 
@@ -826,9 +1082,11 @@ section.visible{
             Countdown to 25 August at 12:00 AM ✨
         </p>
 
+
         <h3 class="codeTitle">
             🔑 Enter the Secret Code
         </h3>
+
 
         <div class="codeRow">
 
@@ -848,6 +1106,7 @@ section.visible{
 
         </div>
 
+
         <div id="errorMessage"></div>
 
         <p style="font-size:12px;margin-top:14px;">
@@ -859,12 +1118,14 @@ section.visible{
 </div>
 
 
-<!-- WEBSITE -->
+<!-- MAIN WEBSITE -->
 
 <main id="website">
 
 <div class="container">
 
+
+<!-- COVER -->
 
 <section class="hero">
 
@@ -874,12 +1135,15 @@ section.visible{
             A special birthday memory
         </div>
 
+
         <h1>
             Happy Birthday
+
             <span class="name">
                 Eeshal Ibrahim
             </span>
         </h1>
+
 
         <p class="heroText">
             This is more than a birthday wish.
@@ -888,18 +1152,21 @@ section.visible{
             that deserve to be remembered.
         </p>
 
+
         <div class="coverBox">
 
             <p>
                 Take your time.
                 Look through the memories.
                 Open the Secret Mail.
+                Watch the video.
                 Find the hidden words.
                 And when you reach the end,
                 there is one final memory waiting for you. 🤍
             </p>
 
         </div>
+
 
         <div class="scrollHint">
             ↓ Begin the birthday journey ↓
@@ -909,6 +1176,8 @@ section.visible{
 
 </section>
 
+
+<!-- BIRTHDAY REVEAL -->
 
 <section class="reveal">
 
@@ -923,11 +1192,14 @@ section.visible{
     <p class="intro">
         Today is your day.
         A new chapter begins, filled with possibilities,
-        dreams, memories and moments that have not happened yet.
+        dreams, memories and moments that have not
+        happened yet.
     </p>
 
 </section>
 
+
+<!-- WHY -->
 
 <section>
 
@@ -936,35 +1208,35 @@ section.visible{
         <span>This</span>
     </h2>
 
+
     <div class="longText">
 
         <p>
-            A normal birthday message can be read in a few seconds.
-            I wanted to make something that could take a little longer
-            and feel more personal.
+            A normal birthday message can be read in
+            a few seconds. I wanted to make something
+            that could take a little longer and feel
+            more personal.
         </p>
 
+
         <p>
-            So this page became a small collection of memories,
-            photographs, thoughts and surprises.
+            So this page became a small collection
+            of memories, photographs, thoughts
+            and surprises.
         </p>
+
 
         <p>
             Some things are visible immediately.
-            Other things are waiting for you to discover them.
+            Other things are waiting for you to discover.
         </p>
 
-        <p>
-            The photographs preserve moments.
-            The Secret Mail carries the longer message.
-            The hidden words add a little mystery.
-            And the final picture waits at the end of the journey.
-        </p>
 
         <div class="quote">
-            Sometimes the smallest moments become the memories
-            we remember the longest.
+            Sometimes the smallest moments become
+            the memories we remember the longest.
         </div>
+
 
         <p>
             This page doesn't need to be perfect.
@@ -976,6 +1248,8 @@ section.visible{
 </section>
 
 
+<!-- LITTLE MEMORIES -->
+
 <section>
 
     <h2 class="title">
@@ -983,47 +1257,65 @@ section.visible{
         <span>Remembering</span>
     </h2>
 
-    <p class="intro">
-        Not every meaningful memory is a huge event.
-        Sometimes it is simply a conversation,
-        a smile, a photograph or a moment.
-    </p>
 
     <div class="grid">
 
         <div class="card">
-            <h3>💬 Conversations</h3>
+
+            <h3>
+                💬 Conversations
+            </h3>
+
             <p>
                 Some conversations stay in our minds
                 long after they have ended because
                 of the person we shared them with.
             </p>
+
         </div>
 
+
         <div class="card">
-            <h3>😊 Smiles</h3>
+
+            <h3>
+                😊 Smiles
+            </h3>
+
             <p>
                 A smile can be a tiny moment,
                 but sometimes one smile can become
                 attached to an entire memory.
             </p>
+
         </div>
 
+
         <div class="card">
-            <h3>📸 Pictures</h3>
+
+            <h3>
+                📸 Pictures
+            </h3>
+
             <p>
                 One photograph can bring back
                 a whole feeling, even after time passes.
             </p>
+
         </div>
 
+
         <div class="card">
-            <h3>🌙 Little Moments</h3>
+
+            <h3>
+                🌙 Little Moments
+            </h3>
+
             <p>
                 The moments that seemed ordinary
                 can sometimes become the ones
                 we value most when looking back.
             </p>
+
         </div>
 
     </div>
@@ -1031,7 +1323,7 @@ section.visible{
 </section>
 
 
-<!-- 6 PHOTO GALLERY -->
+<!-- PHOTO GALLERY -->
 
 <section>
 
@@ -1040,84 +1332,116 @@ section.visible{
         <span>Six Special Memories</span>
     </h2>
 
+
     <p class="intro">
         Six photographs.
         Six little pieces of time.
         Tap any picture to see it larger.
     </p>
 
+
     <div class="gallery">
+
 
         <div
             class="photo"
             onclick="openPhoto('Miss together pictures.jpeg')"
         >
-            <span class="photoNumber">01</span>
+
+            <span class="photoNumber">
+                01
+            </span>
+
             <img
                 src="Miss%20together%20pictures.jpeg"
                 alt="Memory 1"
-                loading="lazy"
             >
+
         </div>
+
 
         <div
             class="photo"
             onclick="openPhoto('The beautiful yellow.jpg')"
         >
-            <span class="photoNumber">02</span>
+
+            <span class="photoNumber">
+                02
+            </span>
+
             <img
                 src="The%20beautiful%20yellow.jpg"
                 alt="Memory 2"
-                loading="lazy"
             >
+
         </div>
+
 
         <div
             class="photo"
             onclick="openPhoto('The best mirror.jpeg')"
         >
-            <span class="photoNumber">03</span>
+
+            <span class="photoNumber">
+                03
+            </span>
+
             <img
                 src="The%20best%20mirror.jpeg"
                 alt="Memory 3"
-                loading="lazy"
             >
+
         </div>
+
 
         <div
             class="photo"
             onclick="openPhoto('The black.jpg')"
         >
-            <span class="photoNumber">04</span>
+
+            <span class="photoNumber">
+                04
+            </span>
+
             <img
                 src="The%20black.jpg"
                 alt="Memory 4"
-                loading="lazy"
             >
+
         </div>
+
 
         <div
             class="photo"
             onclick="openPhoto('The dreaming is grandfather.png')"
         >
-            <span class="photoNumber">05</span>
+
+            <span class="photoNumber">
+                05
+            </span>
+
             <img
                 src="The%20dreaming%20is%20grandfather.png"
                 alt="Memory 5"
-                loading="lazy"
             >
+
         </div>
+
 
         <div
             class="photo"
             onclick="openPhoto('The weather is beautiful.jpg')"
         >
-            <span class="photoNumber">06</span>
+
+            <span class="photoNumber">
+                06
+            </span>
+
             <img
                 src="The%20weather%20is%20beautiful.jpg"
                 alt="Memory 6"
-                loading="lazy"
             >
+
         </div>
 
     </div>
@@ -1134,6 +1458,7 @@ section.visible{
         <span>Secret Mail</span>
     </h2>
 
+
     <div
         class="envelope"
         onclick="openSecretMail()"
@@ -1141,17 +1466,19 @@ section.visible{
         💌
     </div>
 
+
     <p class="intro">
-        There is one message I didn't want
-        to place on the cover.
-        It is waiting inside this letter.
+        You unlocked the birthday surprise.
+        But there is one more thing waiting
+        inside this letter.
     </p>
+
 
     <button
         class="mainButton"
         onclick="openSecretMail()"
     >
-        Open My Secret Message
+        Open My Secret Mail 💌
     </button>
 
 
@@ -1164,25 +1491,30 @@ section.visible{
             💌 My Secret Message
         </h3>
 
+
         <p>
             Eeshal,
         </p>
 
+
         <p>
-            I wanted to leave something here that wasn't
-            just another birthday wish.
+            I wanted to leave something here that
+            wasn't just another birthday wish.
             I wanted to write something from my heart —
             something that carries memories, feelings
             and words that can sometimes be difficult
             to say out loud.
         </p>
 
+
         <p>
-            Some people become a beautiful part of our story,
-            and no matter how much time passes,
-            the memories they leave behind can remain special.
+            Some people become a beautiful part of
+            our story, and no matter how much time
+            passes, the memories they leave behind
+            can remain special.
             You are one of those people in my life.
         </p>
+
 
         <p>
             I still remember the little things —
@@ -1191,55 +1523,52 @@ section.visible{
             but became precious memories later.
         </p>
 
-        <p>
-            The pictures, the laughter,
-            the happiness, the difficult moments,
-            and everything we experienced together
-            became part of a chapter that I will remember. ❤️
-        </p>
 
         <p>
-            There were moments when I imagined a future with you —
-            not just birthdays and celebrations,
+            The pictures, the laughter, the happiness,
+            the difficult moments, and everything we
+            experienced together became part of a chapter
+            that I will remember. ❤️
+        </p>
+
+
+        <p>
+            There were moments when I imagined a future
+            with you — not just birthdays and celebrations,
             but a whole life.
         </p>
 
-        <p>
-            I imagined being there through the good days
-            and the difficult ones, supporting each other
-            when life became challenging,
-            celebrating each other's successes
-            and growing together with time.
-        </p>
 
         <p>
             Maybe life doesn't always follow the plans
-            we make in our hearts.
-            Sometimes Allah writes a different path for us,
-            and even when we don't understand that path
-            immediately, we have to trust His wisdom.
+            we make in our hearts. Sometimes Allah writes
+            a different path for us, and even when we don't
+            understand that path immediately, we have to
+            trust His wisdom.
         </p>
 
+
         <p>
-            Whatever the future holds,
-            I genuinely hope your life is filled
-            with happiness, peace, success and people
-            who value your heart.
+            Whatever the future holds, I genuinely hope
+            your life is filled with happiness, peace,
+            success and people who value your heart.
         </p>
+
 
         <p>
             On your birthday, I don't want to ask anything
-            from you.
-            I don't want this message to become a burden
-            or make you feel that you have to respond
-            in any particular way.
+            from you. I don't want this message to become
+            a burden or make you feel that you have to
+            respond in any particular way.
         </p>
 
+
         <p>
-            I simply wanted you to know that there was once
-            someone who cared about you deeply
+            I simply wanted you to know that there was
+            once someone who cared about you deeply
             and sincerely wanted the best for you.
         </p>
+
 
         <p>
             If our paths continue together someday,
@@ -1249,30 +1578,36 @@ section.visible{
             understanding, respect and love.
         </p>
 
+
         <p>
-            And if Allah has written different paths for us,
-            I will still hope that your path is beautiful.
+            And if Allah has written different paths
+            for us, I will still hope that your path
+            is beautiful.
         </p>
+
 
         <p>
             Because caring about someone means wanting
-            them to be happy, even when life doesn't turn out
-            exactly the way we imagined.
+            them to be happy, even when life doesn't
+            turn out exactly the way we imagined.
         </p>
+
 
         <p>
             I hope you achieve every dream you have.
-            I hope you become everything you want to become.
-            I hope you never doubt your worth.
+            I hope you become everything you want
+            to become. I hope you never doubt your worth.
         </p>
 
+
         <p>
-            Whenever life feels heavy,
-            remember that difficult days don't last forever.
+            Whenever life feels heavy, remember that
+            difficult days don't last forever.
             Keep believing in yourself.
             Keep moving forward.
             Keep smiling. 🌸
         </p>
+
 
         <p>
             May Allah protect your heart from sadness,
@@ -1282,36 +1617,35 @@ section.visible{
             with peace and happiness. 🤲❤️
         </p>
 
-        <p>
-            May Allah give you success in your studies,
-            your career, your dreams, your family life
-            and every journey that lies ahead.
-        </p>
 
         <p>
             And if one day you look back at these memories,
             I hope you remember them not with sadness,
-            but with a smile —
-            knowing that they were once beautiful moments
-            of our lives.
+            but with a smile — knowing that they were once
+            beautiful moments of our lives.
         </p>
+
 
         <p>
             Thank you for every memory.
         </p>
 
+
         <p>
             Thank you for every smile.
         </p>
+
 
         <p>
             Thank you for every conversation.
         </p>
 
+
         <p>
             Thank you for every little moment
             that became something worth remembering.
         </p>
+
 
         <p>
             Some chapters end.
@@ -1320,79 +1654,31 @@ section.visible{
             with a future we could never have imagined.
         </p>
 
-        <p>
-            Whatever happens,
-            I will always hope that your future
-            is brighter than your past
-            and that your heart finds the peace it deserves.
-            🤍
-        </p>
 
         <p>
-            Today is your birthday,
-            so more than anything,
-            I want you to be happy.
+            Whatever happens, I hope your future is
+            brighter than your past and that your heart
+            finds the peace it deserves. 🤍
         </p>
 
-        <p>
-            May this new year of your life bring you
-            closer to your dreams.
-            May opportunities open for you,
-            may you be surrounded by genuine people,
-            and may your future be full of meaningful moments.
-        </p>
 
-        <p>
-            And if someday you find the person
-            with whom you choose to spend your whole life,
-            I hope that person understands your heart,
-            respects you, supports your dreams,
-            stands beside you during difficult times
-            and celebrates your happiness.
-        </p>
-
-        <p>
-            If that person is meant to be me someday,
-            then InshaAllah,
-            I hope we can build something more beautiful
-            than anything we once imagined —
-            a relationship based not only on love,
-            but also on trust, loyalty, forgiveness,
-            patience, communication and understanding.
-        </p>
-
-        <p>
-            A life where we grow together.
-        </p>
-
-        <p>
-            A life where we support each other.
-        </p>
-
-        <p>
-            A life where we celebrate each other's victories.
-        </p>
-
-        <p>
-            A life where we hold each other up
-            during difficult days.
-        </p>
-
-        <p>
-            But whatever Allah has written,
-            I trust Him.
-        </p>
-
-        <p style="text-align:center;color:#ffd0e8;font-size:22px;">
+        <p
+            style="
+                text-align:center;
+                color:#ffd0e8;
+                font-size:22px;
+            "
+        >
             Happy Birthday, Eeshal Ibrahim. 🎂❤️
         </p>
 
+
         <p>
-            May Allah bless you with the life you dream of,
-            the happiness you deserve,
-            and a future more beautiful
-            than you ever imagined.
+            May this new year of your life bring you
+            closer to your dreams and toward everything
+            that is good for you.
         </p>
+
 
         <p>
             Keep smiling.
@@ -1401,23 +1687,78 @@ section.visible{
             you were meant to be.
         </p>
 
+
         <p>
-            Wherever life takes us,
-            I hope you remain safe,
-            happy, successful and surrounded by peace.
+            Wherever life takes us, I hope you remain
+            safe, happy, successful and surrounded by peace.
         </p>
+
 
         <p>
             You will always be a special chapter
-            in my story,
-            and some memories will always have
-            a place in my heart. ❤️
+            in my story, and some memories will always
+            have a place in my heart. ❤️
         </p>
+
 
         <p class="signature">
             — From someone who once dreamed
             of making a lifetime of memories with you.
         </p>
+
+
+        <!-- VIDEO -->
+
+        <div
+            class="videoBox"
+            id="videoBox"
+        >
+
+            <div class="videoTitle">
+                🎬 A Little Video For You
+            </div>
+
+
+            <div class="videoWrapper">
+
+                <video
+                    id="birthdayVideo"
+                    controls
+                    playsinline
+                    preload="metadata"
+                >
+
+                    <source
+                        src="birthday-video.mp4"
+                        type="video/mp4"
+                    >
+
+                    Your browser does not support
+                    video playback.
+
+                </video>
+
+            </div>
+
+
+            <p class="videoCaption">
+                Some memories are easier to feel
+                than to explain.
+                So instead of writing everything,
+                I wanted to leave you something
+                you could watch. ❤️
+            </p>
+
+
+            <div
+                class="videoEnd"
+                id="videoEnd"
+            >
+                ✨ Thank you for watching.
+                The next surprise is waiting below. 🌸
+            </div>
+
+        </div>
 
     </div>
 
@@ -1433,81 +1774,68 @@ section.visible{
         <span>Find the Hidden Message</span>
     </h2>
 
+
     <p class="intro">
-        Some meaningful words are hidden here.
-        Tap them one by one and discover
-        what they reveal.
+        Tap the words one by one.
+        When you find them all,
+        the hidden message will be revealed.
     </p>
+
 
     <div class="wordWall">
 
-        <button class="word" data-word="EESHAL">EESHAL</button>
-        <button class="word" data-word="SMILE">SMILE</button>
-        <button class="word" data-word="MEMORY">MEMORY</button>
-        <button class="word" data-word="HEART">HEART</button>
-        <button class="word" data-word="DREAM">DREAM</button>
-        <button class="word" data-word="HOPE">HOPE</button>
-        <button class="word" data-word="FUTURE">FUTURE</button>
-        <button class="word" data-word="TRUST">TRUST</button>
-        <button class="word" data-word="LOVE">LOVE</button>
-        <button class="word" data-word="PEACE">PEACE</button>
-        <button class="word" data-word="CHAPTER">CHAPTER</button>
-        <button class="word" data-word="ALWAYS">ALWAYS</button>
+        <button class="word" data-word="EESHAL">
+            EESHAL
+        </button>
+
+        <button class="word" data-word="SMILE">
+            SMILE
+        </button>
+
+        <button class="word" data-word="MEMORY">
+            MEMORY
+        </button>
+
+        <button class="word" data-word="HEART">
+            HEART
+        </button>
+
+        <button class="word" data-word="DREAM">
+            DREAM
+        </button>
+
+        <button class="word" data-word="HOPE">
+            HOPE
+        </button>
+
+        <button class="word" data-word="FUTURE">
+            FUTURE
+        </button>
+
+        <button class="word" data-word="TRUST">
+            TRUST
+        </button>
+
+        <button class="word" data-word="LOVE">
+            LOVE
+        </button>
+
+        <button class="word" data-word="PEACE">
+            PEACE
+        </button>
+
+        <button class="word" data-word="CHAPTER">
+            CHAPTER
+        </button>
+
+        <button class="word" data-word="ALWAYS">
+            ALWAYS
+        </button>
 
     </div>
+
 
     <div id="hiddenMessage"></div>
-
-</section>
-
-
-<!-- LOOKING BACK -->
-
-<section>
-
-    <h2 class="title">
-        💭
-        <span>If You Ever Look Back</span>
-    </h2>
-
-    <div class="longText">
-
-        <p>
-            If you ever look back at this page years from now,
-            I hope you don't only remember the words.
-            I hope you remember the feeling behind them.
-        </p>
-
-        <p>
-            Maybe some pictures will look different with time.
-            Maybe some memories will feel far away.
-            Maybe life will have changed in ways
-            neither of us could predict.
-        </p>
-
-        <p>
-            But that doesn't make the moments that already happened
-            any less real.
-        </p>
-
-        <p>
-            We cannot keep every moment forever.
-            What we can keep is the meaning
-            we gave those moments.
-        </p>
-
-        <div class="quote">
-            A memory doesn't have to last forever
-            to have been meaningful.
-        </div>
-
-        <p>
-            So if you ever find this website again,
-            I hope you smile for a moment.
-            That's enough.
-        </p>
-
-    </div>
 
 </section>
 
@@ -1521,46 +1849,69 @@ section.visible{
         <span>For The Life Ahead</span>
     </h2>
 
+
     <p class="intro">
         There is still so much ahead of you.
-        So many places, dreams, experiences
+        So many dreams, places, experiences
         and memories you haven't discovered yet.
     </p>
+
 
     <div class="grid">
 
         <div class="card">
-            <h3>🌟 Your Dreams</h3>
+
+            <h3>
+                🌟 Your Dreams
+            </h3>
+
             <p>
-                Keep chasing the things that make you
-                excited about your future,
-                even when the road becomes difficult.
+                Keep chasing the things that make
+                you excited about your future.
             </p>
+
         </div>
 
+
         <div class="card">
-            <h3>📚 Your Success</h3>
+
+            <h3>
+                📚 Your Success
+            </h3>
+
             <p>
                 May your hard work become achievements
-                that make you genuinely proud of yourself.
+                that make you genuinely proud.
             </p>
+
         </div>
 
+
         <div class="card">
-            <h3>😊 Your Happiness</h3>
+
+            <h3>
+                😊 Your Happiness
+            </h3>
+
             <p>
                 May you experience happiness
                 that feels genuine, peaceful and real.
             </p>
+
         </div>
+
 
         <div class="card">
-            <h3>🤍 Your People</h3>
+
+            <h3>
+                🤍 Your People
+            </h3>
+
             <p>
                 May the people around you appreciate
-                your heart, respect you
-                and celebrate who you are.
+                your heart and respect who you are.
             </p>
+
         </div>
 
     </div>
@@ -1568,53 +1919,7 @@ section.visible{
 </section>
 
 
-<!-- EESHAL -->
-
-<section>
-
-    <h2 class="title">
-        🌸
-        <span>For Eeshal Ibrahim</span>
-    </h2>
-
-    <div class="longText">
-
-        <p>
-            Your name appears throughout this little website,
-            but the most important part isn't seeing your name
-            on a screen.
-        </p>
-
-        <p>
-            It is the memories connected to it.
-        </p>
-
-        <p>
-            A birthday is usually about cake,
-            photographs and wishes.
-            But underneath all of that is something simpler:
-            another year of life and another opportunity
-            to become the person you want to be.
-        </p>
-
-        <p>
-            There are still places you haven't seen,
-            people you haven't met,
-            dreams you haven't reached,
-            photographs you haven't taken,
-            and memories you haven't made.
-        </p>
-
-        <p>
-            Your story is still being written.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- FINAL EESHAL.PNG -->
+<!-- FINAL MEMORY -->
 
 <section class="final">
 
@@ -1623,20 +1928,22 @@ section.visible{
         <span>One Last Memory</span>
     </h2>
 
+
     <p class="intro">
         You made it all the way to the end.
-        I saved one final picture here.
+        One final picture is waiting here.
     </p>
+
 
     <div class="finalImage">
 
         <img
             src="eeshal.png"
             alt="Eeshal final memory"
-            loading="lazy"
         >
 
     </div>
+
 
     <p class="intro">
         Some pictures don't need a long explanation.
@@ -1647,7 +1954,7 @@ section.visible{
 </section>
 
 
-<!-- ENDING -->
+<!-- FINAL ENDING -->
 
 <section class="ending">
 
@@ -1657,9 +1964,11 @@ section.visible{
             🤍
         </div>
 
+
         <h2>
             Keep This Memory
         </h2>
+
 
         <p>
             If you remember nothing else from this page,
@@ -1668,6 +1977,7 @@ section.visible{
             was worth making special.
         </p>
 
+
         <p>
             Keep the pictures.<br>
             Keep the memories.<br>
@@ -1675,14 +1985,22 @@ section.visible{
             Keep believing in your future.
         </p>
 
+
         <p>
             Some moments belong to the past,
             but that doesn't mean they stop being beautiful.
         </p>
 
-        <p style="color:#ffd0e8;font-size:21px;">
+
+        <p
+            style="
+                color:#ffd0e8;
+                font-size:21px;
+            "
+        >
             Happy Birthday, Eeshal Ibrahim. 🎂❤️
         </p>
+
 
         <p>
             May the chapters ahead of you
@@ -1690,7 +2008,13 @@ section.visible{
             than the ones behind you.
         </p>
 
-        <p style="color:#ffafd5;font-style:italic;">
+
+        <p
+            style="
+                color:#ffafd5;
+                font-style:italic;
+            "
+        >
             This little memory will always be
             a small reminder of a special chapter. 🌸
         </p>
@@ -1704,7 +2028,7 @@ section.visible{
 </main>
 
 
-<!-- IMAGE LIGHTBOX -->
+<!-- PHOTO LIGHTBOX -->
 
 <div
     id="lightbox"
@@ -1714,7 +2038,6 @@ section.visible{
     <button
         class="closeButton"
         onclick="closeLightbox()"
-        aria-label="Close"
     >
         ×
     </button>
@@ -1728,56 +2051,62 @@ section.visible{
 </div>
 
 
+<!-- TOAST -->
+
 <div id="toast"></div>
 
 
 <script>
 
-/* =====================================================
+/* ==========================================
    SECRET CODE
-===================================================== */
+========================================== */
 
 const SECRET_CODE = "EIB2010";
 
 
-/* STARS */
+/* ==========================================
+   CREATE STARS
+========================================== */
 
-const starsContainer =
-    document.getElementById("stars");
+const stars =
+document.getElementById("stars");
 
-for(let i=0;i<100;i++){
+for (let i = 0; i < 100; i++) {
 
     const star =
-        document.createElement("span");
+    document.createElement("span");
 
-    star.className="star";
+    star.className = "star";
 
     star.style.left =
-        Math.random()*100+"%";
+    Math.random() * 100 + "%";
 
     star.style.top =
-        Math.random()*100+"%";
+    Math.random() * 100 + "%";
 
     star.style.animationDelay =
-        Math.random()*3+"s";
+    Math.random() * 3 + "s";
 
     star.style.animationDuration =
-        1.5+Math.random()*3+"s";
+    1.5 + Math.random() * 3 + "s";
 
-    starsContainer.appendChild(star);
+    stars.appendChild(star);
 }
 
 
-/* HEARTS */
+/* ==========================================
+   FLOATING HEARTS
+========================================== */
 
-function createHeart(){
+function createHeart() {
 
     const heart =
-        document.createElement("div");
+    document.createElement("div");
 
-    heart.className="heart";
+    heart.className = "heart";
 
-    const list=[
+    const list = [
         "❤️",
         "💗",
         "💕",
@@ -1786,73 +2115,84 @@ function createHeart(){
     ];
 
     heart.textContent =
-        list[
-            Math.floor(
-                Math.random()*list.length
-            )
-        ];
+    list[
+        Math.floor(
+            Math.random() * list.length
+        )
+    ];
 
     heart.style.left =
-        Math.random()*100+"%";
+    Math.random() * 100 + "%";
 
     heart.style.fontSize =
-        13+Math.random()*17+"px";
+    13 + Math.random() * 17 + "px";
 
     heart.style.animationDuration =
-        7+Math.random()*6+"s";
+    7 + Math.random() * 6 + "s";
 
     document
-        .getElementById("hearts")
-        .appendChild(heart);
+    .getElementById("hearts")
+    .appendChild(heart);
 
     setTimeout(
-        ()=>heart.remove(),
+        () => heart.remove(),
         14000
     );
 }
 
-setInterval(createHeart,1700);
+setInterval(
+    createHeart,
+    1700
+);
 
 
-/* BALLOONS */
+/* ==========================================
+   BALLOONS
+========================================== */
 
-function createBalloon(){
+function createBalloon() {
 
     const balloon =
-        document.createElement("div");
+    document.createElement("div");
 
-    balloon.className="balloon";
-    balloon.textContent="🎈";
+    balloon.className = "balloon";
+
+    balloon.textContent = "🎈";
 
     balloon.style.left =
-        Math.random()*100+"%";
+    Math.random() * 100 + "%";
 
     balloon.style.animationDuration =
-        10+Math.random()*8+"s";
+    10 + Math.random() * 8 + "s";
 
     document
-        .getElementById("balloons")
-        .appendChild(balloon);
+    .getElementById("balloons")
+    .appendChild(balloon);
 
     setTimeout(
-        ()=>balloon.remove(),
+        () => balloon.remove(),
         20000
     );
 }
 
-setInterval(createBalloon,5000);
+setInterval(
+    createBalloon,
+    5000
+);
 
 
-/* PETALS */
+/* ==========================================
+   FALLING PETALS
+========================================== */
 
-function createPetal(){
+function createPetal() {
 
     const petal =
-        document.createElement("div");
+    document.createElement("div");
 
-    petal.className="petal";
+    petal.className = "petal";
 
-    const list=[
+    const list = [
         "🌸",
         "🌷",
         "✿",
@@ -1860,42 +2200,61 @@ function createPetal(){
     ];
 
     petal.textContent =
-        list[
-            Math.floor(
-                Math.random()*list.length
-            )
-        ];
+    list[
+        Math.floor(
+            Math.random() * list.length
+        )
+    ];
 
     petal.style.left =
-        Math.random()*100+"%";
+    Math.random() * 100 + "%";
 
     petal.style.animationDuration =
-        7+Math.random()*6+"s";
+    7 + Math.random() * 6 + "s";
 
     document
-        .getElementById("petals")
-        .appendChild(petal);
+    .getElementById("petals")
+    .appendChild(petal);
 
     setTimeout(
-        ()=>petal.remove(),
+        () => petal.remove(),
         14000
     );
 }
 
-setInterval(createPetal,2300);
+setInterval(
+    createPetal,
+    2300
+);
 
 
-/* COUNTDOWN */
+/* ==========================================
+   COUNTDOWN
+========================================== */
 
-function getBirthdayTarget(){
+function birthdayTarget() {
 
-    const now=new Date();
+    const now =
+    new Date();
 
-    let year=now.getFullYear();
+    let year =
+    now.getFullYear();
 
-    let target=
+    let target =
+    new Date(
+        year,
+        7,
+        25,
+        0,
+        0,
+        0
+    );
+
+    if (now >= target) {
+
+        target =
         new Date(
-            year,
+            year + 1,
             7,
             25,
             0,
@@ -1903,73 +2262,60 @@ function getBirthdayTarget(){
             0
         );
 
-    if(now>=target){
-
-        target=
-            new Date(
-                year+1,
-                7,
-                25,
-                0,
-                0,
-                0
-            );
     }
 
     return target;
 }
 
 
-function updateCountdown(){
+function updateCountdown() {
 
-    const target=
-        getBirthdayTarget();
+    const difference =
+    birthdayTarget() - new Date();
 
-    const now=
-        new Date();
-
-    const difference=
-        target-now;
-
-    if(difference<=0){
+    if (difference <= 0) {
         return;
     }
 
-    const days=
+
+    document
+    .getElementById("days")
+    .textContent =
+    String(
         Math.floor(
-            difference/86400000
-        );
+            difference / 86400000
+        )
+    ).padStart(2, "0");
 
-    const hours=
+
+    document
+    .getElementById("hours")
+    .textContent =
+    String(
         Math.floor(
-            difference/3600000
-        )%24;
+            difference / 3600000
+        ) % 24
+    ).padStart(2, "0");
 
-    const minutes=
+
+    document
+    .getElementById("minutes")
+    .textContent =
+    String(
         Math.floor(
-            difference/60000
-        )%60;
+            difference / 60000
+        ) % 60
+    ).padStart(2, "0");
 
-    const seconds=
+
+    document
+    .getElementById("seconds")
+    .textContent =
+    String(
         Math.floor(
-            difference/1000
-        )%60;
-
-    document.getElementById("days")
-        .textContent=
-        String(days).padStart(2,"0");
-
-    document.getElementById("hours")
-        .textContent=
-        String(hours).padStart(2,"0");
-
-    document.getElementById("minutes")
-        .textContent=
-        String(minutes).padStart(2,"0");
-
-    document.getElementById("seconds")
-        .textContent=
-        String(seconds).padStart(2,"0");
+            difference / 1000
+        ) % 60
+    ).padStart(2, "0");
 }
 
 updateCountdown();
@@ -1980,54 +2326,79 @@ setInterval(
 );
 
 
-/* UNLOCK */
+/* ==========================================
+   UNLOCK WEBSITE
+========================================== */
 
-function unlockWebsite(){
+function unlockWebsite() {
 
-    const input=
-        document.getElementById("secretCode");
+    const input =
+    document.getElementById(
+        "secretCode"
+    );
 
-    const entered=
-        input.value.trim().toUpperCase();
+    const entered =
+    input.value
+    .trim()
+    .toUpperCase();
 
-    if(entered===SECRET_CODE){
 
-        document.getElementById(
+    if (entered === SECRET_CODE) {
+
+        document
+        .getElementById(
             "errorMessage"
-        ).textContent="";
+        )
+        .textContent = "";
 
-        document.getElementById(
+
+        document
+        .getElementById(
             "lockScreen"
-        ).classList.add("hidden");
+        )
+        .classList
+        .add("hidden");
 
-        document.getElementById(
+
+        document
+        .getElementById(
             "website"
-        ).classList.add("show");
+        )
+        .classList
+        .add("show");
+
 
         sessionStorage.setItem(
             "birthdayUnlocked",
             "true"
         );
 
+
         setTimeout(
-            ()=>{
+            () => {
+
                 toast(
-                    "The birthday surprise is unlocked. ❤️"
+                    "Welcome to Eeshal's birthday surprise. ❤️"
                 );
 
                 createConfetti();
+
             },
             600
         );
 
-    }else{
 
-        document.getElementById(
+    } else {
+
+        document
+        .getElementById(
             "errorMessage"
-        ).textContent=
-            "The secret code isn't correct. Try again. ❤️";
+        )
+        .textContent =
+        "The secret code isn't correct. Try again. ❤️";
 
-        input.value="";
+        input.value = "";
+
     }
 }
 
@@ -2035,189 +2406,232 @@ function unlockWebsite(){
 /* ENTER KEY */
 
 document
-    .getElementById("secretCode")
-    .addEventListener(
-        "keydown",
-        function(event){
+.getElementById("secretCode")
+.addEventListener(
+    "keydown",
+    function(event) {
 
-            if(event.key==="Enter"){
-                unlockWebsite();
-            }
-
+        if (event.key === "Enter") {
+            unlockWebsite();
         }
-    );
+
+    }
+);
 
 
-/* SESSION */
+/* ==========================================
+   REMEMBER UNLOCK DURING SESSION
+========================================== */
 
-if(
+if (
     sessionStorage.getItem(
         "birthdayUnlocked"
-    )==="true"
-){
+    ) === "true"
+) {
 
     document
-        .getElementById("lockScreen")
-        .classList.add("hidden");
+    .getElementById(
+        "lockScreen"
+    )
+    .classList
+    .add("hidden");
+
 
     document
-        .getElementById("website")
-        .classList.add("show");
+    .getElementById(
+        "website"
+    )
+    .classList
+    .add("show");
+
 }
 
 
-/* CONFETTI */
+/* ==========================================
+   CONFETTI
+========================================== */
 
-function createConfetti(){
+function createConfetti() {
 
-    const colors=[
-        "#ff69b4",
-        "#ffd166",
-        "#a66cff",
-        "#69d9ff",
-        "#ffffff"
+    const pieces = 90;
+
+    const symbols = [
+        "✨",
+        "💖",
+        "💕",
+        "🌸",
+        "⭐"
     ];
 
-    for(let i=0;i<100;i++){
 
-        const piece=
-            document.createElement("div");
+    for (
+        let i = 0;
+        i < pieces;
+        i++
+    ) {
 
-        piece.style.position="fixed";
-        piece.style.zIndex="12000";
-        piece.style.left="50%";
-        piece.style.top="35%";
-        piece.style.width="7px";
-        piece.style.height="12px";
-        piece.style.borderRadius="2px";
+        const piece =
+        document.createElement("div");
 
-        piece.style.background=
-            colors[
-                Math.floor(
-                    Math.random()*colors.length
-                )
-            ];
+        piece.textContent =
+        symbols[
+            Math.floor(
+                Math.random() *
+                symbols.length
+            )
+        ];
 
-        const x=
-            (Math.random()-.5)*
-            window.innerWidth*1.3;
+        piece.style.position = "fixed";
 
-        const y=
-            (Math.random()-.2)*
-            window.innerHeight;
+        piece.style.zIndex = "12000";
 
-        document.body.appendChild(piece);
+        piece.style.left = "50%";
 
-        const animation=
-            piece.animate(
-                [
-                    {
-                        transform:
-                            "translate(0,0) rotate(0deg)",
-                        opacity:1
-                    },
-                    {
-                        transform:
-                            `translate(${x}px,${y}px) rotate(720deg)`,
-                        opacity:0
-                    }
-                ],
+        piece.style.top = "35%";
+
+        piece.style.fontSize =
+        10 + Math.random() * 15 + "px";
+
+
+        document.body.appendChild(
+            piece
+        );
+
+
+        const x =
+        (Math.random() - .5) *
+        window.innerWidth *
+        1.3;
+
+
+        const y =
+        (Math.random() - .2) *
+        window.innerHeight;
+
+
+        const animation =
+        piece.animate(
+            [
                 {
-                    duration:
-                        1800+
-                        Math.random()*1500,
-                    easing:
-                        "cubic-bezier(.2,.8,.3,1)"
-                }
-            );
+                    transform:
+                    "translate(0,0) rotate(0deg)",
+                    opacity: 1
+                },
 
-        animation.onfinish=()=>{
-            piece.remove();
-        };
+                {
+                    transform:
+                    `translate(${x}px,${y}px) rotate(720deg)`,
+                    opacity: 0
+                }
+            ],
+            {
+                duration:
+                1800 +
+                Math.random() * 1500,
+
+                easing:
+                "cubic-bezier(.2,.8,.3,1)"
+            }
+        );
+
+
+        animation.onfinish =
+        () => piece.remove();
+
     }
 }
 
 
-/* SECTION ANIMATION */
+/* ==========================================
+   SECTION SCROLL ANIMATION
+========================================== */
 
-const sectionObserver=
-    new IntersectionObserver(
-        function(entries){
+const observer =
+new IntersectionObserver(
+    function(entries) {
 
-            entries.forEach(
-                function(entry){
+        entries.forEach(
+            function(entry) {
 
-                    if(entry.isIntersecting){
+                if (entry.isIntersecting) {
 
-                        entry.target
-                            .classList
-                            .add("visible");
-                    }
+                    entry.target
+                    .classList
+                    .add("visible");
 
                 }
-            );
 
-        },
-        {
-            threshold:.12
-        }
-    );
+            }
+        );
+
+    },
+    {
+        threshold: .12
+    }
+);
 
 
 document
-    .querySelectorAll("section")
-    .forEach(
-        function(section){
-
-            sectionObserver.observe(section);
-
-        }
-    );
+.querySelectorAll("section")
+.forEach(
+    section => observer.observe(section)
+);
 
 
-/* PHOTO LIGHTBOX */
+/* ==========================================
+   PHOTO LIGHTBOX
+========================================== */
 
-function openPhoto(filename){
-
-    const image=
-        document.getElementById(
-            "largeImage"
-        );
-
-    image.src=
-        encodeURI(filename);
+function openPhoto(filename) {
 
     document
-        .getElementById("lightbox")
-        .classList.add("open");
+    .getElementById("largeImage")
+    .src =
+    encodeURI(filename);
 
-    document.body.style.overflow="hidden";
+
+    document
+    .getElementById("lightbox")
+    .classList
+    .add("open");
+
+
+    document.body.style.overflow =
+    "hidden";
 }
 
 
-function closeLightbox(){
+function closeLightbox() {
 
     document
-        .getElementById("lightbox")
-        .classList.remove("open");
+    .getElementById("lightbox")
+    .classList
+    .remove("open");
 
-    document.body.style.overflow="";
+
+    document.body.style.overflow =
+    "";
 }
 
 
-function closeLightboxBackground(event){
+function closeLightboxBackground(event) {
 
-    if(event.target.id==="lightbox"){
+    if (
+        event.target.id ===
+        "lightbox"
+    ) {
+
         closeLightbox();
+
     }
 }
 
 
 document.addEventListener(
     "keydown",
-    function(event){
+    function(event) {
 
-        if(event.key==="Escape"){
+        if (event.key === "Escape") {
             closeLightbox();
         }
 
@@ -2225,104 +2639,204 @@ document.addEventListener(
 );
 
 
-/* SECRET MAIL */
+/* ==========================================
+   SECRET MAIL
+========================================== */
 
-function openSecretMail(){
+function openSecretMail() {
 
-    const letter=
-        document.getElementById(
-            "secretLetter"
-        );
+    const letter =
+    document.getElementById(
+        "secretLetter"
+    );
 
-    letter.classList.add("open");
+
+    const videoBox =
+    document.getElementById(
+        "videoBox"
+    );
+
+
+    letter.classList.add(
+        "open"
+    );
+
 
     createConfetti();
 
+
     setTimeout(
-        function(){
+        function() {
+
+            videoBox.classList.add(
+                "show"
+            );
+
+        },
+        700
+    );
+
+
+    setTimeout(
+        function() {
 
             letter.scrollIntoView({
-                behavior:"smooth",
-                block:"start"
+                behavior: "smooth",
+                block: "start"
             });
 
         },
-        150
+        100
     );
+
 }
 
 
-/* HIDDEN WORDS */
+/* ==========================================
+   VIDEO
+   REQUIRED FILE:
+   birthday-video.mp4
+========================================== */
 
-const hiddenWords=
-    document.querySelectorAll(".word");
+const birthdayVideo =
+document.getElementById(
+    "birthdayVideo"
+);
 
-const foundWords=
-    new Set();
+
+birthdayVideo.addEventListener(
+    "play",
+    function() {
+
+        toast(
+            "Enjoy this little memory. ❤️"
+        );
+
+    }
+);
 
 
-hiddenWords.forEach(
-    function(word){
+birthdayVideo.addEventListener(
+    "ended",
+    function() {
+
+        document
+        .getElementById(
+            "videoEnd"
+        )
+        .classList
+        .add("show");
+
+
+        createConfetti();
+
+
+        toast(
+            "Video finished. More memories are waiting below. 🌸"
+        );
+
+    }
+);
+
+
+/* ==========================================
+   HIDDEN WORD DISCOVERY
+========================================== */
+
+const words =
+document.querySelectorAll(
+    ".word"
+);
+
+const found =
+new Set();
+
+
+words.forEach(
+    function(word) {
 
         word.addEventListener(
             "click",
-            function(){
+            function() {
 
-                const value=
-                    word.dataset.word;
+                const value =
+                word.dataset.word;
 
-                if(foundWords.has(value)){
+
+                if (
+                    found.has(value)
+                ) {
                     return;
                 }
 
-                foundWords.add(value);
 
-                word.classList.add("found");
+                found.add(value);
 
-                word.textContent=
-                    "✓ "+value;
 
-                const total=
-                    hiddenWords.length;
+                word.classList.add(
+                    "found"
+                );
 
-                const current=
-                    foundWords.size;
 
-                if(current===total){
+                word.textContent =
+                "✓ " + value;
 
-                    document.getElementById(
+
+                if (
+                    found.size ===
+                    words.length
+                ) {
+
+                    document
+                    .getElementById(
                         "hiddenMessage"
-                    ).innerHTML=`
+                    )
+                    .innerHTML = `
 
-                        ✨ You found every hidden word! ✨
+                        ✨ You found every
+                        hidden word! ✨
 
                         <br><br>
 
                         <strong>
-                        Eeshal, some memories become special
-                        because of the person who was part of them.
-                        Keep smiling, keep dreaming and keep believing
-                        that beautiful chapters are still ahead.
-                        ❤️
-                        </strong>
+                            Eeshal, some memories
+                            become special because
+                            of the person who was
+                            part of them.
 
+                            <br><br>
+
+                            Keep smiling,
+                            keep dreaming,
+                            keep believing,
+                            and remember that
+                            beautiful chapters
+                            are still ahead.
+
+                            ❤️
+                        </strong>
                     `;
 
+
                     createConfetti();
+
 
                     toast(
                         "You discovered the hidden message! 🌸"
                     );
 
-                }else{
 
-                    document.getElementById(
+                } else {
+
+                    document
+                    .getElementById(
                         "hiddenMessage"
-                    ).textContent=
-                        current+
-                        " of "+
-                        total+
-                        " hidden words discovered... 🔎";
+                    )
+                    .textContent =
+                    found.size +
+                    " of " +
+                    words.length +
+                    " hidden words discovered... 🔎";
 
                 }
 
@@ -2333,32 +2847,47 @@ hiddenWords.forEach(
 );
 
 
-/* TOAST */
+/* ==========================================
+   TOAST
+========================================== */
 
 let toastTimer;
 
-function toast(message){
 
-    const box=
-        document.getElementById(
-            "toast"
-        );
+function toast(message) {
 
-    box.textContent=message;
+    const box =
+    document.getElementById(
+        "toast"
+    );
 
-    box.classList.add("show");
 
-    clearTimeout(toastTimer);
+    box.textContent =
+    message;
 
-    toastTimer=
-        setTimeout(
-            function(){
 
-                box.classList.remove("show");
+    box.classList.add(
+        "show"
+    );
 
-            },
-            3500
-        );
+
+    clearTimeout(
+        toastTimer
+    );
+
+
+    toastTimer =
+    setTimeout(
+        function() {
+
+            box.classList.remove(
+                "show"
+            );
+
+        },
+        3500
+    );
+
 }
 
 </script>
